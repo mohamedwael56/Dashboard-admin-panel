@@ -5,5 +5,12 @@
 html, body,#root {
   margin: 0;
   padding: 0;
+  background-color: rgb(238, 236, 236);
+}
+
+aside a{
+  color: #000 !important;
+  font-weight: 400;
+  
 }
 

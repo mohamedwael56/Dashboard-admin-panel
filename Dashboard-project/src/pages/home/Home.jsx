@@ -9,7 +9,7 @@ export function Home() {
   return (
     <>
       <div className="Header ">
-        <nav className="fixed bg-gray-100 w-screen p-4 top-0 z-50 ">
+        <nav className="fixed bg-gray-100 w-full p-4 top-0 z-50 ">
           <ul className="flex items-center justify-between gap-3  ">
             <li>
               <a href="#" className="text-xs">
@@ -72,6 +72,61 @@ export function Home() {
         </nav>
       </div>
 
+<div className="flex mt-15">
+  <aside className="w-64 h-screen bg-gray-100 text-black-100 flex flex-col p-4">
+    <h2 className="text-s font-bold-1 mb-6 select-none flex start opacity-80">Main page</h2>
+
+    <nav className="flex flex-col gap-3 capitalize">
+      <a href="#" className="flex items-center px-3 py-2 rounded hover:bg-gray-200 ">
+        <span></span>
+        <span className="ml-2">Dashboard</span>
+      </a>
+      <a href="#" className="flex items-center px-3 py-2 rounded hover:bg-gray-200">
+        <span></span>
+        <span className="ml-2">Authentication </span>
+      </a>
+      <a href="#" className="flex items-center px-3 py-2 rounded hover:bg-gray-200">
+        <span></span>
+        <span className="ml-2">users</span>
+      </a>
+      <a href="#" className="flex items-center px-3 py-2 rounded hover:bg-gray-200">
+        <span></span>
+        <span className="ml-2">products</span>
+      </a>
+      <a href="#" className="flex items-center px-3 py-2 rounded hover:bg-gray-200">
+        <span></span>
+        <span className="ml-2">invoices</span>
+      </a>
+      <a href="#" className="flex items-center px-3 py-2 rounded hover:bg-gray-200">
+        <span></span>
+        <span className="ml-2">orders</span>
+      </a>
+      <a href="#" className="flex items-center px-3 py-2 rounded hover:bg-gray-200">
+        <span></span>
+        <span className="ml-2">messages</span>
+      </a>
+      <a href="#" className="flex items-center px-3 py-2 rounded hover:bg-gray-200">
+        <span></span>
+        <span className="ml-2">notifications</span>
+      </a>
+      <a href="#" className="flex items-center px-3 py-2 rounded hover:bg-gray-200">
+        <span></span>
+        <span className="ml-2">settings</span>
+      </a>
+    </nav>
+  </aside>
+
+  <main className="flex-1 p-6 m-7 bg-gray-100 w-screen">
+<div class="grid grid-flow-col grid-rows-2 gap-4">
+  <div class="row-span-3 bg-gradient-to-r from-green-700 to-green-300 p-10 ">01</div>
+  <div class="row-span-3 bg-gradient-to-r from-pink-500 to-pink-300 p-10">02</div>
+  <div class="row-span-3 bg-gradient-to-r from-blue-500 to-blue-300 p-10">03</div>
+  <div class="row-span-3 bg-gradient-to-r from-amber-500 to-amber-200 p-10">03</div>
+  <div class="row-span-3 bg-blue-700 p-10">03</div>
+  
+</div>
+  </main>
+</div>
 
 
     </>
