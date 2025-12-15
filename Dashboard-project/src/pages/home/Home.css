@@ -14,3 +14,10 @@ aside a{
   
 }
 
+main a {
+  color: #000 !important;
+  font-size: 9px;
+  margin-right: 1px;
+
+}
+
