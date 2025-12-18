@@ -94,7 +94,7 @@ export function Home() {
         </nav>
       </div>
 
-      <div className="flex mt-15">
+      <div className="flex mt-15 ">
         <aside className="w-64 h-screen bg-gray-100 text-black-100 flex flex-col p-4">
           <h2 className="text-s font-bold-1 mb-6 select-none flex start opacity-80">
             Main page
@@ -301,16 +301,23 @@ export function Home() {
     <div>stock</div>
     <div>rating</div>
     <div>order</div>
-    <div>sales</div>
-    <div>action</div>
+    <div className="mr-4">sales</div>
+    <div className="mr-4">action</div>
   </div>
 <div className="grid grid-cols-[1fr_10fr_2fr_2fr_2fr_2fr_2fr_2fr_2fr_2fr] gap-4 p-2">
   <div className="flex start">
    1
   </div>
 
-  <div className=" flex justify-start ">
-  product 1 
+  <div className=" flex justify-start items-center ">
+
+<img src="../../image/jacket.jpg" alt="" width='35px' />
+
+<div className="text-sm ml-2 ">
+<div > Waterproof jacket with zipper and hood</div>
+<div className="flex justify-start opacity-80 ">winter clothes </div>
+
+</div>
   </div>
   <div>
 women
@@ -324,8 +331,12 @@ women
   <div>
   44
   </div>
-  <div>
-  product 1
+  <div >
+    <div className="flex items-center gap-1">
+<img src="../../public/image/star.png" alt=""  width="10px"/>
+<span className="text-sm">4.9 </span>
+<span>(16)</span>
+</div>
   </div>
   <div>
   180
@@ -333,7 +344,7 @@ women
   <div>
   $38k
   </div>
-  <div >
+  <div className="flex items-center gap-1" >
   <a href="#" className="bg-violet-400 text-white p-1 rounded-xl " ><FontAwesomeIcon icon={faEye} /></a>
   <a href="#" className="bg-green-300 text-white p-1 rounded-xl "><FontAwesomeIcon icon={faPen} /></a>
   <a href="#" className="bg-red-500 text-white p-1 rounded-xl "><FontAwesomeIcon icon={faTrashCan} /></a>
@@ -344,8 +355,15 @@ women
   <div className="flex start">
  2
   </div>
-  <div className=" flex justify-start ">
-  product 2
+   <div className=" flex justify-start items-center ">
+
+<img src="../../image/jacket.jpg" alt="" width='35px' />
+
+<div className="text-sm ml-2 ">
+<div > Waterproof jacket with zipper and hood</div>
+<div className="flex justify-start opacity-80 ">winter clothes </div>
+
+</div>
   </div>
   <div>
 men
@@ -360,8 +378,12 @@ men
   <div>
   34
   </div>
-  <div>
-  product 2
+  <div >
+    <div className="flex items-center gap-1">
+<img src="../../public/image/star.png" alt=""  width="10px"/>
+<span className="text-sm">4.9 </span>
+<span>(16)</span>
+</div>
   </div>
   <div>
   350
@@ -369,8 +391,10 @@ men
   <div>
   $27k
   </div>
-  <div>
-  product 2
+  <div className="flex items-center gap-1" >
+  <a href="#" className="bg-violet-400 text-white p-1 rounded-xl " ><FontAwesomeIcon icon={faEye} /></a>
+  <a href="#" className="bg-green-300 text-white p-1 rounded-xl "><FontAwesomeIcon icon={faPen} /></a>
+  <a href="#" className="bg-red-500 text-white p-1 rounded-xl "><FontAwesomeIcon icon={faTrashCan} /></a>
   </div>
 </div>
 
@@ -378,8 +402,15 @@ men
   <div className="flex start"> 
  3
   </div>
-  <div className=" flex justify-start ">
-  product 3
+   <div className=" flex justify-start items-center ">
+
+<img src="../../image/jacket.jpg" alt="" width='35px' />
+
+<div className="text-sm ml-2 ">
+<div > Waterproof jacket with zipper and hood</div>
+<div className="flex justify-start opacity-80 ">winter clothes </div>
+
+</div>
   </div>
   <div>
 kids
@@ -394,8 +425,12 @@ ecstasy
   <div>
   50
   </div>
-  <div>
-  product 3
+   <div >
+    <div className="flex items-center gap-1">
+<img src="../../public/image/star.png" alt=""  width="10px"/>
+<span className="text-sm">4.9 </span>
+<span>(16)</span>
+</div>
   </div>
   <div>
   145
@@ -403,16 +438,25 @@ ecstasy
   <div>
   $23k
   </div>
-  <div>
-  product 3
+  <div className="flex items-center gap-1" >
+  <a href="#" className="bg-violet-400 text-white p-1 rounded-xl " ><FontAwesomeIcon icon={faEye} /></a>
+  <a href="#" className="bg-green-300 text-white p-1 rounded-xl "><FontAwesomeIcon icon={faPen} /></a>
+  <a href="#" className="bg-red-500 text-white p-1 rounded-xl "><FontAwesomeIcon icon={faTrashCan} /></a>
   </div>
 </div>
 <div className="grid grid-cols-[1fr_10fr_2fr_2fr_2fr_2fr_2fr_2fr_2fr_2fr] gap-4 p-2">
   <div className="flex start">
  4
   </div>
-  <div className=" flex justify-start ">
-  product 4
+  <div className=" flex justify-start items-center ">
+
+<img src="../../image/jacket.jpg" alt="" width='35px' />
+
+<div className="text-sm ml-2 ">
+<div > Waterproof jacket with zipper and hood</div>
+<div className="flex justify-start opacity-80 ">winter clothes </div>
+
+</div>
   </div>
   <div>
 men  </div>
@@ -426,8 +470,12 @@ men  </div>
   <div>
   43
   </div>
-  <div>
-  product 4
+  <div >
+    <div className="flex items-center gap-1">
+<img src="../../public/image/star.png" alt=""  width="10px"/>
+<span className="text-sm">4.9 </span>
+<span>(16)</span>
+</div>
   </div>
   <div>
  196
@@ -435,16 +483,25 @@ men  </div>
   <div>
   $18k
   </div>
-  <div>
-  product 4
+  <div className="flex items-center gap-1" >
+  <a href="#" className="bg-violet-400 text-white p-1 rounded-xl " ><FontAwesomeIcon icon={faEye} /></a>
+  <a href="#" className="bg-green-300 text-white p-1 rounded-xl "><FontAwesomeIcon icon={faPen} /></a>
+  <a href="#" className="bg-red-500 text-white p-1 rounded-xl "><FontAwesomeIcon icon={faTrashCan} /></a>
   </div>
 </div>
 <div className="grid grid-cols-[1fr_10fr_2fr_2fr_2fr_2fr_2fr_2fr_2fr_2fr] gap-4 p-2">
   <div className="flex start">
    5
   </div>
-  <div className=" flex justify-start ">
-  product 5 
+   <div className=" flex justify-start items-center ">
+
+<img src="../../image/jacket.jpg" alt="" width='35px' />
+
+<div className="text-sm ml-2 ">
+<div > Waterproof jacket with zipper and hood</div>
+<div className="flex justify-start opacity-80 ">winter clothes </div>
+
+</div>
   </div>
   <div>
 women
@@ -459,8 +516,12 @@ ecstasy
   <div>
   23
   </div>
-  <div>
-  product 5
+  <div >
+    <div className="flex items-center gap-1">
+<img src="../../public/image/star.png" alt=""  width="10px"/>
+<span className="text-sm">4.9 </span>
+<span>(16)</span>
+</div>
   </div>
   <div>
   165
@@ -468,8 +529,10 @@ ecstasy
   <div>
   $15k
   </div>
-  <div>
-  product 5
+  <div className="flex items-center gap-1" >
+  <a href="#" className="bg-violet-400 text-white p-1 rounded-xl " ><FontAwesomeIcon icon={faEye} /></a>
+  <a href="#" className="bg-green-300 text-white p-1 rounded-xl "><FontAwesomeIcon icon={faPen} /></a>
+  <a href="#" className="bg-red-500 text-white p-1 rounded-xl "><FontAwesomeIcon icon={faTrashCan} /></a>
   </div>
 </div>
 
