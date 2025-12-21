@@ -108,13 +108,16 @@ export function Home() {
               <span></span>
               <span className="ml-2">Dashboard</span>
             </a>
-            <a
-              href="#"
-              className="flex items-center px-3 py-2 rounded hover:bg-gray-200"
-            >
-              <span></span>
-              <span className="ml-2">Authentication </span>
-            </a>
+            <div className="flex items-center">
+            <details className="flex items-center px-3 py-2 rounded  inline-block select-none ">
+              <summary className="ml-2 hover:bg-gray-200 text-black">Authentication </summary>
+              <div className="flex flex-col ml-4 mt-2 gap-2">
+                <a href="login" className="hover:underline hover:bg-gray-200">login</a>
+                <a href="#" className="hover:underline hover:bg-gray-200">register</a>
+                <a href="#" className="hover:underline hover:bg-gray-200">forgot password</a>
+              </div>
+            </details>
+            </div>
             <a
               href="#"
               className="flex items-center px-3 py-2 rounded hover:bg-gray-200"

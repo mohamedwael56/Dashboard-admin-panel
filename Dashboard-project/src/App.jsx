@@ -1,6 +1,7 @@
 import './App.css'
 import { Home } from './pages/home/Home.jsx'
 import { Routes,Route } from 'react-router-dom'
+import { Login } from './pages/login/Login.jsx'
 
 function App() {
 
@@ -8,6 +9,7 @@ function App() {
     <>
     <Routes>
       <Route path='/' element={<Home />} />
+      <Route path='login' element={<Login />} />
     </Routes>
   
     </>
