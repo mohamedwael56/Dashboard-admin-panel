@@ -33,7 +33,7 @@ export function Login() {
           >
             Login
           </button>
-          <a href="#" className="text-blue-600 hover:underline mb-5">
+          <a href="ResetPassword" className="text-blue-600 hover:underline mb-5">
             forget password
           </a>
         </form>
@@ -71,7 +71,7 @@ export function Login() {
     </div>
 
     <div className="bg-gray-200 p-4 rounded-lg mt-4">
-      <p className="text-center text-gray-700 select-none">don't have an account? <a href="#" className="text-blue-600 hover:underline">Sign up</a></p>
+      <p className="text-center text-gray-700 select-none">don't have an account? <a href="/Register" className="text-blue-600 hover:underline">Sign up</a></p>
     </div>
   </>
   );

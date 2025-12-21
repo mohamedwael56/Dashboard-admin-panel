@@ -110,11 +110,11 @@ export function Home() {
             </a>
             <div className="flex items-center">
             <details className="flex items-center px-3 py-2 rounded  inline-block select-none ">
-              <summary className="ml-2 hover:bg-gray-200 text-black">Authentication </summary>
+              <summary className="ml-2 hover:bg-gray-200  hover:rounded-lg text-black">Authentication </summary>
               <div className="flex flex-col ml-4 mt-2 gap-2">
-                <a href="login" className="hover:underline hover:bg-gray-200">login</a>
-                <a href="#" className="hover:underline hover:bg-gray-200">register</a>
-                <a href="#" className="hover:underline hover:bg-gray-200">forgot password</a>
+                <a href="Login" className="hover:underline hover:bg-gray-200">login</a>
+                <a href="Register" className="hover:underline hover:bg-gray-200">register</a>
+                <a href="ResetPassword" className="hover:underline hover:bg-gray-200">forgot password</a>
               </div>
             </details>
             </div>
