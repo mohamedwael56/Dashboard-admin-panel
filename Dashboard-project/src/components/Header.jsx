@@ -4,7 +4,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faBell } from "@fortawesome/free-solid-svg-icons";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import './header.css';
 
 export function Header (){
     return (
@@ -12,7 +12,7 @@ export function Header (){
         <nav className="fixed bg-gray-100 w-full p-4 top-0 z-50 ">
           <ul className="flex items-center justify-between gap-3  ">
             <li>
-              <a href="#" className="text-xs">
+              <a href="#" className="text-xs hover:inherit font-bold ">
                 <h1>Ym style</h1>
               </a>
             </li>

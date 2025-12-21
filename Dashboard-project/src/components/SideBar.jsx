@@ -1,5 +1,6 @@
 export function SideBar (){
     return(
+        <div className="h-screen mt-3">
             <aside className="w-64 h-screen bg-gray-100 text-black-100 flex flex-col p-4">
           <h2 className="text-s font-bold-1 mb-6 select-none flex start opacity-80">
             Main page
@@ -14,8 +15,8 @@ export function SideBar (){
               <span className="ml-2">Dashboard</span>
             </a>
             <div className="flex items-center hover:bg-gray-200 hover:rounded-lg">
-            <details className="flex items-center px-3 py-2 rounded  inline-block select-none ">
-              <summary className="ml-2    text-black">Authentication </summary>
+            <details className="flex cursor-pointer items-center px-3 py-2 rounded  inline-block select-none ">
+              <summary className="ml-2 text-black">Authentication </summary>
               <div className="flex flex-col ml-4 mt-2 gap-2">
                 <a href="Login" className="hover:underline hover:bg-gray-300">login</a>
                 <a href="Register" className="hover:underline hover:bg-gray-300">register</a>
@@ -31,7 +32,7 @@ export function SideBar (){
               <span className="ml-2">users</span>
             </a>
             <a
-              href="#"
+              href="ProductsDetails"
               className="flex items-center px-3 py-2 rounded hover:bg-gray-200"
             >
               <span></span>
@@ -74,6 +75,6 @@ export function SideBar (){
             </a>
           </nav>
         </aside>
-
+</div>
     )
 }

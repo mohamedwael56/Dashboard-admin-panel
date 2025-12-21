@@ -1,0 +1,25 @@
+.first-link {
+    font-size: 20px;
+    color: rgb(0, 89, 255) !important;
+
+    
+}
+
+
+.first-link:hover{
+    color: rgba(2, 100, 247, 0.767) !important;
+
+}
+
+.current-page {
+    color: black !important;
+    font-size: 20px;
+    opacity: 85%;
+
+}
+
+
+.current-page:hover{
+    color: rgb(27, 27, 27) !important;
+
+}

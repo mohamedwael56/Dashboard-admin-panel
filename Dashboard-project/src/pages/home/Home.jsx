@@ -3,14 +3,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
-import { Product } from "../../components/products";
+import { Product } from "../../components/Products";
 import { Header } from "../../components/Header";
 import { SideBar } from "../../components/SideBar";
 export function Home() {
   return (
     <>
       <Header />
-      <div className="flex mt-15 ">
+      <div className="flex min-h-screen mt-15">
     <SideBar />
         <main className="flex-1 p-6 m-7  w-screen">
           <div className="grid grid-cols-3 grid-rows-2 gap-4">
