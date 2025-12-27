@@ -8,7 +8,7 @@ export function SideBar (){
 
           <nav className="flex flex-col gap-3 capitalize">
             <a
-              href="#"
+              href="/"
               className="flex items-center px-3 py-2 rounded hover:bg-gray-200 "
             >
               <span></span>
@@ -61,7 +61,7 @@ export function SideBar (){
             </a>
             
             <a
-              href="#"
+              href="Settings"
               className="flex items-center px-3 py-2 rounded hover:bg-gray-200"
             >
               <span></span>

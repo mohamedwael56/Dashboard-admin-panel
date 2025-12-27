@@ -10,7 +10,7 @@ return(
     <>
     <div >
     <Header />
-    <div className="mt-20 flex">
+    <div className="mt-15 flex">
     <SideBar />
     <main >
         

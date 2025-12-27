@@ -71,7 +71,7 @@ export function Header (){
                   </summary>
 
                   <div className="absolute mt-2 w-40 bg-white shadow-lg rounded-lg">
-                    <a href="#" className="block px-4 py-2 hover:bg-gray-100">
+                    <a href="Profile" className="block px-4 py-2 hover:bg-gray-100">
                       Profile
                     </a>
                     <a href="#" className="block px-4 py-2 hover:bg-gray-100">
