@@ -7,10 +7,10 @@ export function ProductsDetails (){
         <>
 
         <Header />
-                <div className="flex">
+                <div className="flex mt-21">
 
         <SideBar />
-          <main className="mt-23 mx-5 ">
+          <main className=" mt-2 mx-5 ">
             <div className=" main-page flex justify-between w-full bg-gray-100 p-4 rounded-xl items-center my-2">
                 <h2 className="text-xl font-bold select-none">products details</h2>
                 <div className="flex text-xl ">

@@ -56,18 +56,19 @@ export function Header (){
             </li>
 
             <li>
-              <div className="flex items-center ">
-                <img
-                  src="a"
-                  alt=""
-                  className="rounded-full bg-blue-500 m-1 px-3 "
-                  width="30px"
-                  height="30px"
+              <div className="flex  ">
+                
+                <details className="relative inline-block ">
+                  <summary className=" flex items-center  cursor-pointer px-4 py-2 text-black rounded-lg select-none ">
+                   <img
+                  src="./image/eddy.png"
+                  className="rounded-full object-cover w-12 h-12 border border-blue-500 mr-2"
+               
                 />
-                <details className="relative inline-block">
-                  <summary className="cursor-pointer px-4 py-2 text-black rounded-lg select-none ">
+                <div>
                     <span className=" font-medium">mohamed wael</span>
                     <span className="block text-xs">@mohamedwael56</span>
+                 </div>
                   </summary>
 
                   <div className="absolute mt-2 w-40 bg-white shadow-lg rounded-lg">

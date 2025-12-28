@@ -16,7 +16,7 @@ export function Profile() {
                 <a className="profile-links" href="/">
                   home
                 </a>
-                <a className="profile-links" href="">
+                <a className="profile-links" href="Users">
                   {" "}
                   - users
                 </a>
@@ -56,19 +56,28 @@ export function Profile() {
 
                   <div className="grid grid-cols-2 gap-3 m-3 h-30 self-center w-3/4">
                     <div className=" flex relative ">
-                      <input className="border px-2 rounded-xl h-10 w-full" type="text " />
+                      <input
+                        className="border px-2 rounded-xl h-10 w-full"
+                        type="text "
+                      />
                       <span className="absolute bottom-7  bg-gray-100">
                         Fullname
                       </span>
                     </div>
                     <div className=" flex relative ">
-                      <input type="text" className="px-2 rounded-xl h-10 w-full border"/>
+                      <input
+                        type="text"
+                        className="px-2 rounded-xl h-10 w-full border"
+                      />
                       <span className="absolute bottom-7 bg-gray-100">
                         Username
                       </span>
                     </div>
                     <div className=" flex relative  col-span-2 ">
-                      <textarea type="text" className="h-30 rounded-xl border px-2 py-3 w-full"/>
+                      <textarea
+                        type="text"
+                        className="h-30 rounded-xl border px-2 py-3 w-full"
+                      />
                       <span className="absolute bottom-26 bg-gray-100 ">
                         Biography
                       </span>
@@ -89,10 +98,15 @@ export function Profile() {
                     </span>
                   </div>
                   <div className=" flex relative ">
-                    <input
-                      type="text"
-                      className="border px-5 py-2 rounded-xl w-full"
-                    />
+                    <select
+                      name=""
+                      id=""
+                      className="w-full px-5 py-2 border rounded-xl"
+                    >
+                      <option value="Active">Admin</option>
+                      <option value="blocked">Viewer</option>
+                      <option value="blocked">Editor</option>
+                    </select>
                     <span className="absolute bottom-7 bg-gray-100">Role </span>
                   </div>
                   <div className="flex relative">
@@ -101,7 +115,8 @@ export function Profile() {
                       id=""
                       className="w-full px-5 py-2 border rounded-xl"
                     >
-                      <option value="">1</option>
+                      <option value="Active">Active</option>
+                      <option value="blocked">blocked</option>
                     </select>
                     <span className="absolute bottom-7 bg-gray-100">
                       status

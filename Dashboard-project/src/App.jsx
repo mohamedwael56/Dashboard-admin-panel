@@ -6,7 +6,8 @@ import { Register } from './pages/auth/Register.jsx'
 import { ResetPassword } from './pages/auth/ResetPassword.jsx'
 import { ProductsDetails } from './pages/ProductsDetails/ProductsDetails.jsx'
 import { OrderList } from './pages/OrderList/OrderList.jsx'
-import { Profile } from './pages/profile/Profile.jsx'
+import { Profile } from './pages/Users/Profile.jsx'
+import { Users } from './pages/Users/Users.jsx'
 function App() {
 
   return (
@@ -19,7 +20,7 @@ function App() {
       <Route path='ProductsDetails' element={<ProductsDetails />} />
       <Route path='OrdersList' element={<OrderList />} />
       <Route path='Profile' element={<Profile />} />
-
+      <Route path='Users' element={<Users />} />
     </Routes>
   
     </>

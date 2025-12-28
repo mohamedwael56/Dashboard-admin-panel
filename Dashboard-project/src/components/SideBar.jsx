@@ -25,7 +25,7 @@ export function SideBar (){
             </details>
             </div>
             <a
-              href="#"
+              href="Users"
               className="flex items-center px-3 py-2 rounded hover:bg-gray-200"
             >
               <span></span>
@@ -52,13 +52,7 @@ export function SideBar (){
               <span></span>
               <span className="ml-2">orders</span>
             </a>
-            <a
-              href="#"
-              className="flex items-center px-3 py-2 rounded hover:bg-gray-200"
-            >
-              <span></span>
-              <span className="ml-2">messages</span>
-            </a>
+           
             
             <a
               href="Settings"
