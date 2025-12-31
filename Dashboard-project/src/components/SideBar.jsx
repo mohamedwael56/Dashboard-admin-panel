@@ -38,13 +38,7 @@ export function SideBar (){
               <span></span>
               <span className="ml-2">products</span>
             </a>
-            <a
-              href="#"
-              className="flex items-center px-3 py-2 rounded hover:bg-gray-200"
-            >
-              <span></span>
-              <span className="ml-2">invoices</span>
-            </a>
+            
             <a
               href="OrdersList"
               className="flex items-center px-3 py-2 rounded hover:bg-gray-200"

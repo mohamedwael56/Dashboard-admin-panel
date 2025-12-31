@@ -8,6 +8,7 @@ import { ProductsDetails } from './pages/ProductsDetails/ProductsDetails.jsx'
 import { OrderList } from './pages/OrderList/OrderList.jsx'
 import { Profile } from './pages/Users/Profile.jsx'
 import { Users } from './pages/Users/Users.jsx'
+import { Settings } from './pages/Settings/Settings.jsx'
 function App() {
 
   return (
@@ -21,6 +22,7 @@ function App() {
       <Route path='OrdersList' element={<OrderList />} />
       <Route path='Profile' element={<Profile />} />
       <Route path='Users' element={<Users />} />
+      <Route path='Settings' element={<Settings />} />
     </Routes>
   
     </>

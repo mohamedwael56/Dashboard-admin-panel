@@ -6,7 +6,16 @@ import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
 import { Product } from "../../components/Products";
 import { Header } from "../../components/Header";
 import { SideBar } from "../../components/SideBar";
+import { BarChart, Bar, XAxis, Tooltip, ResponsiveContainer, YAxis } from "recharts";
+
 export function Home() {
+
+  const data = [
+  { name: "Jan", users: 100 },
+  { name: "Feb", users: 200 },
+  { name: "Mar", users: 300 },
+];
+
   return (
     <>
       <Header />
@@ -20,6 +29,8 @@ export function Home() {
                   <div>Total Users</div>
                   <div>277</div>
                 </div>
+                <div className="h-8  rounded-lg flex items-center justify-center text-gray-400">
+. </div>
                 <div>
                   <span>+95% </span>
                   <span>last month</span>
@@ -37,10 +48,14 @@ export function Home() {
                   <div>Total orders</div>
                   <div>338</div>
                 </div>
+                <div className="h-32 bg-gray-100 rounded-lg flex items-center justify-center text-gray-400">
+    Chart goes here
+  </div>
                 <div>
                   <span>+30% </span>
                   <span>last month</span>
                 </div>
+                
               </div>
               <div>
                 <a href="#" className="cursor-pointer text-2xl select-none">
@@ -52,6 +67,15 @@ export function Home() {
               <div>
                 <div className="mb-1 capitalize">total sales</div>
                 <div>$25,300</div>
+                 <div className="h-64 w-full  rounded-lg flex items-center justify-center text-gray-400">
+<ResponsiveContainer width="100%" height="100%">
+  <BarChart data={data}>
+    <XAxis dataKey="name"  />
+    <Tooltip />
+    <Bar dataKey="users" fill="#fff" radius={[6,6,0,0]} />
+  </BarChart>
+</ResponsiveContainer> 
+ </div>
               </div>
               <div>
                 <span>+55% </span>
@@ -64,6 +88,9 @@ export function Home() {
                   <div>Total products</div>
                   <div>557</div>
                 </div>
+                <div className="h-8 bg-gray-100 rounded-lg flex items-center justify-center text-gray-400">
+    Chart goes here
+  </div>
                 <div>
                   <span>+25% </span>
                   <span>last month</span>
@@ -81,6 +108,11 @@ export function Home() {
                   <div>Total reviews</div>
                   <div>165</div>
                 </div>
+                <div className="h-32 bg-gray-100 rounded-lg w-full flex items-center justify-center text-gray-400">
+ <div className="w-3 bg-black h-1/2 rounded"></div>
+  <div className="w-3 bg-black h-3/4 rounded"></div>
+  <div className="w-3 bg-black h-1/3 rounded"></div>
+  <div className="w-3 bg-black h-full rounded"></div>  </div>
                 <div>
                   <span>+45% </span>
                   <span>last month</span>
