@@ -1,7 +1,7 @@
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { use, useEffect,useState } from "react";
+import { useEffect,useState } from "react";
 import axios from "axios";
 
 export function UsersDetails(){
