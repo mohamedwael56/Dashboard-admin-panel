@@ -1,4 +1,5 @@
 const users = require("../data/users.data.js");
+const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 // Helper function لعمل token
@@ -10,22 +11,21 @@ const generateToken = (user) => {
   );
 };
 
-exports.register = (req, res) => {
-  const { name, email, role, image } = req.body;
+// Register
+exports.register = async (req, res) => {
+  const { name, email, password, role, image } = req.body;
 
-  // نتأكد إن الايميل مش موجود
   const exists = users.find(u => u.email === email);
-  if (exists) {
-    return res.status(400).json({ message: "User already exists" });
-  }
+  if (exists) return res.status(400).json({ message: "User already exists" });
 
-  // نعمل id جديد
+  const hashedPassword = await bcrypt.hash(password, 10);
+
   const newId = users.length ? users[users.length - 1].id + 1 : 1;
-
   const newUser = {
     id: newId,
     name,
     email,
+    password: hashedPassword,
     role: role || "user",
     status: "active",
     registeredAt: new Date().toISOString().split("T")[0],
@@ -35,19 +35,32 @@ exports.register = (req, res) => {
   users.push(newUser);
 
   const token = generateToken(newUser);
-
   res.json({ token, user: newUser });
 };
 
-exports.login = (req, res) => {
-  const { email } = req.body;
+// Login
+exports.login = async (req, res) => {
+  const { email, password } = req.body;
 
   const user = users.find(u => u.email === email);
-  if (!user) {
-    return res.status(400).json({ message: "Invalid email" });
-  }
+  if (!user) return res.status(400).json({ message: "Invalid email or password" });
+
+  const validPassword = await bcrypt.compare(password, user.password);
+  if (!validPassword) return res.status(400).json({ message: "Invalid email or password" });
 
   const token = generateToken(user);
-
   res.json({ token, user });
+};
+
+// Forgot Password
+exports.forgotPassword = async (req, res) => {
+  const { email, newPassword } = req.body;
+
+  const user = users.find(u => u.email === email);
+  if (!user) return res.status(400).json({ message: "User not found" });
+
+  const hashedPassword = await bcrypt.hash(newPassword, 10);
+  user.password = hashedPassword;
+
+  res.json({ message: "Password updated successfully" });
 };
