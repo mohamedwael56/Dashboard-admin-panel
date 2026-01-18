@@ -47,7 +47,7 @@ orders.map((order)=>{
 
   <div className=" flex justify-start items-center ">
 
-<img src="../../image/eddy.png" alt="" width='40px' className="rounded-full" />
+<img src={`${order.image}`} alt="" width='25px'  className="rounded-full " />
 
 <div className="text-sm ml-2 ">
 <div > {order.customerName}</div>

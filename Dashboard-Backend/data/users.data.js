@@ -2,7 +2,7 @@ const users = [
   {
     id: 1,
     name: "Ahmed Ali",
-    avatar: "https://via.placeholder.com/50",
+    image: "/images/ahmed-ali.jpg",
     email: "ahmed@gmail.com",
     role: "admin",
     status: "active",
@@ -11,7 +11,7 @@ const users = [
   {
     id: 2,
     name: "Mohamed Salah",
-    avatar: "https://via.placeholder.com/50",
+    image: "/images/mohamed-salah.jpg",
     email: "m.salah@gmail.com",
     role: "manager",
     status: "active",
@@ -20,7 +20,7 @@ const users = [
   {
     id: 3,
     name: "Sara Ibrahim",
-    avatar: "https://via.placeholder.com/50",
+    image: "/images/sara-ibrahem.jpg",
     email: "sara@gmail.com",
     role: "user",
     status: "blocked",
@@ -29,7 +29,7 @@ const users = [
   {
     id: 4,
     name: "Youssef Adel",
-    avatar: "https://via.placeholder.com/50",
+    image: "/images/yousef-adel.jpg",
     email: "youssef@gmail.com",
     role: "user",
     status: "active",
@@ -38,7 +38,7 @@ const users = [
   {
     id: 5,
     name: "Mona Hassan",
-    avatar: "https://via.placeholder.com/50",
+    image: "/images/mona-hassan.jpg",
     email: "mona@gmail.com",
     role: "manager",
     status: "active",
@@ -47,7 +47,7 @@ const users = [
   {
     id: 6,
     name: "Omar Khaled",
-    avatar: "https://via.placeholder.com/50",
+    image: "/images/omar-khaled.jpg",
     email: "omar@gmail.com",
     role: "editor",
     status: "active",
@@ -56,7 +56,7 @@ const users = [
   {
     id: 7,
     name: "Nour Ahmed",
-    avatar: "https://via.placeholder.com/50",
+    image: "/images/nour-ahmed.jpg",
     email: "nour@gmail.com",
     role: "user",
     status: "blocked",
@@ -65,7 +65,7 @@ const users = [
   {
     id: 8,
     name: "Hany Mostafa",
-    avatar: "https://via.placeholder.com/50",
+    image: "/images/hany-mostafa.jpg",
     email: "hany@gmail.com",
     role: "admin",
     status: "active",

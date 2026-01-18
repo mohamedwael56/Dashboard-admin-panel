@@ -2,7 +2,7 @@ const orders = [
   {
     id: 1,
     customerName: "Ahmed Ali",
-    customerAvatar: "https://via.placeholder.com/50",
+    image: "/images/ahmed-ali.jpg",
     itemsCount: 3,
     quantity: 5,
     totalPrice: 320,
@@ -13,7 +13,7 @@ const orders = [
   {
     id: 2,
     customerName: "Sara Ibrahim",
-    customerAvatar: "https://via.placeholder.com/50",
+    image: "/images/sara-ibrahem.jpg",
     itemsCount: 1,
     quantity: 1,
     totalPrice: 120,
@@ -24,7 +24,7 @@ const orders = [
   {
     id: 3,
     customerName: "Mohamed Salah",
-    customerAvatar: "https://via.placeholder.com/50",
+    image: "/images/mohamed-salah.jpg",
     itemsCount: 4,
     quantity: 6,
     totalPrice: 540,
@@ -35,7 +35,7 @@ const orders = [
   {
     id: 4,
     customerName: "Omar Khaled",
-    customerAvatar: "https://via.placeholder.com/50",
+    image: "/images/omar-khaled.jpg",
     itemsCount: 2,
     quantity: 2,
     totalPrice: 210,
@@ -46,7 +46,7 @@ const orders = [
   {
     id: 5,
     customerName: "Mona Hassan",
-    customerAvatar: "https://via.placeholder.com/50",
+    image: "/images/mona-hassan.jpg",
     itemsCount: 5,
     quantity: 8,
     totalPrice: 760,
@@ -57,7 +57,7 @@ const orders = [
   {
     id: 6,
     customerName: "Youssef Adel",
-    customerAvatar: "https://via.placeholder.com/50",
+    image: "/images/yousef-adel.jpg",
     itemsCount: 2,
     quantity: 3,
     totalPrice: 280,
@@ -68,7 +68,7 @@ const orders = [
   {
     id: 7,
     customerName: "Nour Ahmed",
-    customerAvatar: "https://via.placeholder.com/50",
+    image: "/images/nour-ahmed.jpg",
     itemsCount: 1,
     quantity: 1,
     totalPrice: 95,
@@ -79,7 +79,7 @@ const orders = [
   {
     id: 8,
     customerName: "Hany Mostafa",
-    customerAvatar: "https://via.placeholder.com/50",
+    image: "/images/hany-mostafa.jpg",
     itemsCount: 3,
     quantity: 4,
     totalPrice: 430,
@@ -90,7 +90,7 @@ const orders = [
   {
     id: 9,
     customerName: "Khaled Samy",
-    customerAvatar: "https://via.placeholder.com/50",
+    image: "/images/khaled-samy.jpg",
     itemsCount: 6,
     quantity: 10,
     totalPrice: 980,
@@ -101,7 +101,7 @@ const orders = [
   {
     id: 10,
     customerName: "Mariam Tarek",
-    customerAvatar: "https://via.placeholder.com/50",
+    image: "/images/mariam-tarek.jpg",
     itemsCount: 2,
     quantity: 2,
     totalPrice: 190,

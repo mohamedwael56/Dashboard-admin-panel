@@ -42,7 +42,7 @@ users.map((user)=>{
 
   <div className=" flex justify-start items-center ">
 
-<img src="../../image/eddy.png" alt="" width='50px' className="rounded-full" />
+<img src={`${user.image}`} alt="" width='25px' className="rounded-full" />
 
 <div className=" ml-2 ">
 <div > {user.name}</div>
