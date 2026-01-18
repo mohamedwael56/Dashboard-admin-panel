@@ -6,7 +6,7 @@ const charts = [
     title: "Orders",
     total: 860,
     percentChange: 8,
-    rowSpan: "row-span-2",
+    rowSpan: "row-span-1",
     height: "h-64",
     gradient: "bg-gradient-to-r from-green-700 to-green-300",
     data: [
@@ -24,7 +24,7 @@ const charts = [
     title: "Users",
     total: 5400,
     percentChange: 15,
-    rowSpan: "row-span-2",
+    rowSpan: "row-span-1",
     height: "h-64",
     gradient: "bg-gradient-to-r from-pink-500 to-pink-300",
     data: [
@@ -42,8 +42,8 @@ const charts = [
     title: "Sales",
     total: 125000,
     percentChange: 12,
-    rowSpan: "row-span-4",
-     height: "h-full",
+    rowSpan: "row-span-2",
+     height: "h-128",
     currency: "EGP",
     gradient: "bg-gradient-to-r from-blue-500 to-blue-200",
     
@@ -63,7 +63,7 @@ const charts = [
     title: "Products",
     total: 320,
     percentChange: -5,
-    rowSpan: "row-span-2",
+    rowSpan: "row-span-1",
     height: "h-64",
      gradient: "bg-gradient-to-r from-blue-700 to-blue-300",
      data: [
@@ -80,7 +80,7 @@ const charts = [
     title: "Reviews",
     total: 1450,
     percentChange: 20,
-    rowSpan: "row-span-2",
+    rowSpan: "row-span-1",
     height: "h-64",
     gradient: "bg-gradient-to-r from-amber-500 to-amber-200",
     data : [

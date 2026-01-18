@@ -1,6 +1,4 @@
 import {  XAxis,AreaChart,Area, Tooltip, ResponsiveContainer,} from "recharts";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -27,7 +25,7 @@ export function Cards (){
             cards.map((card)=>{
               return(
             
-    <button className={`${card.gradient} flex justify-between ${card.rowSpan} ${card.height} p-4 text-white border-none `}>
+    <button key={card.key} className={`${card.gradient} flex justify-between ${card.height} ${card.rowSpan} p-4 text-white border-none `}>
               <div className="flex w-full flex-col justify-between h-full items-start">
                 <div className="flex flex-col items-start">
                   <div>{card.title}</div>
@@ -83,11 +81,7 @@ export function Cards (){
                   <span>last month</span>
                 </div>
               </div>
-              <div className="flex items-start">
-                <a className="cursor-pointer text-2xl select-none">
-                  <FontAwesomeIcon icon={faUser} />
-                </a>
-              </div>
+             
             </button>
               )
             })
