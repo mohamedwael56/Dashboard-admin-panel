@@ -1,6 +1,45 @@
+import axios from "axios";
 import "./login.css";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export function Login() {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+const handleSubmit= async(e)=>{
+  e.preventDefault();
+  try{
+  const response =await axios.post('/api/auth/login',{
+    email,
+    password
+  }
+
+  )
+  const {token, user} = response.data;
+
+  localStorage.setItem('token', token);
+    navigate('/');
+
+  console.log("Token:", token);
+  console.log("User:", user)
+  }catch (error) {
+  if(error.response){ alert(error.response.data.message)}
+  else {alert("something went wrong")};
+}
+      setEmail('');
+      setPassword('');
+
+} 
+
   return (
     <>
     <div className="flex items-center justify-center bg-gray-100 h-screen w-screen">
@@ -12,6 +51,8 @@ export function Login() {
               Email
             </label>
             <input
+            value={email}
+            onChange={handleEmailChange}
               type="email"
               id="email"
               className="w-full px-3 py-2 border rounded-xl"
@@ -22,12 +63,15 @@ export function Login() {
               Password
             </label>
             <input
+            value={password}
+            onChange={handlePasswordChange}
               type="password"
               id="password"
               className="w-full px-3 py-2 border rounded-xl"
             />
           </div>
           <button
+          onClick={handleSubmit}
             type="submit"
             className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
           >

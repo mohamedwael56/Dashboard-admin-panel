@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "Ahmed Ali",
+    "image": "/images/ahmed-ali.jpg",
+    "email": "ahmed@gmail.com",
+    "role": "admin",
+    "password": "$2b$10$fqu.BbVbTMYuKVJP9WQfeeavfCMxUvr6JlpUMMP1UdZcN3bTu74mK",
+    "status": "active",
+    "registeredAt": "2024-01-12"
+  },
+  {
+    "id": 2,
+    "name": "Mohamed Salah",
+    "image": "/images/mohamed-salah.jpg",
+    "email": "m.salah@gmail.com",
+    "password": "$2b$10$msRb.FYL7ibl0Vz/Wnh2F.d8c5a4k4/ZPFOZ0WZp4ZhkAvo1qPqOq",
+    "role": "manager",
+    "status": "active",
+    "registeredAt": "2024-02-05"
+  },
+  {
+    "id": 3,
+    "name": "Sara Ibrahim",
+    "image": "/images/sara-ibrahem.jpg",
+    "email": "sara@gmail.com",
+    "password": "$2b$10$ZnF5OSHsCdZGG/QGMfBzd.OCC4O5OXizue0mpo2Ui370jAVyoE2he",
+    "role": "user",
+    "status": "blocked",
+    "registeredAt": "2024-02-18"
+  },
+  {
+    "id": 4,
+    "name": "Youssef Adel",
+    "image": "/images/yousef-adel.jpg",
+    "email": "youssef@gmail.com",
+    "password": "$2b$10$KjFFzsqPgrfgNf1AeTqQjOvTtMHAEArLsOs.LtFnHhu7bnkB.4qGW",
+    "role": "user",
+    "status": "active",
+    "registeredAt": "2024-03-01"
+  },
+  {
+    "id": 5,
+    "name": "Mona Hassan",
+    "image": "/images/mona-hassan.jpg",
+    "email": "mona@gmail.com",
+    "password": "$2b$10$LS/rwubooP7FXg.3XAIh1eFMGBkcIfTp8RiLPx13RoGRNauQO0S8q",
+    "role": "manager",
+    "status": "active",
+    "registeredAt": "2024-03-10"
+  },
+  {
+    "id": 6,
+    "name": "Omar Khaled",
+    "image": "/images/omar-khaled.jpg",
+    "email": "omar@gmail.com",
+    "password": "$2b$10$yFr1Bncw1wjVpRLfagF3D.3Kqru2Cn6Vu7iRGk2fj6WOG4wtzkQ/C",
+    "role": "editor",
+    "status": "active",
+    "registeredAt": "2024-03-20"
+  },
+  {
+    "id": 7,
+    "name": "Nour Ahmed",
+    "image": "/images/nour-ahmed.jpg",
+    "email": "nour@gmail.com",
+    "password": "$2b$10$TTiI.q/c5r4S6ZQwSDqqXu/8ICrCVhZe6sjCirqX/v5pInkR8Ek4u",
+    "role": "user",
+    "status": "blocked",
+    "registeredAt": "2024-04-02"
+  },
+  {
+    "id": 8,
+    "name": "Hany Mostafa",
+    "image": "/images/hany-mostafa.jpg",
+    "email": "hany@gmail.com",
+    "password": "$2b$10$ACk6EXmLSrj7GJvRwlaE7uBEbJ3FimKWl7WqF9IQkK15YkwZ572hy",
+    "role": "admin",
+    "status": "active",
+    "registeredAt": "2024-04-15"
+  }
+]
