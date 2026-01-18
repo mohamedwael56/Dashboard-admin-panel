@@ -1,8 +1,12 @@
 const users = require("../data/users.data.js");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const fs = require("fs");
+const path = require("path");
 
-// Helper function لعمل token
+const usersFile = path.join(__dirname, "../data/users.json");
+
+
 const generateToken = (user) => {
   return jwt.sign(
     { id: user.id, email: user.email, role: user.role },
@@ -14,18 +18,21 @@ const generateToken = (user) => {
 // Register
 exports.register = async (req, res) => {
   const { name, email, password, role, image } = req.body;
-
+  let users = [];
+  if (fs.existsSync(usersFile)) {
+    const data = fs.readFileSync(usersFile);
+    users = JSON.parse(data);
+  }
   const exists = users.find(u => u.email === email);
   if (exists) return res.status(400).json({ message: "User already exists" });
 
-  const hashedPassword = await bcrypt.hash(password, 10);
 
   const newId = users.length ? users[users.length - 1].id + 1 : 1;
   const newUser = {
     id: newId,
     name,
     email,
-    password: hashedPassword,
+    password,
     role: role || "user",
     status: "active",
     registeredAt: new Date().toISOString().split("T")[0],
@@ -34,6 +41,8 @@ exports.register = async (req, res) => {
 
   users.push(newUser);
 
+    fs.writeFileSync(usersFile, JSON.stringify(users, null, 2));
+
   const token = generateToken(newUser);
   res.json({ token, user: newUser });
 };
@@ -41,6 +50,11 @@ exports.register = async (req, res) => {
 // Login
 exports.login = async (req, res) => {
   const { email, password } = req.body;
+  let users = [];
+  if (fs.existsSync(usersFile)) {
+    const data = fs.readFileSync(usersFile);
+    users = JSON.parse(data);
+  }
 
   const user = users.find(u => u.email === email);
   if (!user) return res.status(400).json({ message: "Invalid email or password" });
@@ -59,8 +73,7 @@ exports.forgotPassword = async (req, res) => {
   const user = users.find(u => u.email === email);
   if (!user) return res.status(400).json({ message: "User not found" });
 
-  const hashedPassword = await bcrypt.hash(newPassword, 10);
-  user.password = hashedPassword;
+user.password = newPassword;
 
   res.json({ message: "Password updated successfully" });
 };

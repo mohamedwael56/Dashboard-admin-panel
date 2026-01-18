@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "mohamedwael56",
+    "email": "i.u.500@yahoo.com",
+    "password": "$2b$10$ay48P.5q7l4m1CYrGI4NuOSPFNgTTcE3FEqQO1qRZ6hIyhLwtuzEG",
+    "role": "user",
+    "status": "active",
+    "registeredAt": "2026-01-18",
+    "image": "/images/default.jpg"
+  },
+  {
+    "id": 2,
+    "name": "mohamedwael55",
+    "email": "mohmedhomos0147@gmail.com",
+    "password": "123456",
+    "role": "user",
+    "status": "active",
+    "registeredAt": "2026-01-18",
+    "image": "/images/default.jpg"
+  },
+  {
+    "id": 3,
+    "name": "mohamedwael57",
+    "email": "marawanamin77@gmail.com",
+    "password": "123456",
+    "role": "user",
+    "status": "active",
+    "registeredAt": "2026-01-18",
+    "image": "/images/default.jpg"
+  }
+]
