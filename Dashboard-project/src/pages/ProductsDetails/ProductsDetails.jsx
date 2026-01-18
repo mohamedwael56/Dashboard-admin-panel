@@ -20,7 +20,7 @@ export function ProductsDetails (){
             </div>
 
 <div className="grid grid-cols-3 my-4 gap-4">
-                <button class=" flex justify-between capitalize row-span-1 bg-gradient-to-r from-blue-500 to-blue-200 p-6 text-white flex flex-col gap-2 items-start">
+                <button className=" flex justify-between capitalize row-span-1 bg-gradient-to-r from-blue-500 to-blue-200 p-6 text-white flex flex-col gap-2 items-start">
                 <div>547</div>
                 <div>Total products</div>
             
@@ -32,7 +32,7 @@ export function ProductsDetails (){
                   <div>Total categories</div>
               </div>
             </button>
-            <button class="flex justify-between  row-span-1 bg-gradient-to-r from-pink-500 to-pink-300 p-4 text-white">
+            <button className="flex justify-between  row-span-1 bg-gradient-to-r from-pink-500 to-pink-300 p-4 text-white">
               <div className="flex flex-col justify-between h-full items-start">
                   <div>249</div>
                   <div>Total brands</div>

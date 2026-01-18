@@ -49,7 +49,7 @@ const users = [
     name: "Omar Khaled",
     avatar: "https://via.placeholder.com/50",
     email: "omar@gmail.com",
-    role: "user",
+    role: "editor",
     status: "active",
     registeredAt: "2024-03-20",
   },

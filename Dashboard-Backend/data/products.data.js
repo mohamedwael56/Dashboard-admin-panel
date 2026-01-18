@@ -1,8 +1,8 @@
 const products = [
   {
     id: 1,
-    name: "iPhone 14 Pro",
-    image: "https://via.placeholder.com/60",
+    name: "iPhone 14",
+    image: "/images/iphone14.jpg",
     category: "Smartphones",
     brand: "Apple",
     price: 1200,
@@ -15,7 +15,7 @@ const products = [
   {
     id: 2,
     name: "Samsung Galaxy S23",
-    image: "https://via.placeholder.com/60",
+    image: "/images/s23.jpg",
     category: "Smartphones",
     brand: "Samsung",
     price: 999,
@@ -28,7 +28,7 @@ const products = [
   {
     id: 3,
     name: "MacBook Air M2",
-    image: "https://via.placeholder.com/60",
+    image: "/images/macbook.jpg",
     category: "Laptops",
     brand: "Apple",
     price: 1450,
@@ -41,7 +41,7 @@ const products = [
   {
     id: 4,
     name: "Dell XPS 13",
-    image: "https://via.placeholder.com/60",
+    image: "/images/laptop.jpg",
     category: "Laptops",
     brand: "Dell",
     price: 1350,
@@ -54,7 +54,7 @@ const products = [
   {
     id: 5,
     name: "Sony WH-1000XM5",
-    image: "https://via.placeholder.com/60",
+    image: "/images/sony-wh.jpg",
     category: "Headphones",
     brand: "Sony",
     price: 399,
@@ -67,7 +67,7 @@ const products = [
   {
     id: 6,
     name: "Apple Watch Series 9",
-    image: "https://via.placeholder.com/60",
+    image: "/images/appleWatch.jpg",
     category: "Wearables",
     brand: "Apple",
     price: 499,
@@ -80,7 +80,7 @@ const products = [
   {
     id: 7,
     name: "Logitech MX Master 3",
-    image: "https://via.placeholder.com/60",
+    image: "/images/logitech.jpg",
     category: "Accessories",
     brand: "Logitech",
     price: 120,
@@ -93,7 +93,7 @@ const products = [
   {
     id: 8,
     name: "PlayStation 5",
-    image: "https://via.placeholder.com/60",
+    image: "/images/playstation5.jpg",
     category: "Gaming",
     brand: "Sony",
     price: 599,
@@ -106,7 +106,7 @@ const products = [
   {
     id: 9,
     name: "Xbox Series X",
-    image: "https://via.placeholder.com/60",
+    image: "/images/xbox.jpg",
     category: "Gaming",
     brand: "Microsoft",
     price: 579,
@@ -119,7 +119,7 @@ const products = [
   {
     id: 10,
     name: "Canon EOS R6",
-    image: "https://via.placeholder.com/60",
+    image: "/images/canon.jpg",
     category: "Cameras",
     brand: "Canon",
     price: 2499,

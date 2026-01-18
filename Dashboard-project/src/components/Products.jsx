@@ -2,11 +2,28 @@ import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { faPen } from "@fortawesome/free-solid-svg-icons";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import axios from 'axios'
+import { useEffect, useState } from "react";
 export function Product (){
+
+  const [productsData,setProductsData] = useState([])
+useEffect(()=>{
+const reloadProductsData = async ()=>{
+  try{
+const response = await axios.get('/api/products')
+setProductsData(response.data.data)
+console.log(response.data.data)
+   } catch(error){
+  console.error('Error fetching products data:',error)}
+} 
+reloadProductsData()
+},[])
+
     return (
         <>
+        
         <div className="w-full ">
-  <div className="grid grid-cols-[1fr_10fr_2fr_2fr_2fr_2fr_2fr_2fr_2fr_2fr] 
+  <div className="grid grid-cols-[1fr_6fr_3fr_2fr_2fr_2fr_2fr_2fr_2fr_2fr] 
    gap-4 font-semibold border-b p-1 border bg-blue-500 rounded-lg text-white  ">
     <div className="flex start">UID</div>
     <div className=" flex justify-start ">Product</div>
@@ -19,45 +36,49 @@ export function Product (){
     <div className="mr-4">sales</div>
     <div className="mr-4">action</div>
   </div>
-<div className="grid grid-cols-[1fr_10fr_2fr_2fr_2fr_2fr_2fr_2fr_2fr_2fr] gap-4 p-2">
+  {
+    productsData.map((data)=>{
+      console.log(data)
+      return(
+        
+<div className="grid grid-cols-[1fr_6fr_3fr_2fr_2fr_2fr_2fr_2fr_2fr_2fr] gap-4 p-2">
   <div className="flex start">
-   1
+   {data.id}
   </div>
 
   <div className=" flex justify-start items-center ">
 
-<img src="../../image/jacket.jpg" alt="" width='35px' />
+<img src={data.image} alt="" width='20px' />
 
-<div className="text-sm ml-2 ">
-<div > Waterproof jacket with zipper and hood</div>
-<div className="flex justify-start opacity-80 ">winter clothes </div>
+<div className=" ml-2 ">
+<div > {data.name}</div>
 
 </div>
   </div>
   <div>
-women
+{data.category}
   </div>
   <div>
-  richman
+  {data.brand}
   </div>
   <div>
-  $30.10
+  ${data.price}
   </div>
   <div>
-  44
+  {data.stock}
   </div>
   <div >
     <div className="flex items-center gap-1">
 <img src="../../public/image/star.png" alt=""  width="10px"/>
-<span className="text-sm">4.9 </span>
-<span>(16)</span>
+<span className="text-sm">{data.rating} </span>
+<span>({data.reviewsCount})</span>
 </div>
   </div>
   <div>
-  180
+  {data.orders}
   </div>
   <div>
-  $38k
+  {data.sales}
   </div>
   <div className="flex items-center gap-1" >
   <a href="#" className="bg-violet-400 text-white p-1 rounded-xl " ><FontAwesomeIcon icon={faEye} /></a>
@@ -65,194 +86,11 @@ women
   <a href="#" className="bg-red-500 text-white p-1 rounded-xl "><FontAwesomeIcon icon={faTrashCan} /></a>
   </div>
 </div>
+  ) })
+  }
+
  
-<div className="grid grid-cols-[1fr_10fr_2fr_2fr_2fr_2fr_2fr_2fr_2fr_2fr] gap-4 p-2">
-  <div className="flex start">
- 2
-  </div>
-   <div className=" flex justify-start items-center ">
-
-<img src="../../image/jacket.jpg" alt="" width='35px' />
-
-<div className="text-sm ml-2 ">
-<div > Waterproof jacket with zipper and hood</div>
-<div className="flex justify-start opacity-80 ">winter clothes </div>
 
 </div>
-  </div>
-  <div>
-men
-  </div>
-  <div>
-  ecstasy
-  </div>
-
-  <div>
-  $15.12
-  </div>
-  <div>
-  34
-  </div>
-  <div >
-    <div className="flex items-center gap-1">
-<img src="../../public/image/star.png" alt=""  width="10px"/>
-<span className="text-sm">4.9 </span>
-<span>(16)</span>
-</div>
-  </div>
-  <div>
-  350
-  </div>
-  <div>
-  $27k
-  </div>
-  <div className="flex items-center gap-1" >
-  <a href="#" className="bg-violet-400 text-white p-1 rounded-xl " ><FontAwesomeIcon icon={faEye} /></a>
-  <a href="#" className="bg-green-300 text-white p-1 rounded-xl "><FontAwesomeIcon icon={faPen} /></a>
-  <a href="#" className="bg-red-500 text-white p-1 rounded-xl "><FontAwesomeIcon icon={faTrashCan} /></a>
-  </div>
-</div>
-
-<div className="grid grid-cols-[1fr_10fr_2fr_2fr_2fr_2fr_2fr_2fr_2fr_2fr] gap-4 p-2">
-  <div className="flex start"> 
- 3
-  </div>
-   <div className=" flex justify-start items-center ">
-
-<img src="../../image/jacket.jpg" alt="" width='35px' />
-
-<div className="text-sm ml-2 ">
-<div > Waterproof jacket with zipper and hood</div>
-<div className="flex justify-start opacity-80 ">winter clothes </div>
-
-</div>
-  </div>
-  <div>
-kids
-  </div>
-  <div>
-ecstasy
-  </div>
-
-  <div>
-  $60.25
-  </div>
-  <div>
-  50
-  </div>
-   <div >
-    <div className="flex items-center gap-1">
-<img src="../../public/image/star.png" alt=""  width="10px"/>
-<span className="text-sm">4.9 </span>
-<span>(16)</span>
-</div>
-  </div>
-  <div>
-  145
-  </div>
-  <div>
-  $23k
-  </div>
-  <div className="flex items-center gap-1" >
-  <a href="#" className="bg-violet-400 text-white p-1 rounded-xl " ><FontAwesomeIcon icon={faEye} /></a>
-  <a href="#" className="bg-green-300 text-white p-1 rounded-xl "><FontAwesomeIcon icon={faPen} /></a>
-  <a href="#" className="bg-red-500 text-white p-1 rounded-xl "><FontAwesomeIcon icon={faTrashCan} /></a>
-  </div>
-</div>
-<div className="grid grid-cols-[1fr_10fr_2fr_2fr_2fr_2fr_2fr_2fr_2fr_2fr] gap-4 p-2">
-  <div className="flex start">
- 4
-  </div>
-  <div className=" flex justify-start items-center ">
-
-<img src="../../image/jacket.jpg" alt="" width='35px' />
-
-<div className="text-sm ml-2 ">
-<div > Waterproof jacket with zipper and hood</div>
-<div className="flex justify-start opacity-80 ">winter clothes </div>
-
-</div>
-  </div>
-  <div>
-men  </div>
-  <div>
-  lubana
-  </div>
-
-  <div>
-  $17.80
-  </div>
-  <div>
-  43
-  </div>
-  <div >
-    <div className="flex items-center gap-1">
-<img src="../../public/image/star.png" alt=""  width="10px"/>
-<span className="text-sm">4.9 </span>
-<span>(16)</span>
-</div>
-  </div>
-  <div>
- 196
-  </div>
-  <div>
-  $18k
-  </div>
-  <div className="flex items-center gap-1" >
-  <a href="#" className="bg-violet-400 text-white p-1 rounded-xl " ><FontAwesomeIcon icon={faEye} /></a>
-  <a href="#" className="bg-green-300 text-white p-1 rounded-xl "><FontAwesomeIcon icon={faPen} /></a>
-  <a href="#" className="bg-red-500 text-white p-1 rounded-xl "><FontAwesomeIcon icon={faTrashCan} /></a>
-  </div>
-</div>
-<div className="grid grid-cols-[1fr_10fr_2fr_2fr_2fr_2fr_2fr_2fr_2fr_2fr] gap-4 p-2">
-  <div className="flex start">
-   5
-  </div>
-   <div className=" flex justify-start items-center ">
-
-<img src="../../image/jacket.jpg" alt="" width='35px' />
-
-<div className="text-sm ml-2 ">
-<div > Waterproof jacket with zipper and hood</div>
-<div className="flex justify-start opacity-80 ">winter clothes </div>
-
-</div>
-  </div>
-  <div>
-women
-  </div>
-  <div>
-ecstasy
-  </div>
-
-  <div>
-  $12.15
-  </div>
-  <div>
-  23
-  </div>
-  <div >
-    <div className="flex items-center gap-1">
-<img src="../../public/image/star.png" alt=""  width="10px"/>
-<span className="text-sm">4.9 </span>
-<span>(16)</span>
-</div>
-  </div>
-  <div>
-  165
-  </div>
-  <div>
-  $15k
-  </div>
-  <div className="flex items-center gap-1" >
-  <a href="#" className="bg-violet-400 text-white p-1 rounded-xl " ><FontAwesomeIcon icon={faEye} /></a>
-  <a href="#" className="bg-green-300 text-white p-1 rounded-xl "><FontAwesomeIcon icon={faPen} /></a>
-  <a href="#" className="bg-red-500 text-white p-1 rounded-xl "><FontAwesomeIcon icon={faTrashCan} /></a>
-  </div>
-</div>
-
-
-</div>
-  </>
-    )
+        </>)
 }

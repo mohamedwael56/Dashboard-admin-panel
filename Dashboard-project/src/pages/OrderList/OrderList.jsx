@@ -1,10 +1,6 @@
 import { Header } from "../../components/Header";
 import { SideBar } from "../../components/SideBar";
-import { faEye } from "@fortawesome/free-solid-svg-icons";
-import { faPen } from "@fortawesome/free-solid-svg-icons";
-import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import { OrdersDetails } from "./OrdersDetails";
 export function OrderList() {
 return(
     <>
@@ -16,7 +12,7 @@ return(
         
 <div className="grid grid-cols-4 my-4 gap-4 mx-4">
                
- <button class="flex justify-between  row-span-1 bg-gradient-to-r from-pink-500 to-pink-300 p-4 text-white">
+ <button className="flex justify-between  row-span-1 bg-gradient-to-r from-pink-500 to-pink-300 p-4 text-white">
               <div className="flex flex-col justify-between h-full items-start">
                   
                    <div>547</div>
@@ -24,7 +20,7 @@ return(
               </div>
             </button>
               
-             <button class=" flex justify-between capitalize row-span-1 bg-gradient-to-r from-blue-500 to-blue-200 p-6 text-white flex flex-col gap-2 items-start">
+             <button className=" flex justify-between capitalize row-span-1 bg-gradient-to-r from-blue-500 to-blue-200 p-6 text-white flex flex-col gap-2 items-start">
                <div>398</div>
                   <div>Shipped_orders</div>
             
@@ -37,7 +33,7 @@ return(
                    
               </div>
             </button>
-            <button class="flex justify-between  row-span-1 bg-gradient-to-r from-red-500 to-red-300 p-4 text-white">
+            <button className="flex justify-between  row-span-1 bg-gradient-to-r from-red-500 to-red-300 p-4 text-white">
               <div className="flex flex-col justify-between h-full items-start">
                   <div>249</div>
                   <div>canceled_Orders</div>
@@ -87,210 +83,7 @@ return(
             </div>
           </div>
 
-        <div className="w-full mx-5 flex flex-col justify-start ">
-  <div className="grid grid-cols-[1fr_3fr_2fr_2fr_2fr_2fr_2fr_2fr] 
-   gap-4 font-semibold border-b p-1 border bg-blue-500 rounded-lg text-white  ">
-    <div className="flex start">UID</div>
-    <div className=" flex justify-start ">clint</div>
-    <div>items </div>
-    <div>amount</div>
-    <div>payment</div>
-    <div>status</div>
-    <div>order date</div>
-    <div>order</div>
-    
-  </div>
-<div className="grid grid-cols-[1fr_3fr_2fr_2fr_2fr_2fr_2fr_2fr] gap-4 p-2">
-  <div className="flex start">
-   1
-  </div>
-
-  <div className=" flex justify-start items-center ">
-
-<img src="../../image/eddy.png" alt="" width='40px' className="rounded-full" />
-
-<div className="text-sm ml-2 ">
-<div > raley zukerberg</div>
-
-</div>
-  </div>
-  <div>
-(2) items
-  </div>
-  <div>
-  $56.00
-  </div>
-  <div>
-  cash
-  </div>
-  <div className="bg-fuchsia-500 text-white rounded-xl p-1">
-  pending
-  </div>
-  <div >
-    <div className="flex items-center ">
-15/06/2025
-</div>
-  </div>
- 
-  <div className="flex items-center gap-1" >
-  <a href="#" className="bg-violet-400 text-white p-2 rounded-xl text-lg" ><FontAwesomeIcon icon={faEye} /></a>
-  <a href="#" className="bg-green-300 text-white p-2 rounded-xl text-lg"><FontAwesomeIcon icon={faPen} /></a>
-  <a href="#" className="bg-red-500 text-white p-2 rounded-xl text-lg"><FontAwesomeIcon icon={faTrashCan} /></a>
-  </div>
-</div>
- 
-<div className="grid grid-cols-[1fr_3fr_2fr_2fr_2fr_2fr_2fr_2fr] gap-4 p-2">
-  <div className="flex start">
- 2
-  </div>
-   <div className=" flex justify-start items-center ">
-
-<img src="../../image/eddy.png" alt="" width='40px' className="rounded-full" />
-
-<div className="text-sm ml-2 ">
-<div > raley zukerberg</div>
-
-</div>
-  </div>
-   <div>
-(2) items
-  </div>
-  <div>
-  $56.00
-  </div>
-  <div>
-  visa
-  </div>
-  <div className="bg-green-500 text-white rounded-xl p-1">
-  shipped
-  </div>
-  <div >
-    <div className="flex items-center ">
-15/06/2025
-</div>
-  </div>
-  
-  <div className="flex items-center gap-1" >
-  <a href="#" className="bg-violet-400 text-white p-2 rounded-xl text-lg" ><FontAwesomeIcon icon={faEye} /></a>
-  <a href="#" className="bg-green-300 text-white p-2 rounded-xl text-lg"><FontAwesomeIcon icon={faPen} /></a>
-  <a href="#" className="bg-red-500 text-white p-2 rounded-xl text-lg"><FontAwesomeIcon icon={faTrashCan} /></a>
-  </div>
-</div>
-
-<div className="grid grid-cols-[1fr_3fr_2fr_2fr_2fr_2fr_2fr_2fr] gap-4 p-2">
-  <div className="flex start"> 
- 3
-  </div>
-   <div className=" flex justify-start items-center ">
-
-<img src="../../image/eddy.png" alt="" width='40px' className="rounded-full" />
-
-<div className="text-sm ml-2 ">
-<div > raley zukerberg</div>
-
-</div>
-  </div>
-   <div>
-(2) items
-  </div>
-  <div>
-  $56.00
-  </div>
-  <div>
-  visa
-  </div>
-  <div className="bg-red-600 text-white rounded-xl p-1">
-  canceled
-  </div>
-  <div >
-    <div className="flex items-center ">
-15/06/2025
-</div>
-  </div>
- 
-  <div className="flex items-center gap-1" >
-  <a href="#" className="bg-violet-400 text-white p-2 rounded-xl text-lg" ><FontAwesomeIcon icon={faEye} /></a>
-  <a href="#" className="bg-green-300 text-white p-2 rounded-xl text-lg"><FontAwesomeIcon icon={faPen} /></a>
-  <a href="#" className="bg-red-500 text-white p-2 rounded-xl text-lg"><FontAwesomeIcon icon={faTrashCan} /></a>
-  </div>
-</div>
-<div className="grid grid-cols-[1fr_3fr_2fr_2fr_2fr_2fr_2fr_2fr] gap-4 p-2">
-  <div className="flex start">
- 4
-  </div>
-  <div className=" flex justify-start items-center ">
-
-<img src="../../image/eddy.png" alt="" width='40px' className="rounded-full" />
-
-<div className="text-sm ml-2 ">
-<div > raley zukerberg</div>
-
-</div>
-  </div>
-   <div>
-(2) items
-  </div>
-  <div>
-  $56.00
-  </div>
-  <div>
-  paypal
-  </div>
-  <div className="bg-fuchsia-500 text-white rounded-xl p-1">
-  pending
-  </div>
-  <div >
-    <div className="flex items-center ">
-15/06/2025
-</div>
-  </div>
-  
-  <div className="flex items-center gap-1" >
-  <a href="#" className="bg-violet-400 text-white p-2 rounded-xl text-lg" ><FontAwesomeIcon icon={faEye} /></a>
-  <a href="#" className="bg-green-300 text-white p-2 rounded-xl text-lg"><FontAwesomeIcon icon={faPen} /></a>
-  <a href="#" className="bg-red-500 text-white p-2 rounded-xl text-lg"><FontAwesomeIcon icon={faTrashCan} /></a>
-  </div>
-</div>
-<div className="grid grid-cols-[1fr_3fr_2fr_2fr_2fr_2fr_2fr_2fr] gap-4 p-2">
-  <div className="flex start">
-   5
-  </div>
-   <div className=" flex justify-start items-center ">
-
-<img src="../../image/eddy.png" alt="" width='40px' className="rounded-full"  />
-
-<div className="text-sm ml-2 ">
-<div > raley zukerberg</div>
-
-</div>
-  </div>
-  <div>
-(2) items
-  </div>
-  <div>
-  $56.00
-  </div>
-  <div>
-  cash
-  </div>
-  <div className="bg-fuchsia-500 text-white rounded-xl p-1">
-  pending
-  </div>
-  <div >
-    <div className="flex items-center ">
-15/06/2025
-</div>
-  </div>
- 
-  <div className="flex items-center gap-1" >
-  <a href="#" className="bg-violet-400 text-white p-2 rounded-xl text-lg" ><FontAwesomeIcon icon={faEye} /></a>
-  <a href="#" className="bg-green-300 text-white p-2 rounded-xl text-lg"><FontAwesomeIcon icon={faPen} /></a>
-  <a href="#" className="bg-red-500 text-white p-2 rounded-xl text-lg"><FontAwesomeIcon icon={faTrashCan} /></a>
-  </div>
-</div>
-
-
-</div>
+      <OrdersDetails />
 
     </main>
     </div>
