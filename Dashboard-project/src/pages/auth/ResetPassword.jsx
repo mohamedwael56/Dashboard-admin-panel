@@ -32,6 +32,7 @@ const getResetLink= async (e)=>{
 </div>
 </form>
 </div>
+    <a className="text-blue-600" href="ResetPassword2">try another way</a>
 
 <div className="mt-5 mr-10">
     <p>do you remember your password? <a href="Login" className="text-blue-600">Login</a></p>

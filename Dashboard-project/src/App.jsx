@@ -9,6 +9,7 @@ import { OrderList } from './pages/OrderList/OrderList.jsx'
 import { Profile } from './pages/Users/Profile.jsx'
 import { Users } from './pages/Users/Users.jsx'
 import { Settings } from './pages/Settings/Settings.jsx'
+import { ResetPassword2 } from './pages/auth/ResetPassword2.jsx'
 function App() {
 
   return (
@@ -18,6 +19,7 @@ function App() {
       <Route path='Login' element={<Login />} />
       <Route path='Register' element={<Register />} />
       <Route path='ResetPassword' element={<ResetPassword />} />
+      <Route path='ResetPassword2' element={<ResetPassword2 />} />
       <Route path='ProductsDetails' element={<ProductsDetails />} />
       <Route path='OrdersList' element={<OrderList />} />
       <Route path='Profile' element={<Profile />} />

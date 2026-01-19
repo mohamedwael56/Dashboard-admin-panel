@@ -1,4 +1,3 @@
-const users = require("../data/users.data.js");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const fs = require("fs");
@@ -6,7 +5,15 @@ const path = require("path");
 
 const usersFile = path.join(__dirname, "../data/users.json");
 
+const getUsers = () => {
+  if (!fs.existsSync(usersFile)) return [];
+  const data = fs.readFileSync(usersFile, "utf-8");
+  return JSON.parse(data);
+};
 
+const saveUsers = (users) => {
+  fs.writeFileSync(usersFile, JSON.stringify(users, null, 2));
+};
 const generateToken = (user) => {
   return jwt.sign(
     { id: user.id, email: user.email, role: user.role },
@@ -18,11 +25,8 @@ const generateToken = (user) => {
 // Register
 exports.register = async (req, res) => {
   const { name, email, password, role, image } = req.body;
-  let users = [];
-  if (fs.existsSync(usersFile)) {
-    const data = fs.readFileSync(usersFile);
-    users = JSON.parse(data);
-  }
+ let users = getUsers();
+
   const exists = users.find(u => u.email === email);
   if (exists) return res.status(400).json({ message: "User already exists" });
 
@@ -41,7 +45,7 @@ exports.register = async (req, res) => {
 
   users.push(newUser);
 
-    fs.writeFileSync(usersFile, JSON.stringify(users, null, 2));
+saveUsers(users);
 
   const token = generateToken(newUser);
   res.json({ token, user: newUser });
@@ -50,11 +54,7 @@ exports.register = async (req, res) => {
 // Login
 exports.login = async (req, res) => {
   const { email, password } = req.body;
-  let users = [];
-  if (fs.existsSync(usersFile)) {
-    const data = fs.readFileSync(usersFile);
-    users = JSON.parse(data);
-  }
+let users = getUsers();
 
   const user = users.find(u => u.email === email);
   if (!user) return res.status(400).json({ message: "Invalid email or password" });
@@ -69,11 +69,14 @@ exports.login = async (req, res) => {
 // Forgot Password
 exports.forgotPassword = async (req, res) => {
   const { email, newPassword } = req.body;
+let users = getUsers();
 
   const user = users.find(u => u.email === email);
   if (!user) return res.status(400).json({ message: "User not found" });
 
 user.password = newPassword;
+saveUsers(users);
+
 
   res.json({ message: "Password updated successfully" });
 };

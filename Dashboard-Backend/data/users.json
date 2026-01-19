@@ -28,5 +28,15 @@
     "status": "active",
     "registeredAt": "2026-01-18",
     "image": "/images/default.jpg"
+  },
+  {
+    "id": 4,
+    "name": "mohamedwael56",
+    "email": "sadasd@gmail",
+    "password": "123455",
+    "role": "user",
+    "status": "active",
+    "registeredAt": "2026-01-19",
+    "image": "/images/default.jpg"
   }
 ]
