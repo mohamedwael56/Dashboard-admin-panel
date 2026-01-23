@@ -3,6 +3,14 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 export function Cards (){
+              const gradientClasses={
+              green:"bg-gradient-to-r from-green-700 to-green-300",
+              blue:"bg-gradient-to-r from-blue-500 to-blue-200",
+              amber:"bg-gradient-to-r from-amber-500 to-amber-200",
+              pink:"bg-gradient-to-r from-pink-500 to-pink-300",
+              lightBlue:"bg-gradient-to-r from-blue-700 to-blue-300",
+            }
+
   const [cards ,setCards]=useState([])
   useEffect(()=>{
     const fetchCards=async()=>{
@@ -21,11 +29,14 @@ export function Cards (){
     return (
         <>
               <div className="grid grid-cols-3 grid-rows-2 gap-4">
+        
            {
+            
             cards.map((card)=>{
+              
               return(
             
-    <button key={card.key} className={`${card.gradient} flex justify-between ${card.height} ${card.rowSpan} p-4 text-white border-none `}>
+    <button key={card.key} className={`${gradientClasses[card.gradient]} flex justify-between ${card.height} ${card.key==='sales'?'row-span-2': 'row-span-1'} p-4 text-white border-none `}>
               <div className="flex w-full flex-col justify-between h-full items-start">
                 <div className="flex flex-col items-start">
                   <div>{card.title}</div>

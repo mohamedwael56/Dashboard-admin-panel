@@ -8,7 +8,7 @@ const charts = [
     percentChange: 8,
     rowSpan: "row-span-1",
     height: "h-64",
-    gradient: "bg-gradient-to-r from-green-700 to-green-300",
+    gradient: "green",
     data: [
        {name: "Jan", value: 120},
        {name: "Feb", value: 140},
@@ -26,7 +26,7 @@ const charts = [
     percentChange: 15,
     rowSpan: "row-span-1",
     height: "h-64",
-    gradient: "bg-gradient-to-r from-pink-500 to-pink-300",
+    gradient: "pink",
     data: [
       {name: "Jan", value: 500},
       {name: "Feb", value: 800},
@@ -45,7 +45,7 @@ const charts = [
     rowSpan: "row-span-2",
      height: "h-128",
     currency: "EGP",
-    gradient: "bg-gradient-to-r from-blue-500 to-blue-200",
+    gradient: "blue",
     
       data: [
         {name: "Jan", value: 12000},
@@ -65,7 +65,7 @@ const charts = [
     percentChange: -5,
     rowSpan: "row-span-1",
     height: "h-64",
-     gradient: "bg-gradient-to-r from-blue-700 to-blue-300",
+     gradient: "lightBlue",
      data: [
       {name:"Electronics" , value:120},
       {name:"Clothing" , value:80},
@@ -82,7 +82,7 @@ const charts = [
     percentChange: 20,
     rowSpan: "row-span-1",
     height: "h-64",
-    gradient: "bg-gradient-to-r from-amber-500 to-amber-200",
+    gradient: "amber",
     data : [
       {name:"5 Stars", value:800},
       {name:"4 Stars", value:400},
