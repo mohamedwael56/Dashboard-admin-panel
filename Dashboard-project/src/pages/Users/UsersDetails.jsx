@@ -1,23 +1,9 @@
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect,useState } from "react";
-import axios from "axios";
 
-export function UsersDetails(){
-  const [users,setUsers]=useState([])
-useEffect(()=>{
-const fetchUsers=async()=>{
-    try{
-        const response=await axios("/api/users")
-        setUsers(response.data.data)
-        console.log(response.data.data)
-    }catch(error){
-        console.error("error fetching users",error)
-    }
-}
-fetchUsers()
-},[])
+
+export function UsersDetails({results}){
     return(
     <>
      <div className="w-full mx-5 flex flex-col justify-start ">
@@ -33,7 +19,7 @@ fetchUsers()
     
   </div>
   {
-users.map((user)=>{
+results.map((user)=>{
   return(
 <div className="grid grid-cols-[1fr_3fr_2fr_2fr_2fr_2fr_2fr] gap-4 p-2">
   <div className="flex start">

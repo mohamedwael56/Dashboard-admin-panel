@@ -9,6 +9,7 @@ const orders = [
     paymentMethod: "Credit Card",
     status: "completed",
     orderDate: "2024-05-01",
+    Gender:'men'
   },
   {
     id: 2,
@@ -20,6 +21,7 @@ const orders = [
     paymentMethod: "PayPal",
     status: "pending",
     orderDate: "2024-05-03",
+    Gender:'women'
   },
   {
     id: 3,
@@ -31,6 +33,7 @@ const orders = [
     paymentMethod: "Cash On Delivery",
     status: "cancelled",
     orderDate: "2024-05-04",
+    Gender:'men'
   },
   {
     id: 4,
@@ -42,6 +45,7 @@ const orders = [
     paymentMethod: "Credit Card",
     status: "completed",
     orderDate: "2024-05-06",
+    Gender:'men'
   },
   {
     id: 5,
@@ -53,6 +57,7 @@ const orders = [
     paymentMethod: "PayPal",
     status: "pending",
     orderDate: "2024-05-07",
+    Gender:'women'
   },
   {
     id: 6,
@@ -64,6 +69,7 @@ const orders = [
     paymentMethod: "Credit Card",
     status: "completed",
     orderDate: "2024-05-08",
+    Gender:'men'
   },
   {
     id: 7,
@@ -75,6 +81,7 @@ const orders = [
     paymentMethod: "Cash On Delivery",
     status: "pending",
     orderDate: "2024-05-09",
+    Gender:'men'
   },
   {
     id: 8,
@@ -86,6 +93,7 @@ const orders = [
     paymentMethod: "Credit Card",
     status: "completed",
     orderDate: "2024-05-10",
+    Gender:'men'
   },
   {
     id: 9,
@@ -97,6 +105,7 @@ const orders = [
     paymentMethod: "PayPal",
     status: "completed",
     orderDate: "2024-05-11",
+    Gender:'men'
   },
   {
     id: 10,
@@ -108,6 +117,7 @@ const orders = [
     paymentMethod: "Credit Card",
     status: "cancelled",
     orderDate: "2024-05-12",
+    Gender:'women'
   },
 ];
 

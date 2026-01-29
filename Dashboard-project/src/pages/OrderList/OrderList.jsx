@@ -1,7 +1,52 @@
 import { Header } from "../../components/Header";
 import { SideBar } from "../../components/SideBar";
 import { OrdersDetails } from "./OrdersDetails";
+import { useEffect, useState } from "react";
+import axios from "axios";
 export function OrderList() {
+
+const [rows,setRows]= useState('All')
+const [status,setStatus]= useState('All')
+const [search,setSearch]=useState('')
+const [gender,setGender]=useState('All')
+
+ const [orders,setOrders]=useState([])
+
+    useEffect(()=>{
+    const fetchOrders=async()=>{
+        try{
+            const response=await axios("/api/orders")
+            setOrders(response.data.data)
+            console.log(response.data.data)
+        }catch(error){
+            console.error("error fetching orders",error)
+        }
+    }
+    fetchOrders()
+    },[])
+
+let results= orders;
+if(rows!=='All'){
+  results= results.slice(0,rows);
+}
+if(status!=='All'){
+  results=results.filter(result=>result.status===status)
+}
+if(gender!=='All'){
+  results=results.filter(result=>result.Gender===gender)
+}
+if(search.trim()!==''){
+  results=results.filter(result=>
+    result.id.toString().includes(search) ||
+    result.customerName.toLowerCase().includes(search.toLowerCase()) ||
+    result.paymentMethod.toLowerCase().includes(search.toLowerCase())||
+    result.status.toLowerCase().includes(search.toLowerCase())||
+    result.quantity.toString().includes(search)||
+    result.totalPrice.toString().includes(search)
+ 
+  );
+}
+
 return(
     <>
     <div >
@@ -45,45 +90,55 @@ return(
                 <h2 className="font-bold text-lg mb-5">order information</h2>
               <div className="w-full grid grid-cols-4 gap-4  ">
                 <div>showed by</div>
-                <div>status by</div>
-                <div>issued by</div>
+                <div>Gender</div>
+                <div>status</div>
                 <div>search by</div>
 
                 <div>
-                  <select className="bg-gray-200 p-2">
-                      <option value="10">row 10</option>
-                      <option value="20">row 20</option>
-                      <option value="50">row 50</option>
-                      <option value="100">row 100</option>
+                  <select className="bg-gray-200 p-2"
+                  onChange={(e)=>{setRows(e.target.value)}}
+                  value={rows}>
+                      <option value="All">All</option>
+                      <option value="3">3 rows</option>
+                      <option value="5">5 rows</option>
+                      <option value="8">8 rows</option>
                   </select>
                 </div>
                 <div>
-                  <select className="bg-gray-200 p-2">
+                  <select className="bg-gray-200 p-2"
+                  onChange={(e)=>{setGender(e.target.value)}}
+                  value={gender}>
+                    <option value="All">All</option>
                     <option value="men">men</option>
                     <option value="women">women</option>
                   </select>
                 </div>
                 <div>
-                  <input className="bg-gray-200 p-2 border-none rounded-lg"
-                    type="date"
-                    name=""
-                    id=""
-                    placeholder="id/name/category/brand"
-                  />
+                  <select className="bg-gray-200 p-2"
+                  onChange={(e)=>{setStatus(e.target.value)}}
+                  value={status}>
+                    <option value="All">All</option>
+                    <option value="completed">completed</option>
+                    <option value="pending">pending</option>
+                    <option value="cancelled">canceled</option>
+                  </select>
                 </div>
                 <div>
-                  <input className="bg-gray-200 p-2 border-none rounded-lg"
+                  <input
+                  onChange={(e)=>{setSearch(e.target.value)}}
+                  value={search}
+                  className="bg-gray-200 p-2 border-none rounded-lg"
                     type="text"
                     name=""
                     id=""
-                    placeholder="id/name/category/brand"
+                    placeholder="id/name/status/amount"
                   />
                 </div>
               </div>
             </div>
           </div>
 
-      <OrdersDetails />
+      <OrdersDetails orders={results} />
 
     </main>
     </div>

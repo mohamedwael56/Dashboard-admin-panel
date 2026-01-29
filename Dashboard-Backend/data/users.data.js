@@ -8,6 +8,8 @@ const users = [
     password: "123456",
     status: "active",
     registeredAt: "2024-01-12",
+    Gender:'men'
+
   },
   {
     id: 2,
@@ -18,6 +20,7 @@ const users = [
     role: "manager",
     status: "active",
     registeredAt: "2024-02-05",
+    Gender:'men'
   },
   {
     id: 3,
@@ -28,6 +31,8 @@ const users = [
     role: "user",
     status: "blocked",
     registeredAt: "2024-02-18",
+    Gender:'women'
+
   },
   {
     id: 4,
@@ -38,6 +43,8 @@ const users = [
     role: "user",
     status: "active",
     registeredAt: "2024-03-01",
+    Gender:'men'
+
   },
   {
     id: 5,
@@ -48,6 +55,8 @@ const users = [
     role: "manager",
     status: "active",
     registeredAt: "2024-03-10",
+    Gender:'women'
+
   },
   {
     id: 6,
@@ -58,6 +67,8 @@ const users = [
     role: "editor",
     status: "active",
     registeredAt: "2024-03-20",
+    Gender:'men'
+
   },
   {
     id: 7,
@@ -68,6 +79,8 @@ const users = [
     role: "user",
     status: "blocked",
     registeredAt: "2024-04-02",
+    Gender:'men'
+
   },
   {
     id: 8,
@@ -78,6 +91,8 @@ const users = [
     role: "admin",
     status: "active",
     registeredAt: "2024-04-15",
+    Gender:'men'
+
   },
 ];
 

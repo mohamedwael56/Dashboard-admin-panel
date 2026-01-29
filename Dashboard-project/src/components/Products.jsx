@@ -2,21 +2,7 @@ import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { faPen } from "@fortawesome/free-solid-svg-icons";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import axios from 'axios'
-import { useEffect, useState } from "react";
-export function Product (){
-
-  const [productsData,setProductsData] = useState([])
-useEffect(()=>{
-const reloadProductsData = async ()=>{
-  try{
-const response = await axios.get('/api/products')
-setProductsData(response.data.data)
-   } catch(error){
-  console.error('Error fetching products data:',error)}
-} 
-reloadProductsData()
-},[])
+export function Product ({results}){
 
     return (
         <>
@@ -36,7 +22,7 @@ reloadProductsData()
     <div className="mr-4">action</div>
   </div>
   {
-    productsData.map((data)=>{
+    results?.map((data)=>{
       return(
         
 <div className="grid grid-cols-[1fr_6fr_3fr_2fr_2fr_2fr_2fr_2fr_2fr_2fr] gap-4 p-2">

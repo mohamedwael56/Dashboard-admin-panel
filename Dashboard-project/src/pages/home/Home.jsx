@@ -3,8 +3,44 @@ import { Product } from "../../components/Products";
 import { Header } from "../../components/Header";
 import { SideBar } from "../../components/SideBar";
 import { Cards } from "./Cards";
+import { useEffect, useState } from "react";
+import axios from "axios";
 export function Home() {
+const [search,setSearch]= useState('');
+  const [rows,setRows]=useState('All')
+  const [categories,setCategories]= useState('All')
+  const [brand,setBrand]= useState('All')
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    const fetchBrandsDetails = async () => {
+      try {
+        const response = await axios.get("/api/products");
+        setProducts(response.data.data);
+        console.log(response.data.data);
+      } catch (error) {
+        console.error("Error fetching brands details:", error);
+      }
+    };
+    fetchBrandsDetails();
+  }, []);
+  let results = products;
   
+  if(rows!=='All'){
+    results= results.slice (0,rows);
+  }
+  if (brand !== "All") {
+    results = results.filter((result) => result.brand === brand);
+  }
+  if (categories !== "All") {
+    results = results.filter((result) => result.category ===categories);
+  }
+  if(search.trim()!== ''){
+    results = results.filter((result)=>
+    result.name.toLowerCase().includes(search.toLowerCase()) ||
+    result.id.toString().includes(search) ||
+    result.category.toLowerCase().includes(search.toLowerCase()) ||
+    result.brand.toLowerCase().includes(search.toLowerCase())
+  )};  
 
   return (
     <>
@@ -12,8 +48,7 @@ export function Home() {
       <div className="flex min-h-screen mt-15">
         <SideBar />
         <main className="flex-1 p-6 m-7  w-screen">
-    
-        <Cards />
+          <Cards />
           <div className="capitalize mt-8 bg-gray-100 rounded-2xl  ">
             <div className="flex flex-col items-start p-5">
               <div className="text-xl mb-5">Best Selling Products</div>
@@ -24,27 +59,40 @@ export function Home() {
                 <div>search by</div>
 
                 <div>
-                  <select className="bg-gray-200 p-2">
-                    <option value="10">row 10</option>
-                    <option value="20">row 20</option>
-                    <option value="50">row 50</option>
-                    <option value="100">row 100</option>
+                  <select className="bg-gray-200 p-2" onChange={(e)=>{
+                    setRows(e.target.value)
+                  }} value={rows}>
+                    <option value="All">All</option>
+                    <option value="3">row 3</option>
+                    <option value="5">row 5</option>
+                    <option value="8">row 8</option>
                   </select>
                 </div>
                 <div>
-                  <select className="bg-gray-200 p-2">
-                    <option value="men">men</option>
-                    <option value="women">women</option>
+                  <select className="bg-gray-200 p-2" onChange={(e)=>{
+                  setCategories(e.target.value)
+                  }} value={categories}>
+                  <option value="All">All</option>
+
+                    {products.map((product) => {
+                      return <option value={product.category}>{product.category}</option>;
+                    })}                    
                   </select>
                 </div>
                 <div>
-                  <select className="bg-gray-200 p-2">
-                    <option value="ecstasy">ecstasy</option>
-                    <option value="H&M">H&M</option>
+                  <select className="bg-gray-200 p-2" onChange={(e)=>{
+                    setBrand(e.target.value)
+                  }} value={brand}>
+                    <option value="All">All</option>
+
+                    {products.map((product) => {
+                      return <option value={product.brand}>{product.brand}</option>;
+                    })}
                   </select>
                 </div>
                 <div>
                   <input
+                  onChange={(e)=>{setSearch(e.target.value)}}
                     className="bg-gray-200 p-2 border-none rounded-lg"
                     type="text"
                     name=""
@@ -56,7 +104,7 @@ export function Home() {
             </div>
           </div>
 
-          <Product />
+          <Product results={results} />
         </main>
       </div>
     </>

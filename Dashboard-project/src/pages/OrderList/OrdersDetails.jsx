@@ -2,25 +2,11 @@ import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { faPen } from "@fortawesome/free-solid-svg-icons";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect,useState } from "react";
-import axios from "axios";
 
 
-export function OrdersDetails(){
-    const [orders,setOrders]=useState([])
 
-    useEffect(()=>{
-    const fetchOrders=async()=>{
-        try{
-            const response=await axios("/api/orders")
-            setOrders(response.data.data)
-            console.log(response.data.data)
-        }catch(error){
-            console.error("error fetching orders",error)
-        }
-    }
-    fetchOrders()
-    },[])
+export function OrdersDetails({orders}){
+   
 
     return(
         <>
