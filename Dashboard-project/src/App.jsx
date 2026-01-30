@@ -10,21 +10,40 @@ import { Profile } from './pages/Users/Profile.jsx'
 import { Users } from './pages/Users/Users.jsx'
 import { Settings } from './pages/Settings/Settings.jsx'
 import { ResetPassword2 } from './pages/auth/ResetPassword2.jsx'
+import { EachProduct } from './pages/ProductsDetails/EachProduct.jsx'
+import { useEffect, useState } from "react";
+import axios from "axios";
+
 function App() {
+
+    const [products, setProducts] = useState([]);
+useEffect(()=>{
+
+const fetchBrandsDetails = async ()=>{
+  try{
+const response= await axios.get('/api/products')
+setProducts(response.data.data)
+console.log(response.data.data)
+} catch(error){
+  console.error('Error fetching brands details:',error)}
+}
+fetchBrandsDetails()
+},[])
 
   return (
     <>
     <Routes>
-      <Route path='/' element={<Home />} />
+      <Route path='/' element={<Home products={products} />} />
       <Route path='Login' element={<Login />} />
       <Route path='Register' element={<Register />} />
       <Route path='ResetPassword' element={<ResetPassword />} />
       <Route path='ResetPassword2' element={<ResetPassword2 />} />
-      <Route path='ProductsDetails' element={<ProductsDetails />} />
+      <Route path='ProductsDetails' element={<ProductsDetails products={products} />} />
       <Route path='OrdersList' element={<OrderList />} />
       <Route path='Profile' element={<Profile />} />
       <Route path='Users' element={<Users />} />
       <Route path='Settings' element={<Settings />} />
+      <Route path='EachProduct' element={<EachProduct products={products} />} />
     </Routes>
   
     </>

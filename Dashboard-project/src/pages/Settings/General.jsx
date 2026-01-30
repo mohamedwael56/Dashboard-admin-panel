@@ -7,7 +7,7 @@ export function General(){
              </div>
              <div className="flex mx-5 gap-4 text-xl">
                 <label htmlFor="">Full name</label>
-                <input type="text" value="mohamed wael" className="border mb-5 ml-6 rounded-lg px-2 "/>
+                <input type="text" value="mohamed Wael" className="border mb-5 ml-6 rounded-lg px-2 "/>
              </div>
              <div className="flex mx-5 my-2 gap-2 text-xl">
                 <label htmlFor="">User name</label>

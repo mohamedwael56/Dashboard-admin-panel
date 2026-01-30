@@ -2,9 +2,8 @@ import { Header } from "../../components/Header.jsx";
 import { SideBar } from "../../components/SideBar.jsx";
 import { Product } from "../../components/Products.jsx";
 import "./ProductsDetails.css"
-import { useEffect, useState } from "react";
-import axios from "axios";
-export function ProductsDetails (){
+import { useState } from "react";
+export function ProductsDetails ({products}) {
 
   const [rows, setRows]= useState('All');
 const [categories, setCategories]= useState ('All');
@@ -12,19 +11,7 @@ const [brand, setBrand]= useState ('All');
 const [search,setSearch]=useState('')
 
 
-  const [products, setProducts] = useState([]);
-useEffect(()=>{
 
-const fetchBrandsDetails = async ()=>{
-  try{
-const response= await axios.get('/api/products')
-setProducts(response.data.data)
-console.log(response.data.data)
-} catch(error){
-  console.error('Error fetching brands details:',error)}
-}
-fetchBrandsDetails()
-},[])
 let results = products;
 if (brand !== 'All'){
 results = results.filter(result=>result.brand === brand);
