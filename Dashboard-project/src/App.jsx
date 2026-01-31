@@ -43,7 +43,7 @@ fetchBrandsDetails()
       <Route path='Profile' element={<Profile />} />
       <Route path='Users' element={<Users />} />
       <Route path='Settings' element={<Settings />} />
-      <Route path='EachProduct' element={<EachProduct products={products} />} />
+      <Route path='EachProduct/:orderId' element={<EachProduct products={products} />} />
     </Routes>
   
     </>

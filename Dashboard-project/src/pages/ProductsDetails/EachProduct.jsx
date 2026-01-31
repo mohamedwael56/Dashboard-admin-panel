@@ -1,10 +1,11 @@
+import {useParams} from 'react-router-dom';
 export function EachProduct({products}) {
 
+const {orderId} = useParams();
 const product = products.find((data)=>{
-    return data.id === 1;
+    return data.id === Number(orderId);
 })
-    console.log(product);
-
+console.log(orderId);
 if(!product){
     return <div>Product not found</div>
 }

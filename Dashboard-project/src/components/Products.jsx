@@ -64,7 +64,7 @@ export function Product ({results}){
   {data.sales}
   </div>
   <div className="flex items-center gap-1" >
-  <a href="EachProduct" className="bg-violet-400 text-white p-2 rounded-xl " ><FontAwesomeIcon icon={faEye} /></a>
+  <a href={`EachProduct/${data.id}`} className="bg-violet-400 text-white p-2 rounded-xl " ><FontAwesomeIcon icon={faEye} /></a>
   <a href="#" className="bg-red-500 text-white p-2 rounded-xl "><FontAwesomeIcon icon={faTrashCan} /></a>
   </div>
 </div>

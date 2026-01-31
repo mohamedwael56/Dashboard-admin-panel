@@ -1,9 +1,3 @@
-import { faEye } from "@fortawesome/free-solid-svg-icons";
-import { faPen } from "@fortawesome/free-solid-svg-icons";
-import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-
 
 export function OrdersDetails({orders}){
    
@@ -11,7 +5,7 @@ export function OrdersDetails({orders}){
     return(
         <>
   <div className="w-full mx-5 flex flex-col justify-start ">
-  <div className="grid grid-cols-[1fr_3fr_2fr_2fr_2fr_2fr_2fr_2fr] 
+  <div className="grid grid-cols-[1fr_3fr_2fr_2fr_2fr_2fr_2fr] 
    gap-4 font-semibold border-b p-1 border bg-blue-500 rounded-lg text-white  ">
     <div className="flex start">UID</div>
     <div className=" flex justify-start ">client</div>
@@ -20,13 +14,12 @@ export function OrdersDetails({orders}){
     <div>payment</div>
     <div>status</div>
     <div>order date</div>
-    <div>order</div>
     
   </div>
   {
 orders.map((order)=>{
   return(
-    <div className="grid grid-cols-[1fr_3fr_2fr_2fr_2fr_2fr_2fr_2fr] gap-4 p-2">
+    <div className="grid grid-cols-[1fr_3fr_2fr_2fr_2fr_2fr_2fr] gap-4 p-2">
   <div className="flex start">
    {order.id}
   </div>
@@ -53,16 +46,11 @@ orders.map((order)=>{
   {order.status}
   </div>
   <div >
-    <div className="flex items-center ">
+    <div className="flex items-center ml-6">
 {order.orderDate}
 </div>
   </div>
  
-  <div className="flex items-center gap-1" >
-  <a href="#" className="bg-violet-400 text-white p-2 rounded-xl text-lg" ><FontAwesomeIcon icon={faEye} /></a>
-  <a href="#" className="bg-green-300 text-white p-2 rounded-xl text-lg"><FontAwesomeIcon icon={faPen} /></a>
-  <a href="#" className="bg-red-500 text-white p-2 rounded-xl text-lg"><FontAwesomeIcon icon={faTrashCan} /></a>
-  </div>
 </div>
     
   )
