@@ -1,27 +1,14 @@
 import { SideBar } from "../../components/SideBar";
 import { Header } from "../../components/Header";
 import { UsersDetails } from "./UsersDetails";
-import { useEffect, useState } from "react";
-import axios from "axios";
-export function Users(){
+import {useState} from "react";
+
+export function Users({users}) {
 
   const [gender,setGender]= useState('All')
   const [rows,setRows]= useState('All')
   const [status,setStatus]= useState('All')
 const [search,setSearch]=useState('')
-    const [users,setUsers]=useState([])
-useEffect(()=>{
-const fetchUsers=async()=>{
-    try{
-        const response=await axios("/api/users")
-        setUsers(response.data.data)
-        console.log(response.data.data)
-    }catch(error){
-        console.error("error fetching users",error)
-    }
-}
-fetchUsers()
-},[])
 
 let results= users;
 if(rows!=='All'){

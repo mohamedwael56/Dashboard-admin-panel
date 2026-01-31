@@ -30,6 +30,22 @@ console.log(response.data.data)
 fetchBrandsDetails()
 },[])
 
+
+    const [users,setUsers]=useState([])
+useEffect(()=>{
+const fetchUsers=async()=>{
+    try{
+        const response=await axios("/api/users")
+        setUsers(response.data.data)
+        console.log(response.data.data)
+    }catch(error){
+        console.error("error fetching users",error)
+    }
+}
+fetchUsers()
+},[])
+
+
   return (
     <>
     <Routes>
@@ -40,8 +56,8 @@ fetchBrandsDetails()
       <Route path='ResetPassword2' element={<ResetPassword2 />} />
       <Route path='ProductsDetails' element={<ProductsDetails products={products} />} />
       <Route path='OrdersList' element={<OrderList />} />
-      <Route path='Profile' element={<Profile />} />
-      <Route path='Users' element={<Users />} />
+      <Route path='Profile/:userId' element={<Profile users={users} />} />
+      <Route path='Users' element={<Users users={users} />} />
       <Route path='Settings' element={<Settings />} />
       <Route path='EachProduct/:orderId' element={<EachProduct products={products} />} />
     </Routes>

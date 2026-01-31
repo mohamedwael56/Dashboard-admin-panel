@@ -5,7 +5,7 @@ import "./Profile.css";
 import { useState } from "react";
 import { ChangePassword } from "./ChangePassword";
 import { DeleteAccount } from "./DeleteAccount";
-export function Profile() {
+export function Profile({users}) {
 
 const [activeTab, setActiveTab] = useState("profile");
 
@@ -47,7 +47,7 @@ const [activeTab, setActiveTab] = useState("profile");
                   delete account
                 </a>
               </div>
-             {activeTab === 'profile' && <GeneralInfo />} 
+             {activeTab === 'profile' && <GeneralInfo users={users} />} 
               {activeTab === 'changePassword' && <ChangePassword />}
               {activeTab === 'deleteAccount' && <DeleteAccount />}
             </div>

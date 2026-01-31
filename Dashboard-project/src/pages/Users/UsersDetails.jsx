@@ -7,7 +7,7 @@ export function UsersDetails({results}){
     return(
     <>
      <div className="w-full mx-5 flex flex-col justify-start ">
-  <div className="grid grid-cols-[1fr_3fr_2fr_2fr_2fr_2fr_2fr] 
+  <div className="grid grid-cols-[1fr_3fr_3fr_2fr_2fr_2fr_2fr] 
    gap-4 font-semibold border-b p-1 border bg-blue-500 rounded-lg text-white  ">
     <div className="flex start">UID</div>
     <div className=" flex justify-start ">name</div>
@@ -21,7 +21,7 @@ export function UsersDetails({results}){
   {
 results.map((user)=>{
   return(
-<div className="grid grid-cols-[1fr_3fr_2fr_2fr_2fr_2fr_2fr] gap-4 p-2">
+<div className="grid grid-cols-[1fr_3fr_3fr_2fr_2fr_2fr_2fr] gap-4 p-2">
   <div className="flex start">
    {user.id}
   </div>
@@ -51,7 +51,7 @@ results.map((user)=>{
   </div>
  
   <div className="flex gap-2 justify-center" >
-  <a href="Profile" className="bg-violet-400 text-white p-2 rounded-xl text-lg" ><FontAwesomeIcon icon={faEye} /></a>
+  <a href={`Profile/${user.id}`} className="bg-violet-400 text-white p-2 rounded-xl text-lg" ><FontAwesomeIcon icon={faEye} /></a>
  
   <a href="#" className="bg-red-500 text-white p-2 rounded-xl text-lg"><FontAwesomeIcon icon={faTrashCan} /></a>
   </div>
