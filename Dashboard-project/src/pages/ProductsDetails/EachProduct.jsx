@@ -20,7 +20,7 @@ if(!product){
                 <h2 className="text-xl font-bold select-none">products details</h2>
                 <div className="flex text-xl ">
                 <Link to="/" className="first-link">Home</Link>
-                <Link to="ProductsDetails" className="first-link">~ProductsDetails</Link>
+                <Link to="/ProductsDetails" className="first-link">~ProductsDetails</Link>
                 <Link to="#" className="current-page">~product name</Link>
                 </div>
             </div>
