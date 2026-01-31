@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export function Register(){
     const navigate=useNavigate();
@@ -70,7 +71,7 @@ console.log("response",response.data)
                     welcome to the Register Page
                 </h1>
                 <p className="text-lg mt-1">you can sign up a new account from the box on the right or you can get back the home page from the button below down</p>
-                    <a href="/" className="inline-block p-2 rounded-xl text-white bg-blue-500 mt-3 w-[20vw] hover:text-white hover:bg-blue-600" >Home page</a>
+                    <Link to="/" className="inline-block p-2 rounded-xl text-white bg-blue-500 mt-3 w-[20vw] hover:text-white hover:bg-blue-600" >Home page</Link>
             </div>
 </div>
         <div >

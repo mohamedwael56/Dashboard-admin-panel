@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
 export function ResetPassword(){
 const [email,setEmail]=useState("");
 const getResetLink= async (e)=>{
@@ -32,10 +34,10 @@ const getResetLink= async (e)=>{
 </div>
 </form>
 </div>
-    <a className="text-blue-600" href="ResetPassword2">try another way</a>
+    <Link className="text-blue-600" to="ResetPassword2">try another way</Link>
 
 <div className="mt-5 mr-10">
-    <p>do you remember your password? <a href="Login" className="text-blue-600">Login</a></p>
+    <p>do you remember your password? <Link to="Login" className="text-blue-600">Login</Link></p>
 </div>
 </div>
 

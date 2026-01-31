@@ -5,6 +5,7 @@ import { faBell } from "@fortawesome/free-solid-svg-icons";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './header.css';
+import { Link } from "react-router-dom";
 
 export function Header (){
     return (
@@ -12,9 +13,9 @@ export function Header (){
         <nav className="fixed bg-gray-100 w-full p-4 top-0 z-50 ">
           <ul className="flex items-center justify-between gap-3  ">
             <li>
-              <a href="/" className="text-xs hover:inherit font-bold ">
+              <Link to="/" className="text-xs hover:inherit font-bold ">
                 <h1>Ym style</h1>
-              </a>
+              </Link>
             </li>
             <li>
               {" "}
@@ -72,15 +73,15 @@ export function Header (){
                   </summary>
 
                   <div className="absolute mt-2 w-40 bg-white shadow-lg rounded-lg">
-                    <a href="Profile" className="block px-4 py-2 hover:bg-gray-100">
+                    <Link to="/Profile/0" className="block px-4 py-2 hover:bg-gray-100">
                       Profile
-                    </a>
-                    <a href="settings" className="block px-4 py-2 hover:bg-gray-100">
+                    </Link>
+                    <Link to="/settings" className="block px-4 py-2 hover:bg-gray-100">
                       Settings
-                    </a>
-                    <a href="#" className="block px-4 py-2 hover:bg-gray-100">
+                    </Link>
+                    <Link to="#" className="block px-4 py-2 hover:bg-gray-100">
                       Logout
-                    </a>
+                    </Link>
                   </div>
                 </details>
               </div>

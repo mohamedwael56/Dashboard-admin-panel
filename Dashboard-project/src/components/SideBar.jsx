@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export function SideBar (){
     return(
         <div className="h-screen mt-3">
@@ -7,54 +9,54 @@ export function SideBar (){
           </h2>
 
           <nav className="flex flex-col gap-3 capitalize">
-            <a
-              href="/"
+            <Link
+              to="/"
               className="flex items-center px-3 py-2 rounded hover:bg-gray-200 "
             >
               <span></span>
               <span className="ml-2">Dashboard</span>
-            </a>
+            </Link>
             <div className="flex items-center hover:bg-gray-200 hover:rounded-lg">
             <details className="flex cursor-pointer items-center px-3 py-2 rounded  inline-block select-none ">
               <summary className="ml-2 text-black">Authentication </summary>
               <div className="flex flex-col ml-4 mt-2 gap-2">
-                <a href="Login" className="hover:underline hover:bg-gray-300">login</a>
-                <a href="Register" className="hover:underline hover:bg-gray-300">register</a>
-                <a href="ResetPassword" className="hover:underline hover:bg-gray-300">forgot password</a>
+                <Link to="Login" className="hover:underline hover:bg-gray-300">login</Link>
+                <Link to="Register" className="hover:underline hover:bg-gray-300">register</Link>
+                <Link to="ResetPassword" className="hover:underline hover:bg-gray-300">forgot password</Link>
               </div>
             </details>
             </div>
-            <a
-              href="Users"
+            <Link
+              to="/Users"
               className="flex items-center px-3 py-2 rounded hover:bg-gray-200"
             >
               <span></span>
               <span className="ml-2">users</span>
-            </a>
-            <a
-              href="ProductsDetails"
+            </Link>
+            <Link
+              to="/ProductsDetails"
               className="flex items-center px-3 py-2 rounded hover:bg-gray-200"
             >
               <span></span>
               <span className="ml-2">products</span>
-            </a>
+            </Link>
             
-            <a
-              href="OrdersList"
+            <Link
+              to="/OrdersList"
               className="flex items-center px-3 py-2 rounded hover:bg-gray-200"
             >
               <span></span>
               <span className="ml-2">orders</span>
-            </a>
+            </Link>
            
             
-            <a
-              href="Settings"
+            <Link
+              to="/Settings"
               className="flex items-center px-3 py-2 rounded hover:bg-gray-200"
             >
               <span></span>
               <span className="ml-2">settings</span>
-            </a>
+            </Link>
           </nav>
         </aside>
 </div>

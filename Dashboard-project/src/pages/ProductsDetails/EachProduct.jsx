@@ -1,4 +1,6 @@
 import {useParams} from 'react-router-dom';
+import { Link } from "react-router-dom";
+
 export function EachProduct({products}) {
 
 const {orderId} = useParams();
@@ -17,9 +19,9 @@ if(!product){
       <div className=" main-page flex justify-between w-full bg-white p-4 rounded-xl items-center my-2">
                 <h2 className="text-xl font-bold select-none">products details</h2>
                 <div className="flex text-xl ">
-                <a href="/" className="first-link">Home</a>
-                <a href="ProductsDetails" className="first-link">~ProductsDetails</a>
-                <a href="#" className="current-page">~product name</a>
+                <Link to="/" className="first-link">Home</Link>
+                <Link to="ProductsDetails" className="first-link">~ProductsDetails</Link>
+                <Link to="#" className="current-page">~product name</Link>
                 </div>
             </div>
 

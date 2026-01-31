@@ -2,6 +2,7 @@ import { Header } from "../../components/Header.jsx";
 import { SideBar } from "../../components/SideBar.jsx";
 import { Product } from "../../components/Products.jsx";
 import "./ProductsDetails.css"
+import { Link } from "react-router-dom";
 import { useState } from "react";
 export function ProductsDetails ({products}) {
 
@@ -47,8 +48,8 @@ console.log(results)
             <div className=" main-page flex justify-between w-full bg-gray-100 p-4 rounded-xl items-center my-2">
                 <h2 className="text-xl font-bold select-none">products details</h2>
                 <div className="flex text-xl ">
-                <a href="/" className="first-link">Home</a>
-                <a href="#" className="current-page">~ProductsDetails</a>
+                <Link to="/" className="first-link">Home</Link>
+                <Link to="#" className="current-page">~ProductsDetails</Link>
                 </div>
             </div>
 

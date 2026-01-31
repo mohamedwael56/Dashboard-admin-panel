@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 export function ResetPassword2() {
@@ -76,7 +77,7 @@ export function ResetPassword2() {
           >
             Reset Password
           </button>
-          <a href="/">HOME</a>
+          <Link to="/">HOME</Link>
         </form>
       </div>
     </div>

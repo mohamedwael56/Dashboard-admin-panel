@@ -2,6 +2,7 @@ import axios from "axios";
 import "./login.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export function Login() {
   const navigate = useNavigate();
@@ -77,9 +78,9 @@ const handleSubmit= async(e)=>{
           >
             Login
           </button>
-          <a href="ResetPassword" className="text-blue-600 hover:underline mb-5">
+          <Link to="ResetPassword" className="text-blue-600 hover:underline mb-5">
             forget password
-          </a>
+          </Link>
         </form>
         <div className="flex flex-row items-center mt-5">
           <hr className="w-full" />
@@ -121,7 +122,7 @@ const handleSubmit= async(e)=>{
     </div>
 
     <div className="bg-gray-200 p-4 rounded-lg mt-4">
-      <p className="text-center text-gray-700 select-none">don't have an account? <a href="/Register" className="text-blue-600 hover:underline">Sign up</a></p>
+      <p className="text-center text-gray-700 select-none">don't have an account? <Link to="/Register" className="text-blue-600 hover:underline">Sign up</Link></p>
     </div>
   </>
   );
