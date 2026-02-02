@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { useState } from 'react';
 export function ChangePassword() {
+    const user=JSON.parse(localStorage.getItem('user'))
+
     const [currentPassword, setCurrentPassword] = useState('');
     const [newPassword, setNewPassword] = useState('');
     const [confirmNewPassword, setConfirmNewPassword] = useState('');
@@ -14,9 +16,11 @@ function handleSubmit(e) {
         alert('New password and confirmation password do not match.');
         return;
        }
-        axios.post('/api/auth/forgot-password', {
+        axios.post(`/api/auth/forgot-password/`, {
+          email:user.email,
             currentPassword,
             newPassword,
+           
 
     })
     .then(response => {

@@ -46,7 +46,7 @@ export function Header (){
                 />
                 <div>
                     <span className=" font-medium">{userData.name}</span>
-                    <span className="block text-xs">@{userData.userName}</span>
+                    <span className="block text-xs">@{userData.username}</span>
                  </div>
                   </summary>
 

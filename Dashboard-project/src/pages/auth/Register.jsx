@@ -56,6 +56,7 @@ const response = await axios.post('/api/auth/register',{
     password
 
 })
+
 console.log("response",response.data)
     setUsername("");
     setEmail("");
@@ -63,6 +64,7 @@ console.log("response",response.data)
 
     alert("Registered successfully!");
     navigate('/');
+
     }catch (error){
         if(error.response){ alert (error.response.data.message)}
         else {alert ("something went wrong")}
