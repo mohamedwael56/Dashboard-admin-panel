@@ -4,7 +4,6 @@ import { useState } from "react";
 import { General } from "./General";
 import { Security } from "./Security";
 import { Notifications } from "./Notifications";
-import { Appearance } from "./Appearance";
 import { Link } from "react-router-dom";
 export function Settings(){
 const [activeTab, setActiveTab] = useState('General');
@@ -20,7 +19,7 @@ const [activeTab, setActiveTab] = useState('General');
             <div className="bg-gray-100 mx-4 flex p-4 justify-between rounded-xl">
               <h2 className="font-bold select-none">Settings Page</h2>
               <div className="capitalize">
-                <Link className="profile-links" to="/">
+                <Link className="profile-links" to="/home">
                   home
                 </Link>
                 <Link className="profile-links1" to="/Users">
@@ -42,14 +41,10 @@ const [activeTab, setActiveTab] = useState('General');
                 <Link to="#" className="profile-edit" onClick={()=>setActiveTab('Notifications')}>
                   Notifications
                 </Link>
-                <Link to="#" className="profile-edit" onClick={()=>setActiveTab('Appearance')}>
-                  Appearance
-                </Link>
               </div>
              {activeTab === 'General' && <General />}
              {activeTab === 'Security' && <Security />}
              {activeTab === 'Notifications' && <Notifications />}
-             {activeTab === 'Appearance' && <Appearance />}
         
         </div>
 

@@ -22,6 +22,13 @@ else{setEmailButton(false)}
 
   const navigate = useNavigate()
 const saveProfile = async () => {
+
+if (loggedInUser.name===changeName
+   &&
+   loggedInUser.email===changeEmail
+   &&
+   !selectedImage)return alert('nothing has been changed to be updated')
+
   const formData = new FormData();
   formData.append("userId", loggedInUser.id);
   formData.append("newName", changeName);

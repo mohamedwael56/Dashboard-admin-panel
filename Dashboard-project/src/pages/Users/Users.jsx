@@ -2,6 +2,7 @@ import { SideBar } from "../../components/SideBar";
 import { Header } from "../../components/Header";
 import { UsersDetails } from "./UsersDetails";
 import {useState} from "react";
+import { Link } from "react-router-dom";
 
 export function Users({users}) {
 
@@ -38,13 +39,13 @@ if(search.trim()!==''){
 <div className="bg-gray-100 mx-4 flex p-4 justify-between rounded-xl mt-8">
               <h2 className="font-bold select-none">Profile Page</h2>
               <div className="capitalize">
-                <a className="profile-links" href="/">
+                <Link className="profile-links" to="/home">
                   home
-                </a>
-                <a className="profile-links1" href="Users">
+                </Link>
+                <Link className="profile-links1" to="/Users">
                   {" "}
                   - users
-                </a>
+                </Link>
                 
               </div>
             </div>

@@ -5,6 +5,7 @@ import "./Profile.css";
 import { useState } from "react";
 import { ChangePassword } from "./ChangePassword";
 import { DeleteAccount } from "./DeleteAccount";
+import { Link } from "react-router-dom";
 export function Profile({users}) {
 
 const [activeTab, setActiveTab] = useState("profile");
@@ -21,17 +22,17 @@ const [activeTab, setActiveTab] = useState("profile");
             <div className="bg-gray-100 mx-4 flex p-4 justify-between rounded-xl">
               <h2 className="font-bold select-none">Profile Page</h2>
               <div className="capitalize">
-                <a className="profile-links" href="/">
+                <Link className="profile-links" to="/home">
                   home
-                </a>
-                <a className="profile-links" href="Users">
+                </Link>
+                <Link className="profile-links" to="Users">
                   {" "}
                   - users
-                </a>
-                <a className="profile-links1" href="">
+                </Link>
+                <Link className="profile-links1" to="">
                   {" "}
                   - my account{" "}
-                </a>
+                </Link>
               </div>
             </div>
 

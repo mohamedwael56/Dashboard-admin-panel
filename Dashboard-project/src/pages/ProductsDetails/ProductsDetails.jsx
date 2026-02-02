@@ -48,7 +48,7 @@ console.log(results)
             <div className=" main-page flex justify-between w-full bg-gray-100 p-4 rounded-xl items-center my-2">
                 <h2 className="text-xl font-bold select-none">products details</h2>
                 <div className="flex text-xl ">
-                <Link to="/" className="first-link">Home</Link>
+                <Link to="/home" className="first-link">Home</Link>
                 <Link to="#" className="current-page">~ProductsDetails</Link>
                 </div>
             </div>
