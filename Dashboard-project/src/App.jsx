@@ -23,7 +23,6 @@ const fetchBrandsDetails = async ()=>{
   try{
 const response= await axios.get('/api/products')
 setProducts(response.data.data)
-console.log(response.data.data)
 } catch(error){
   console.error('Error fetching brands details:',error)}
 }
@@ -37,7 +36,6 @@ const fetchUsers=async()=>{
     try{
         const response=await axios("/api/users")
         setUsers(response.data.data)
-        console.log(response.data.data)
     }catch(error){
         console.error("error fetching users",error)
     }
@@ -49,8 +47,8 @@ fetchUsers()
   return (
     <>
     <Routes>
-      <Route path='/' element={<Home products={products} />} />
-      <Route path='Login' element={<Login />} />
+      <Route path='home' element={<Home products={products} users={users} />} />
+      <Route path='/' element={<Login />} />
       <Route path='Register' element={<Register />} />
       <Route path='ResetPassword' element={<ResetPassword />} />
       <Route path='ResetPassword2' element={<ResetPassword2 />} />

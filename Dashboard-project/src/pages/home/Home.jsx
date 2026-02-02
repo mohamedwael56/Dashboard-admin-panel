@@ -4,7 +4,8 @@ import { Header } from "../../components/Header";
 import { SideBar } from "../../components/SideBar";
 import { Cards } from "./Cards";
 import {useState} from "react";
-export function Home({products}) {
+export function Home({products,users}) {
+  
 const [search,setSearch]= useState('');
   const [rows,setRows]=useState('All')
   const [categories,setCategories]= useState('All')
@@ -30,7 +31,7 @@ const [search,setSearch]= useState('');
 
   return (
     <>
-      <Header />
+      <Header user={users} />
       <div className="flex min-h-screen mt-15">
         <SideBar />
         <main className="flex-1 p-6 m-7  w-screen">

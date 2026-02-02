@@ -9,7 +9,7 @@ export function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleEmailChange = (e) => {
+  const handleEmailChange = (e) => {0.
     setEmail(e.target.value);
   };
   const handlePasswordChange = (e) => {
@@ -26,9 +26,12 @@ const handleSubmit= async(e)=>{
 
   )
   const {token, user} = response.data;
+  console.log(response.data)
+
 
   localStorage.setItem('token', token);
-    navigate('/');
+  localStorage.setItem('user',JSON.stringify(user))
+    navigate('home');
 
   console.log("Token:", token);
   console.log("User:", user)
@@ -78,7 +81,7 @@ const handleSubmit= async(e)=>{
           >
             Login
           </button>
-          <Link to="ResetPassword" className="text-blue-600 hover:underline mb-5">
+          <Link to="/ResetPassword" className="text-blue-600 hover:underline mb-5">
             forget password
           </Link>
         </form>

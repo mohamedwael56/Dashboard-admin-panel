@@ -12,7 +12,11 @@ export function Register(){
     const [password,setPassword]=useState("");
     const [confirmPassword,setConfirmPassword]=useState("");    
    const [username,setUsername]=useState("");   
-   
+   const [name,setName]=useState('')
+
+   const handleNameChange=(e)=>{
+    setName(e.target.value)
+   }
    const handleUsernameChange=(e)=>{
     setUsername (e.target.value);
    }
@@ -33,7 +37,7 @@ export function Register(){
    const handleRegisterClick= async (e)=>{
     e.preventDefault();
     try{
-        if(!username || !email || !password){
+        if(!username || !email || !password ||!name){
             alert ("please fill all the fields");
             return;
         }
@@ -46,9 +50,11 @@ export function Register(){
             return;
         }
 const response = await axios.post('/api/auth/register',{
-    name: username,
+    name,
+    username,
     email,
-    password,
+    password
+
 })
 console.log("response",response.data)
     setUsername("");
@@ -56,7 +62,7 @@ console.log("response",response.data)
     setPassword("");
 
     alert("Registered successfully!");
-    navigate('/Login');
+    navigate('/');
     }catch (error){
         if(error.response){ alert (error.response.data.message)}
         else {alert ("something went wrong")}
@@ -79,6 +85,15 @@ console.log("response",response.data)
 
 <h2 className="text-lg mb-4"> register  a new account</h2>
 <form >
+    <div className="mb-4">
+    <input 
+    value={name}
+    onChange={handleNameChange}
+    type="text"
+    id="name"
+    className="w-full px-3 py-2 border rounded-xl"
+    placeholder="enter your name" />
+    </div>
     <div className="mb-4">
     <input 
     value={username}

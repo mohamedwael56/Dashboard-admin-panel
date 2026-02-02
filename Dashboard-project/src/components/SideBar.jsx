@@ -10,7 +10,7 @@ export function SideBar (){
 
           <nav className="flex flex-col gap-3 capitalize">
             <Link
-              to="/"
+              to="/home"
               className="flex items-center px-3 py-2 rounded hover:bg-gray-200 "
             >
               <span></span>
@@ -20,9 +20,9 @@ export function SideBar (){
             <details className="flex cursor-pointer items-center px-3 py-2 rounded  inline-block select-none ">
               <summary className="ml-2 text-black">Authentication </summary>
               <div className="flex flex-col ml-4 mt-2 gap-2">
-                <Link to="Login" className="hover:underline hover:bg-gray-300">login</Link>
-                <Link to="Register" className="hover:underline hover:bg-gray-300">register</Link>
-                <Link to="ResetPassword" className="hover:underline hover:bg-gray-300">forgot password</Link>
+                <Link to="/" className="hover:underline hover:bg-gray-300">login</Link>
+                <Link to="/Register" className="hover:underline hover:bg-gray-300">register</Link>
+                <Link to="/ResetPassword" className="hover:underline hover:bg-gray-300">forgot password</Link>
               </div>
             </details>
             </div>

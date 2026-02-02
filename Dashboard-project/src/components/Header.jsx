@@ -1,29 +1,28 @@
-import { faList } from "@fortawesome/free-solid-svg-icons";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { faBell } from "@fortawesome/free-solid-svg-icons";
-import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './header.css';
 import { Link } from "react-router-dom";
-
 export function Header (){
+
+  const userData=JSON.parse(localStorage.getItem('user'));
+
+  console.log(userData)
+
+  
+ 
     return (
 <div className="Header ">
         <nav className="fixed bg-gray-100 w-full p-4 top-0 z-50 ">
           <ul className="flex items-center justify-between gap-3  ">
             <li>
-              <Link to="/" className="text-xs hover:inherit font-bold ">
+              <Link to="/home" className="text-xs hover:inherit font-bold ">
                 <h1>Ym style</h1>
               </Link>
             </li>
-            <li>
-              {" "}
-              <FontAwesomeIcon icon={faList} />
-            </li>
+           
             <li>
               <div className="relative w-80 ">
-                <button className="absolute border-0 top-1 right-3 p-0 text-xs  ">
+                <button  className="absolute border-0 top-1 right-3 p-0 text-xs  ">
                   <FontAwesomeIcon icon={faMagnifyingGlass} />
                 </button>
                 <input
@@ -33,28 +32,7 @@ export function Header (){
                 />
               </div>
             </li>
-            <li>
-              <div className="flex gap-4">
-                <button className="relative p-2 text-2xl">
-                  <FontAwesomeIcon icon={faCartShopping} />
-                  <span className="absolute top-1 left-1 bg-red-500 text-white rounded-2xl w-4 text-xs ">
-                    0
-                  </span>
-                </button>
-                <button className="relative p-2">
-                  <FontAwesomeIcon icon={faEnvelope} />
-                  <span className="absolute top-1 left-1 bg-red-500 text-white rounded-2xl w-4 text-xs ">
-                    0
-                  </span>
-                </button>
-                <button className="relative p-2 ">
-                  <FontAwesomeIcon icon={faBell} />
-                  <span className="absolute top-1 left-1 bg-red-500 text-white rounded-2xl w-4 text-xs ">
-                    0
-                  </span>
-                </button>
-              </div>
-            </li>
+            
 
             <li>
               <div className="flex  ">
@@ -62,13 +40,13 @@ export function Header (){
                 <details className="relative inline-block ">
                   <summary className=" flex items-center  cursor-pointer px-4 py-2 text-black rounded-lg select-none ">
                    <img
-                  src="./image/eddy.png"
+                  src={userData.image}
                   className="rounded-full object-cover w-12 h-12 border border-blue-500 mr-2"
                
                 />
                 <div>
-                    <span className=" font-medium">mohamed wael</span>
-                    <span className="block text-xs">@mohamedwael56</span>
+                    <span className=" font-medium">{userData.name}</span>
+                    <span className="block text-xs">@{userData.userName}</span>
                  </div>
                   </summary>
 
@@ -79,7 +57,7 @@ export function Header (){
                     <Link to="/settings" className="block px-4 py-2 hover:bg-gray-100">
                       Settings
                     </Link>
-                    <Link to="#" className="block px-4 py-2 hover:bg-gray-100">
+                    <Link to="/" className="block px-4 py-2 hover:bg-gray-100">
                       Logout
                     </Link>
                   </div>
