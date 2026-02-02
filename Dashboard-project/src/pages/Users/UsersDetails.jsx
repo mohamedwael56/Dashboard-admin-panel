@@ -1,5 +1,4 @@
 import { faEye } from "@fortawesome/free-solid-svg-icons";
-import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
@@ -50,10 +49,9 @@ results.map((user)=>{
 </div>
   </div>
  
-  <div className="flex gap-2 justify-center" >
-  <a href={`Profile/${user.id}`} className="bg-violet-400 text-white p-2 rounded-xl text-lg" ><FontAwesomeIcon icon={faEye} /></a>
+  <div className=" mt-2 " >
+  <a href={`Profile/${user.id}`} className="bg-violet-400 text-white p-4  rounded-xl text-lg" ><FontAwesomeIcon icon={faEye} /></a>
  
-  <a href="#" className="bg-red-500 text-white p-2 rounded-xl text-lg"><FontAwesomeIcon icon={faTrashCan} /></a>
   </div>
 </div>
 

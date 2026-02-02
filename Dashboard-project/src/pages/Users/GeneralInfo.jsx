@@ -23,7 +23,6 @@ const {userId}=useParams()
                       src={userDetails.image}
                       className="rounded-full w-32 h-32 object-cover border"
                     />
-                    <Link to='/settings' className="mt-5 self-center upload-button">upload</Link>
                   </div>
 
                   <div className="grid grid-cols-2 gap-3 m-3 h-30 self-center w-3/4">
@@ -60,7 +59,7 @@ const {userId}=useParams()
                     </div>
                   </div>
                 </div>
-                <h2 className="flex items-start font-bold text-black opacity-85 m-3">
+                <h2 className="flex mt-8 items-start font-bold text-black opacity-85 m-3">
                   private information
                 </h2>
                 <div className="grid grid-cols-3 gap-3 mb-3 mx-3">

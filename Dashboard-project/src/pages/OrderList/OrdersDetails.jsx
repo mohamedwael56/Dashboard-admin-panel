@@ -42,7 +42,7 @@ orders.map((order)=>{
   <div>
   {order.paymentMethod}
   </div>
-  <div className="bg-fuchsia-500 text-white rounded-xl p-1">
+  <div className={`${order.status==='completed'&& 'bg-green-600'||order.status==='pending'&&'bg-yellow-600'||order.status==='cancelled'&& 'bg-red-600'} text-white rounded-xl p-1`}>
   {order.status}
   </div>
   <div >
