@@ -24,7 +24,7 @@ const generateToken = (user) => {
 
 // Register
 exports.register = async (req, res) => {
-  const { name, email, password, role, image,userName } = req.body;
+  const { name, username,email, password, role, image, } = req.body;
  let users = getUsers();
 
   const exists = users.find(u => u.email === email);
@@ -35,13 +35,14 @@ exports.register = async (req, res) => {
   const newUser = {
     id: newId,
     name,
+    username,
     email,
     password,
     role: role || "user",
     status: "active",
     registeredAt: new Date().toISOString().split("T")[0],
     image: image || "/images/default.jpg",
-    userName
+    
   };
 
   users.push(newUser);
@@ -69,11 +70,15 @@ let users = getUsers();
 
 // Forgot Password
 exports.forgotPassword = async (req, res) => {
-  const { email, newPassword } = req.body;
+  const { email, currentPassword,newPassword } = req.body;
 let users = getUsers();
 
   const user = users.find(u => u.email === email);
   if (!user) return res.status(400).json({ message: "User not found" });
+
+  if (user.password !== currentPassword) { // أو لو hash: bcrypt.compare
+    return res.status(400).json({ message: "Current password is incorrect" });
+}
 
 user.password = newPassword;
 saveUsers(users);

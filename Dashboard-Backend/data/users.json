@@ -9,6 +9,28 @@
     "status": "active",
     "registeredAt": "2023-01-12",
     "Gender": "men",
-    "userName": "mohamedwael56"
+    "username": "mohamedwael56"
+  },
+  {
+    "id": 1,
+    "name": "karina ",
+    "username": "asdsa123",
+    "email": "karina@gmail.com",
+    "password": "123456",
+    "role": "user",
+    "status": "active",
+    "registeredAt": "2026-02-02",
+    "image": "/images/default.jpg"
+  },
+  {
+    "id": 2,
+    "name": "tota",
+    "username": "tota123456789",
+    "email": "tota@gmail.com",
+    "password": "123456",
+    "role": "user",
+    "status": "active",
+    "registeredAt": "2026-02-02",
+    "image": "/images/default.jpg"
   }
 ]
