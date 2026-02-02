@@ -24,13 +24,13 @@
   },
   {
     "id": 2,
-    "name": "tota",
+    "name": "tota123",
     "username": "tota123456789",
-    "email": "tota@gmail.com",
+    "email": "tota123@gmail.com",
     "password": "123456",
     "role": "user",
     "status": "active",
     "registeredAt": "2026-02-02",
-    "image": "/images/default.jpg"
+    "image": "/uploads/image-1770061512708.jpg"
   }
 ]

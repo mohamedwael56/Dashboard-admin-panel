@@ -7,9 +7,7 @@ const {userId}=useParams()
   if(!userDetails){
     return(<div>nothing found</div>)
   }
-  console.log(userDetails)
   const loggedInUser=JSON.parse(localStorage.getItem('user'))
-  console.log(loggedInUser)
   return (
   <div className="flex flex-col">
                 <div className="flex items-center m-3 mt-5">

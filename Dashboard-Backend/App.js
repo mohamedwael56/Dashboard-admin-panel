@@ -11,7 +11,8 @@ const productsRoute = require('./routes/products.routes.js');
 const settingsRoute = require('./routes/settings.routes.js');
 const chartsRoute = require('./routes/charts.routes.js');
 const authRoutes = require("./routes/auth.routes.js");
-const accountRoutes = require("./routes/accountRoutes");
+const accountRoutes = require("./routes/accountRoutes.js");
+const path = require("path");
 
 const app = express();
 
@@ -30,6 +31,8 @@ app.use('/api/settings', settingsRoute);
 app.use('/api/charts', chartsRoute);
 app.use("/api/auth", authRoutes);
 app.use("/api/account", accountRoutes);
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+
 
 
 app.get("/", (req, res) => {

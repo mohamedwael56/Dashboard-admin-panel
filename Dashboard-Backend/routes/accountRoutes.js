@@ -23,6 +23,6 @@ const upload = multer({ storage });
 router.delete("/delete-account", deleteAccount);
 
 // تعديل البروفايل: الاسم، الإيميل، والصورة
-router.put("/update-profile", upload.single("image"), updateProfile);
+router.post("/update-profile", upload.single("image"), updateProfile);
 
 module.exports = router;

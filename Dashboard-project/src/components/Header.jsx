@@ -6,10 +6,9 @@ export function Header (){
 
   const userData=JSON.parse(localStorage.getItem('user'));
 
-  console.log(userData)
 
   
- 
+ console.log(userData)
     return (
 <div className="Header ">
         <nav className="fixed bg-gray-100 w-full p-4 top-0 z-50 ">
@@ -40,7 +39,7 @@ export function Header (){
                 <details className="relative inline-block ">
                   <summary className=" flex items-center  cursor-pointer px-4 py-2 text-black rounded-lg select-none ">
                    <img
-                  src={userData.image}
+                  src={`${userData.image}`}
                   className="rounded-full object-cover w-12 h-12 border border-blue-500 mr-2"
                
                 />

@@ -15,6 +15,9 @@ export default defineConfig({
       '/images':{
         target: 'http://localhost:5000',
       },
+      '/uploads':{
+        target:'http://localhost:5000'
+      },
     },
   },
 })
