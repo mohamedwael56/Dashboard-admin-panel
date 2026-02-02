@@ -24,7 +24,7 @@ const generateToken = (user) => {
 
 // Register
 exports.register = async (req, res) => {
-  const { name, email, password, role, image } = req.body;
+  const { name, email, password, role, image,userName } = req.body;
  let users = getUsers();
 
   const exists = users.find(u => u.email === email);
@@ -41,6 +41,7 @@ exports.register = async (req, res) => {
     status: "active",
     registeredAt: new Date().toISOString().split("T")[0],
     image: image || "/images/default.jpg",
+    userName
   };
 
   users.push(newUser);

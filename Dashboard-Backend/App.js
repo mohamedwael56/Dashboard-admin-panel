@@ -11,6 +11,7 @@ const productsRoute = require('./routes/products.routes.js');
 const settingsRoute = require('./routes/settings.routes.js');
 const chartsRoute = require('./routes/charts.routes.js');
 const authRoutes = require("./routes/auth.routes.js");
+const accountRoutes = require("./routes/accountRoutes");
 
 const app = express();
 
@@ -28,6 +29,7 @@ app.use('/api/reviews', reviewsRoute);
 app.use('/api/settings', settingsRoute);
 app.use('/api/charts', chartsRoute);
 app.use("/api/auth", authRoutes);
+app.use("/api/account", accountRoutes);
 
 
 app.get("/", (req, res) => {
