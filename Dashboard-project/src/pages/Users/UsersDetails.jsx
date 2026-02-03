@@ -1,12 +1,12 @@
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import { Link } from "react-router-dom";
 
 export function UsersDetails({results}){
     return(
     <>
-     <div className="w-full mx-5 flex flex-col justify-start ">
-  <div className="grid grid-cols-[1fr_3fr_3fr_2fr_2fr_2fr_2fr] 
+     <div className="w-full users-box mx-5 flex flex-col justify-start ">
+  <div className="box-header grid grid-cols-[1fr_3fr_3fr_2fr_2fr_2fr_2fr] 
    gap-4 font-semibold border-b p-1 border bg-blue-500 rounded-lg text-white  ">
     <div className="flex start">UID</div>
     <div className=" flex justify-start ">name</div>
@@ -20,14 +20,14 @@ export function UsersDetails({results}){
   {
 results.map((user)=>{
   return(
-<div className="grid grid-cols-[1fr_3fr_3fr_2fr_2fr_2fr_2fr] gap-4 p-2">
+<div className="grid users-details grid-cols-[1fr_3fr_3fr_2fr_2fr_2fr_2fr] gap-4 p-2">
   <div className="flex start">
    {user.id}
   </div>
 
   <div className=" flex justify-start items-center ">
 
-<img src={`${user.image}`} alt="" width='25px' className="rounded-full" />
+<img src={`${user.image}`} alt="" width='25px' className="rounded-full users-pics" />
 
 <div className=" ml-2 ">
 <div > {user.name}</div>
@@ -49,8 +49,8 @@ results.map((user)=>{
 </div>
   </div>
  
-  <div className=" mt-2 " >
-  <a href={`Profile/${user.id}`} className="bg-violet-400 text-white p-4  rounded-xl text-lg" ><FontAwesomeIcon icon={faEye} /></a>
+  <div className=" mt-2  " >
+  <Link href={`Profile/${user.id}`} className="action-button bg-violet-400 text-white p-4  rounded-xl text-lg" ><FontAwesomeIcon icon={faEye} /></Link>
  
   </div>
 </div>

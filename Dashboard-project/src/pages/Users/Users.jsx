@@ -3,6 +3,7 @@ import { Header } from "../../components/Header";
 import { UsersDetails } from "./UsersDetails";
 import {useState} from "react";
 import { Link } from "react-router-dom";
+import './users.css'
 
 export function Users({users,collapsed,collapsingButton}) {
 
@@ -36,13 +37,13 @@ if(search.trim()!==''){
     <SideBar collapsed={collapsed} />
  <main className="w-full">
         
-<div className="bg-gray-100 mx-4 flex p-4 justify-between rounded-xl mt-8">
+<div className="main-title bg-gray-100 mx-4 flex p-4 justify-between rounded-xl mt-8">
               <h2 className="font-bold select-none">Profile Page</h2>
               <div className="capitalize">
-                <Link className="profile-links" to="/home">
+                <Link className="main-title profile-links" to="/home">
                   home
                 </Link>
-                <Link className="profile-links1" to="/Users">
+                <Link className="main-title profile-links1" to="/Users">
                   {" "}
                   - users
                 </Link>
@@ -50,9 +51,9 @@ if(search.trim()!==''){
               </div>
             </div>
             
-         <div className="capitalize mt-8 bg-gray-100 rounded-2xl  ">
+         <div className="filtration-box capitalize mt-8 bg-gray-100 rounded-2xl  ">
             <div className="flex flex-col items-start p-5">
-                <h2 className="font-bold text-lg mb-5">order information</h2>
+                <h2 className="filtration-title font-bold text-lg mb-5">order information</h2>
               <div className="w-full grid grid-cols-4 gap-4  ">
                 <div>showed by</div>
                 <div>Gender</div>
