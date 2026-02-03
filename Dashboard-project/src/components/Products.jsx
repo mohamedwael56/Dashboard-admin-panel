@@ -1,13 +1,14 @@
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
+import './Products.css'
 export function Product ({results}){
 
     return (
         <>
         
-        <div className="w-full ">
-  <div className="grid grid-cols-[1fr_6fr_3fr_2fr_2fr_2fr_2fr_2fr_2fr_2fr] 
+        <div className="w-full products-box">
+  <div className="grid box-header grid-cols-[1fr_6fr_4fr_2fr_2fr_2fr_2fr_2fr_2fr_2fr] 
    gap-4 font-semibold border-b p-1 border bg-blue-500 rounded-lg text-white  ">
     <div className="flex start">UID</div>
     <div className=" flex justify-start ">Product</div>
@@ -24,14 +25,14 @@ export function Product ({results}){
     results?.map((data)=>{
       return(
         
-<div className="grid grid-cols-[1fr_6fr_3fr_2fr_2fr_2fr_2fr_2fr_2fr_2fr] gap-4 p-2">
+<div className="grid product-details grid-cols-[1fr_6fr_4fr_2fr_2fr_2fr_2fr_2fr_2fr_2fr] gap-4 p-2">
   <div className="flex start">
    {data.id}
   </div>
 
   <div className=" flex justify-start items-center ">
 
-<img src={data.image} alt="" width='20px' />
+<img src={data.image} alt="" width='20px' className="products-pics" />
 
 <div className=" ml-2 ">
 <div > {data.name}</div>
@@ -52,8 +53,8 @@ export function Product ({results}){
   </div>
   <div >
     <div className="flex items-center gap-1">
-<img src="../../public/image/star.png" alt=""  width="10px"/>
-<span className="text-sm">{data.rating} </span>
+<img src="../../public/image/star.png" alt=""  width="10px" className="rating-pic"/>
+<span className="text-sm rating-column">{data.rating} </span>
 <span>({data.reviewsCount})</span>
 </div>
   </div>
@@ -63,8 +64,8 @@ export function Product ({results}){
   <div>
   {data.sales}
   </div>
-  <div className="mt-1" >
-  <Link to={`/EachProduct/${data.id}`} className="bg-violet-400 text-white p-3 rounded-xl " ><FontAwesomeIcon icon={faEye} /></Link>
+  <div className="mt-1 " >
+  <Link to={`/EachProduct/${data.id}`} className="bg-violet-400 action-button text-white p-3 rounded-xl " ><FontAwesomeIcon icon={faEye} /></Link>
   </div>
 </div>
   ) })

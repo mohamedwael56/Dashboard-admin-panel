@@ -4,7 +4,7 @@ import { Product } from "../../components/Products.jsx";
 import "./ProductsDetails.css"
 import { Link } from "react-router-dom";
 import { useState } from "react";
-export function ProductsDetails ({products}) {
+export function ProductsDetails ({products,collapsed,collapsingButton}) {
 
   const [rows, setRows]= useState('All');
 const [categories, setCategories]= useState ('All');
@@ -40,10 +40,10 @@ console.log(results)
     return (
         <>
 
-        <Header />
-                <div className="flex mt-21">
+        <Header collapsingButton={collapsingButton} />
+                <div className="flex mt-15">
 
-        <SideBar />
+        <SideBar collapsed={collapsed} />
           <main className=" mt-2 mx-5 ">
             <div className=" main-page flex justify-between w-full bg-gray-100 p-4 rounded-xl items-center my-2">
                 <h2 className="text-xl font-bold select-none">products details</h2>

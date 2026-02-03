@@ -1,6 +1,7 @@
 import {  XAxis,AreaChart,Area, Tooltip, ResponsiveContainer,} from "recharts";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import './Home.css'
 
 export function Cards (){
               const gradientClasses={
@@ -27,7 +28,7 @@ export function Cards (){
 
     return (
         <>
-              <div className="grid grid-cols-3 grid-rows-2 gap-4">
+              <div className=" w-full cards grid grid-cols-3 grid-rows-2 gap-4">
         
            {
             
@@ -35,14 +36,14 @@ export function Cards (){
               
               return(
             
-    <button key={card.key} className={`${gradientClasses[card.gradient]} flex justify-between ${card.height} ${card.key==='sales'?'row-span-2': 'row-span-1'} p-4 text-white border-none `}>
+    <button key={card.key} className={`cards-size ${gradientClasses[card.gradient]} flex justify-between ${card.height} ${card.key==='sales'?'row-span-2': 'row-span-1'} p-4 text-white border-none `}>
               <div className="flex w-full flex-col justify-between h-full items-start">
                 <div className="flex flex-col items-start">
                   <div>{card.title}</div>
                   <div>{card.total}</div>
                 </div>
-                <div className="h-64 w-full border-none rounded-lg flex items-center justify-center text-gray-400">
-                  <ResponsiveContainer width="100%" height={120}>
+                <div className="cards-charts h-64  w-full border-none rounded-lg flex items-center justify-center text-gray-400">
+                  <ResponsiveContainer width="100%" height="100%">
                     <AreaChart data={card.data}>
                       <defs>
                         <linearGradient

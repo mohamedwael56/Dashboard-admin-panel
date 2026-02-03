@@ -3,7 +3,7 @@ import { SideBar } from "../../components/SideBar";
 import { OrdersDetails } from "./OrdersDetails";
 import { useEffect, useState } from "react";
 import axios from "axios";
-export function OrderList() {
+export function OrderList({collapsed,collapsingButton}) {
 
 const [rows,setRows]= useState('All')
 const [status,setStatus]= useState('All')
@@ -50,9 +50,9 @@ if(search.trim()!==''){
 return(
     <>
     <div >
-    <Header />
-    <div className="mt-20 flex">
-    <SideBar />
+    <Header collapsingButton={collapsingButton} />
+    <div className="mt-15 flex">
+    <SideBar collapsed={collapsed} />
     <main >
         
 <div className="grid grid-cols-4 my-4 gap-4 mx-4">

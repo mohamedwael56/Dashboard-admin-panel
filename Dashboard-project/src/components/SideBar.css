@@ -1,0 +1,12 @@
+
+@media (max-width:600px){
+    .main-sideBar{
+     width: 8rem ; 
+    }
+    .sideBar-main-text{
+        font-size: 12px;
+    }
+    .sidebar-links-size{
+        font-size: 8px;
+    }
+}

@@ -1,3 +1,25 @@
 .Header a:hover{
     color:#2b445a;
 }
+
+@media (max-width:600px){
+    .header-text{
+        font-size: 5px;
+    }
+    .header-toggle{
+        font-size: 10px;
+    }
+    .header-search{
+        width: 150px;
+        overflow: hidden;
+        margin-right: 100px;
+    }
+    .header-search-button{
+        font-size: 12px;
+        margin-top: 5px;
+
+    }
+    .header-profile{
+        font-size: 10px;
+    }
+}

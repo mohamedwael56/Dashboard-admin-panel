@@ -5,15 +5,15 @@ import { General } from "./General";
 import { Security } from "./Security";
 import { Notifications } from "./Notifications";
 import { Link } from "react-router-dom";
-export function Settings(){
+export function Settings({collapsed,collapsingButton}){
 const [activeTab, setActiveTab] = useState('General');
 
     return(
         <>
-        <Header />
+        <Header collapsingButton={collapsingButton} />
 
         <div className="mt-15 flex">
-        <SideBar />
+        <SideBar collapsed={collapsed} />
 
  <main className="mt-10 w-full">
             <div className="bg-gray-100 mx-4 flex p-4 justify-between rounded-xl">

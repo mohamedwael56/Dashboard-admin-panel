@@ -1,14 +1,17 @@
 import { Link } from "react-router-dom";
+import './SideBar.css'
+export function SideBar ({collapsed}){
 
-export function SideBar (){
     return(
-        <div className="h-screen mt-3">
-            <aside className="w-64 h-screen bg-gray-100 text-black-100 flex flex-col p-4">
-          <h2 className="text-s font-bold-1 mb-6 select-none flex start opacity-80">
+        <div className="h-screen mt-8">
+          
+
+            <aside className={`main-sideBar  ${collapsed ? "-translate-x-full opacity-0 w-8" : "translate-x-0 opacity-100  w-64"} ease-in-out duration-500 transition-all overflow-hidden h-screen bg-gray-100 text-black-100 flex flex-col p-4`}>
+          <h2 className={`sideBar-main-text text-s font-bold-1 mb-6 select-none flex start opacity-80`}>
             Main page
           </h2>
 
-          <nav className="flex flex-col gap-3 capitalize">
+          <nav className=" sidebar-links-size flex flex-col gap-3 capitalize">
             <Link
               to="/home"
               className="flex items-center px-3 py-2 rounded hover:bg-gray-200 "

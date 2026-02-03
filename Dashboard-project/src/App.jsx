@@ -15,7 +15,10 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 function App() {
-
+  const [collapsed, setCollapsed] = useState(false);
+const collapsingButton=()=>{
+  setCollapsed(!collapsed)
+}
     const [products, setProducts] = useState([]);
 useEffect(()=>{
 
@@ -47,16 +50,16 @@ fetchUsers()
   return (
     <>
     <Routes>
-      <Route path='/home' element={<Home products={products} users={users} />} />
+      <Route path='/home' element={<Home products={products} users={users} collapsingButton={collapsingButton} collapsed={collapsed} />} />
       <Route path='/' element={<Login />} />
       <Route path='/Register' element={<Register />} />
       <Route path='/ResetPassword' element={<ResetPassword />} />
       <Route path='/ResetPassword2' element={<ResetPassword2 />} />
-      <Route path='/ProductsDetails' element={<ProductsDetails products={products} />} />
-      <Route path='/OrdersList' element={<OrderList />} />
-      <Route path='/Profile/:userId' element={<Profile users={users} />} />
-      <Route path='/Users' element={<Users users={users} />} />
-      <Route path='/Settings' element={<Settings />} />
+      <Route path='/ProductsDetails' element={<ProductsDetails products={products} collapsingButton={collapsingButton} collapsed={collapsed} />} />
+      <Route path='/OrdersList' element={<OrderList collapsingButton={collapsingButton} collapsed={collapsed} />} />
+      <Route path='/Profile/:userId' element={<Profile users={users} collapsingButton={collapsingButton} collapsed={collapsed} />} />
+      <Route path='/Users' element={<Users users={users} collapsingButton={collapsingButton} collapsed={collapsed} />} />
+      <Route path='/Settings' element={<Settings collapsingButton={collapsingButton} collapsed={collapsed} />} />
       <Route path='/EachProduct/:orderId' element={<EachProduct products={products} />} />
     </Routes>
   

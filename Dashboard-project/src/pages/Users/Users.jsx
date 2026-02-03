@@ -4,7 +4,7 @@ import { UsersDetails } from "./UsersDetails";
 import {useState} from "react";
 import { Link } from "react-router-dom";
 
-export function Users({users}) {
+export function Users({users,collapsed,collapsingButton}) {
 
   const [gender,setGender]= useState('All')
   const [rows,setRows]= useState('All')
@@ -31,9 +31,9 @@ if(search.trim()!==''){
 }
 
     return(<>
-<Header />
-<div className=" flex mt-18">
-    <SideBar />
+<Header collapsingButton={collapsingButton} />
+<div className=" flex mt-15">
+    <SideBar collapsed={collapsed} />
  <main className="w-full">
         
 <div className="bg-gray-100 mx-4 flex p-4 justify-between rounded-xl mt-8">
