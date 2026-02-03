@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import './Profile.css'
 import { useParams } from "react-router-dom"
 export function GeneralInfo({users}) {
 const {userId}=useParams()
@@ -10,7 +11,7 @@ const {userId}=useParams()
   }
   const loggedInUser=JSON.parse(localStorage.getItem('user'))
   return (
-  <div className="flex flex-col">
+  <div className="flex main-generalInfo flex-col">
                 <div className="flex items-center m-3 mt-5">
                   <h2 className="font-bold text-black opacity-85 whitespace-nowrap ">
                     public information
@@ -21,7 +22,7 @@ const {userId}=useParams()
                   <div className="flex flex-col items-start mt-5 mb-5  ml-2">
                     <img
                       src={userDetails.image}
-                      className="rounded-full w-32 h-32 object-cover border"
+                      className="general-pic rounded-full w-32 h-32 object-cover border"
                     />
                   </div>
 

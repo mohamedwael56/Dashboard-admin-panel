@@ -51,26 +51,26 @@ if (loggedInUser.name===changeName
    return(
          <div className="flex flex-col items-start">
                 <div className="flex flex-col items-start justify-start my-5 mx-3">
-                <img src={loggedInUser.image} alt="" className="rounded-full w-45 h-45 object-cover" />
+                <img src={loggedInUser.image} alt="" className="general-image rounded-full w-45 h-45 object-cover" />
                <input type="file" accept="image/*" hidden  id="upload-photo" onChange={(e)=>{
                   setSelectedImage(e.target.files[0])
                   } } />
-                <button onClick={()=>{document.getElementById("upload-photo").click()}} className="border mt-2 bg-gray-400 text-white ml-5 mb-3"> Change Photo</button>
+                <button onClick={()=>{document.getElementById("upload-photo").click()}} className="border general-change-photo mt-2 bg-gray-400 text-white ml-5 mb-3"> Change Photo</button>
              </div>
-             <div className="flex mx-5 gap-4 text-xl">
+             <div className="general-name flex mx-5 gap-4 text-xl">
                 <label htmlFor="">Full name</label>
                 <input type="text" onChange={changingName} value={changeName} className="border mb-5 ml-6 rounded-lg px-2 "/>
              </div>
-             <div className="flex mx-5 my-2 gap-2 text-xl">
+             <div className="general-username flex mx-5 my-2 gap-2 text-xl">
                 <label htmlFor="">User name</label>
                 <input type="text" value={loggedInUser.username} readOnly className={`border mb-5 ml-6 select-none bg-gray-300 cursor-not-allowed rounded-lg px-2 `}/>
              </div>
-             <div className="flex mx-5 my-2 gap-2 text-xl">
+             <div className="general-email flex mx-5 my-2 gap-2 text-xl">
                 <label htmlFor="">Email address</label>
-                <input type="text" value={changeEmail} onChange={changingEmail}  readOnly={emailButton===false} className={`border mb-5 select-none ${!emailButton?'bg-gray-300 cursor-not-allowed':'bg-gray-100'}  rounded-lg px-2 `}/>
+                <input type="text" value={changeEmail} onChange={changingEmail}  readOnly={emailButton===false} className={`border  mb-5 select-none ${!emailButton?'bg-gray-300 cursor-not-allowed':'bg-gray-100'}  rounded-lg px-2 `}/>
                 <button onClick={clickedEmailButton} className=" h-8 flex text-[5px] items-center email-button">Change Email</button>
              </div>
-            <button onClick={saveProfile} className="flex mx-5 text-white bg-blue-500"> Save Changes</button>
+            <button onClick={saveProfile} className="flex mx-5 save-button text-white bg-blue-500"> Save Changes</button>
               </div>
     )
 }

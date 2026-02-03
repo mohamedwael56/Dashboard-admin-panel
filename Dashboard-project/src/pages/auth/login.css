@@ -6,3 +6,9 @@ body,html,#root{
 a:hover{
   color: white;
 }
+
+@media(max-width:600px){
+  .main-login-page{
+    font-size: 10px;
+  }
+}

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export function Security(){
     return(
-        <div className="security-settings px-6 py-5 bg-gray-100 rounded-xl">
+        <div className=" security-settings px-6 py-5 bg-gray-100 rounded-xl">
   <h2 className="text-xl font-bold mb-6">Security Settings</h2>
 
   

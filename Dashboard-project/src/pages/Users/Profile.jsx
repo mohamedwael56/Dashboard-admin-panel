@@ -18,18 +18,18 @@ const [activeTab, setActiveTab] = useState("profile");
         <div className="mt-15 flex">
           <SideBar />
 
-          <main className="mt-8 w-full">
+          <main className="main-profile mt-8 w-full">
             <div className="bg-gray-100 mx-4 flex p-4 justify-between rounded-xl">
               <h2 className="font-bold select-none">Profile Page</h2>
               <div className="capitalize">
-                <Link className="profile-links" to="/home">
+                <Link className="main-profile profile-links" to="/home">
                   home
                 </Link>
-                <Link className="profile-links" to="Users">
+                <Link className="main-profile profile-links" to="Users">
                   {" "}
                   - users
                 </Link>
-                <Link className="profile-links1" to="">
+                <Link className="main-profile profile-links1" to="">
                   {" "}
                   - my account{" "}
                 </Link>
@@ -38,13 +38,13 @@ const [activeTab, setActiveTab] = useState("profile");
 
             <div className="mx-4 mt-5 bg-gray-100 rounded-xl">
               <div className="flex gap-3 capitalize ">
-                <a href="#" className="profile-edit" onClick={() => setActiveTab('profile')}>
+                <a href="#" className="main-profile profile-edit" onClick={() => setActiveTab('profile')}>
                   edit profile
                 </a>
-                <a href="#" className="profile-edit" onClick={(e) => { e.preventDefault(); setActiveTab('changePassword'); }}>
+                <a href="#" className="main-profile profile-edit" onClick={(e) => { e.preventDefault(); setActiveTab('changePassword'); }}>
                   change Password
                 </a>
-                <a href="#" className="profile-edit" onClick={() => setActiveTab('deleteAccount')}>
+                <a href="#" className="main-profile profile-edit" onClick={() => setActiveTab('deleteAccount')}>
                   delete account
                 </a>
               </div>

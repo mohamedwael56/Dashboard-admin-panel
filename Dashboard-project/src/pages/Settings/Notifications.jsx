@@ -1,4 +1,5 @@
 import {  useState } from "react"
+import './Settings.css'
 export function Notifications(){  
   const saved = JSON.parse(localStorage.getItem('checked'))
   const [email,setEmail]=useState(saved.email)

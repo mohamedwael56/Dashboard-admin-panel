@@ -1,4 +1,35 @@
-.email-button{
-    font-size: 5px !important;
+@media(max-width:600px){
+.main-title{
+    font-size: 15px;
+}
+.navigating-button{
+    font-size: 10px;
+}
+.general-image{
+    width: 100px;
+    height: 100px;
+}
+.general-change-photo{
+    font-size: 10px;
+}
+.general-name{
+    font-size: 15px;
 }
 
+.general-username{
+    font-size: 15px;
+}
+.general-email{
+    font-size: 15px;
+    white-space: nowrap;
+    gap: 12px;
+}
+.email-button{
+    font-size: 15px !important;
+    white-space: nowrap;
+}
+.save-button{
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+}

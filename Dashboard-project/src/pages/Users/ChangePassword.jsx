@@ -1,4 +1,5 @@
 import axios from 'axios';
+import './Profile.css'
 import { useState } from 'react';
 export function ChangePassword() {
     const user=JSON.parse(localStorage.getItem('user'))
@@ -42,9 +43,9 @@ return (
     <h2 className="change-password-title mt-5 mb-3 mx-3 text-xl font-bold text-black flex">Change Password</h2>
 
     <form className="change-password-form" onSubmit={handleSubmit}>
-      <div className="form-group flex mx-3 items-center">
+      <div className=" form-group flex mx-3 items-center">
         <label>Current Password</label>
-        <input type="password" value={currentPassword} onChange={(e) => setCurrentPassword(e.target.value)} className="border-1 ml-13  rounded-xl mx-3 p-1" placeholder="Enter current password" />
+        <input type="password" value={currentPassword} onChange={(e) => setCurrentPassword(e.target.value)} className="current-password border-1 ml-13  rounded-xl mx-3 p-1" placeholder="Enter current password" />
       </div>
 
       <div className="form-group flex mx-3  items-center">
@@ -52,9 +53,9 @@ return (
         <input type="password" value={newPassword} onChange={(e) => setNewPassword(e.target.value)} className="border-1 ml-18 my-5 rounded-xl mx-3 p-1" placeholder="Enter new password" />
       </div>
 
-      <div className="form-group flex mx-3 items-center">
+      <div className=" form-group flex mx-3 items-center">
         <label>Confirm New Password</label>
-        <input type="password" value={confirmNewPassword} onChange={(e) => setConfirmNewPassword(e.target.value)} className="border-1 rounded-xl mx-3 p-1" placeholder="Confirm new password" />
+        <input type="password" value={confirmNewPassword} onChange={(e) => setConfirmNewPassword(e.target.value)} className="confirm-New-Password border-1 rounded-xl mx-3 p-1" placeholder="Confirm new password" />
       </div>
 
       <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-xl m-5" type="submit">Update Password</button>
