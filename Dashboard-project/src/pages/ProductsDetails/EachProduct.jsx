@@ -14,7 +14,7 @@ if(!product){
   return (
 
     
-    <div className="max-w-6xl mx-auto p-6">
+    <div className=" max-w-6xl mx-auto p-6">
       {/* Breadcrumb */}
       <div className=" main-page flex justify-between w-full bg-white p-4 rounded-xl items-center my-2">
                 <h2 className="text-xl font-bold select-none">products details</h2>

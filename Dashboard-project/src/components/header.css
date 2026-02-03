@@ -12,7 +12,6 @@
     .header-search{
         width: 150px;
         overflow: hidden;
-        margin-right: 100px;
     }
     .header-search-button{
         font-size: 12px;
@@ -22,4 +21,29 @@
     .header-profile{
         font-size: 10px;
     }
+}
+@media (max-width:500px){
+        .header-search{
+        width: 100px;
+        overflow: hidden;
+        font-size: 10px;
+    }
+
+    .header-profile{
+        font-size: 8px;
+                margin-right:10px ;
+
+        
+    }
+
+        .header-search-button{
+        font-size: 8px;
+
+    }
+    .header-picture{
+        width: 30px;
+        height: 30px;
+    }
+
+
 }

@@ -1,11 +1,11 @@
-
+import './orders.css'
 export function OrdersDetails({orders}){
    
 
     return(
         <>
-  <div className="w-full mx-5 flex flex-col justify-start ">
-  <div className="grid grid-cols-[1fr_3fr_2fr_2fr_2fr_2fr_2fr] 
+  <div className="orders-box w-full mx-5 flex flex-col justify-start ">
+  <div className="box-header grid grid-cols-[1fr_3fr_2fr_2fr_2fr_2fr_2fr] 
    gap-4 font-semibold border-b p-1 border bg-blue-500 rounded-lg text-white  ">
     <div className="flex start">UID</div>
     <div className=" flex justify-start ">client</div>
@@ -19,16 +19,16 @@ export function OrdersDetails({orders}){
   {
 orders.map((order)=>{
   return(
-    <div className="grid grid-cols-[1fr_3fr_2fr_2fr_2fr_2fr_2fr] gap-4 p-2">
+    <div className="orders-details grid grid-cols-[1fr_3fr_2fr_2fr_2fr_2fr_2fr] gap-4 p-2">
   <div className="flex start">
    {order.id}
   </div>
 
   <div className=" flex justify-start items-center ">
 
-<img src={`${order.image}`} alt="" width='25px'  className="rounded-full " />
+<img src={`${order.image}`} alt="" width='25px'  className="orders-pics rounded-full " />
 
-<div className="text-sm ml-2 ">
+<div className="text-sm ml-2 client-name ">
 <div > {order.customerName}</div>
 
 </div>
@@ -42,7 +42,7 @@ orders.map((order)=>{
   <div>
   {order.paymentMethod}
   </div>
-  <div className={`${order.status==='completed'&& 'bg-green-600'||order.status==='pending'&&'bg-yellow-600'||order.status==='cancelled'&& 'bg-red-600'} text-white rounded-xl p-1`}>
+  <div className={`status-column ${order.status==='completed'&& 'bg-green-600'||order.status==='pending'&&'bg-yellow-600'||order.status==='cancelled'&& 'bg-red-600'} text-white rounded-xl p-1`}>
   {order.status}
   </div>
   <div >

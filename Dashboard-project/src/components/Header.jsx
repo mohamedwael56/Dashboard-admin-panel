@@ -42,9 +42,9 @@ export function Header ({collapsingButton}){
             
 
             <li>
-              <div className="flex  ">
+              <div className="flex   ">
                 
-                <details className="header-profile relative inline-block ">
+                <details className=" relative inline-block ">
                   <summary className=" flex items-center  cursor-pointer px-4 py-2 text-black rounded-lg select-none ">
                    <img
                   src={`${userData.image}`}
@@ -52,8 +52,8 @@ export function Header ({collapsingButton}){
                
                 />
                 <div>
-                    <span className=" font-medium">{userData.name}</span>
-                    <span className="block text-xs">@{userData.username}</span>
+                    <span className="header-profile font-medium">{userData.name}</span>
+                    <span className="header-profile block text-xs">@{userData.username}</span>
                  </div>
                   </summary>
 

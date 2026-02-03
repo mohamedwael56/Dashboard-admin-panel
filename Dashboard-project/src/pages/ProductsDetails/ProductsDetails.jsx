@@ -44,12 +44,12 @@ console.log(results)
                 <div className="flex mt-15">
 
         <SideBar collapsed={collapsed} />
-          <main className=" mt-2 mx-5 ">
-            <div className=" main-page flex justify-between w-full bg-gray-100 p-4 rounded-xl items-center my-2">
+          <main className=" products-page mt-2 mx-5 ">
+            <div className="  main-page flex justify-between w-full bg-gray-100 p-4 rounded-xl items-center my-2">
                 <h2 className="text-xl font-bold select-none">products details</h2>
-                <div className="flex text-xl ">
-                <Link to="/home" className="first-link">Home</Link>
-                <Link to="#" className="current-page">~ProductsDetails</Link>
+                <div className="flex text-xl  ">
+                <Link to="/home" className="header-info first-link">Home</Link>
+                <Link to="#" className=" header-info current-page">~ProductsDetails</Link>
                 </div>
             </div>
 
@@ -73,7 +73,7 @@ console.log(results)
               </div>
             </button>
 </div>
-        <div className="capitalize mt-8 bg-gray-100 rounded-2xl  ">
+        <div className="filtration-box capitalize mt-8 bg-gray-100 rounded-2xl  ">
             <div className="flex flex-col items-start p-5">
               <div className="w-full grid grid-cols-4 gap-4  ">
                 <div>showed by</div>

@@ -1,11 +1,11 @@
 @media(max-width:500px){
     
   .box-header {
-    display: none; /* نخفي رأس الجدول */
+    display: none; 
   }
 
   .product-details {
-    display: block; /* نخلي كل صف يظهر ككارت */
+    display: block; 
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 8px;

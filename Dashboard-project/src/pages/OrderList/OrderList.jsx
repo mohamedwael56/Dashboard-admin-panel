@@ -3,6 +3,7 @@ import { SideBar } from "../../components/SideBar";
 import { OrdersDetails } from "./OrdersDetails";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import './orders.css'
 export function OrderList({collapsed,collapsingButton}) {
 
 const [rows,setRows]= useState('All')
@@ -55,7 +56,7 @@ return(
     <SideBar collapsed={collapsed} />
     <main >
         
-<div className="grid grid-cols-4 my-4 gap-4 mx-4">
+<div className="orders-cards grid grid-cols-4 my-4 gap-4 mx-4">
                
  <button className="flex justify-between  row-span-1 bg-gradient-to-r from-pink-500 to-pink-300 p-4 text-white">
               <div className="flex flex-col justify-between h-full items-start">
@@ -85,9 +86,9 @@ return(
               </div>
             </button>
 </div>
-         <div className="capitalize mt-8 bg-gray-100 rounded-2xl  ">
+         <div className="filtration-box capitalize mt-8 bg-gray-100 rounded-2xl  ">
             <div className="flex flex-col items-start p-5">
-                <h2 className="font-bold text-lg mb-5">order information</h2>
+                <h2 className="filtration-title font-bold text-lg mb-5">order information</h2>
               <div className="w-full grid grid-cols-4 gap-4  ">
                 <div>showed by</div>
                 <div>Gender</div>

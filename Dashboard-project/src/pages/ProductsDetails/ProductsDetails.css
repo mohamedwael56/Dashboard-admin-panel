@@ -23,3 +23,36 @@
     color: rgb(27, 27, 27) !important;
 
 }
+
+@media(max-width:600px){
+    .products-page{
+        font-size: 10px;
+    }
+    .header-info{
+        font-size: 10px !important;
+    }
+    .filtration-box{
+  font-size: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  width: 100%;
+  overflow: hidden;
+}
+}
+@media(max-width:500px){
+    .products-page{
+        font-size: 10px;
+    }
+    .header-info{
+        font-size: 7px !important;
+    }
+    .filtration-box{
+  font-size: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  width: 120%;
+  gap: 10px;
+  overflow: hidden;
+}
+
+}
