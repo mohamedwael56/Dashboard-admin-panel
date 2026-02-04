@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom"
 import './Profile.css'
 import { useParams } from "react-router-dom"
 export function GeneralInfo({users}) {
@@ -9,6 +8,7 @@ const {userId}=useParams()
   if(!userDetails){
     return(<div>nothing found</div>)
   }
+  console.log(userDetails)
   const loggedInUser=JSON.parse(localStorage.getItem('user'))
   return (
   <div className="flex main-generalInfo flex-col">

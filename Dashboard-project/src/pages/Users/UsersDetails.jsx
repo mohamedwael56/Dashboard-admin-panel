@@ -50,7 +50,7 @@ results.map((user)=>{
   </div>
  
   <div className=" mt-2  " >
-  <Link href={`Profile/${user.id}`} className="action-button bg-violet-400 text-white p-4  rounded-xl text-lg" ><FontAwesomeIcon icon={faEye} /></Link>
+  <Link to={`/Profile/${user.id}`} className="action-button bg-violet-400 text-white p-4  rounded-xl text-lg" ><FontAwesomeIcon icon={faEye} /></Link>
  
   </div>
 </div>
