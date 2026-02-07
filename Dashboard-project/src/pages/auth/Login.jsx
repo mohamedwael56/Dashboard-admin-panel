@@ -26,7 +26,7 @@ const handleSubmit= async(e)=>{
   });
   if(error){
     setLoading(false)
-    alert('email or password are wrong')
+    alert('email or password is wrong.')
     console.error(error)
     return;
   }

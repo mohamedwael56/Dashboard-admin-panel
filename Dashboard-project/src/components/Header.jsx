@@ -5,10 +5,12 @@ import { Link } from "react-router-dom";
 export function Header ({collapsingButton}){
 
   const userData=JSON.parse(localStorage.getItem('user'));
+  if(!userData){
+    return<div>error</div>
+  }
 
 
   
- console.log(userData)
     return (
 <div className="Header ">
         <nav className="Header-bar fixed bg-gray-100 w-full p-4 top-0 z-50 ">

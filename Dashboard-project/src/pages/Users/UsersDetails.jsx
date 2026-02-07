@@ -6,7 +6,7 @@ export function UsersDetails({results}){
     return(
     <>
      <div className="w-full users-box mx-5 flex flex-col justify-start ">
-  <div className="box-header grid grid-cols-[2fr_3fr_3fr_2fr_2fr_2fr_1fr] 
+  <div className="box-header grid grid-cols-[2fr_3fr_5fr_2fr_2fr_2fr_1fr] 
    gap-4 font-semibold border-b p-1 border bg-blue-500 rounded-lg text-white  ">
     <div className="flex justify-start ">UID</div>
     <div className=" flex items-start justify-start ">name</div>
@@ -21,7 +21,7 @@ export function UsersDetails({results}){
 results.map((user)=>{
   console.log('a8a',user.image)
   return(
-<div className="grid users-details grid-cols-[2fr_3fr_3fr_2fr_2fr_2fr_1fr] gap-4 p-2">
+<div className="grid users-details grid-cols-[2fr_3fr_5fr_2fr_2fr_2fr_1fr] gap-4 p-2">
   <div className="flex justify-start items-start user-id ">
    {user.id}
   </div>

@@ -12,7 +12,7 @@ const getResetLink= async (e)=>{
     }
 
         const {error}=await supabase.auth.resetPasswordForEmail(email,{
-            redirectTo:'http://localhost:5173/ResetPassword2'
+            redirectTo:'https://dashboard-admin-panel-xh3s.vercel.app/ResetPassword2'
         });
         if(error){
             console.error(error)

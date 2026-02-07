@@ -31,7 +31,6 @@ const fetchBrandsDetails = async ()=>{
 if (error){
   console.error('Error fetching brands details:',error)}
 else{setProducts(data)}
-console.log(data)
 };
 fetchBrandsDetails()
 },[])

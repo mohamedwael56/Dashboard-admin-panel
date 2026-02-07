@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { supabase } from "../../supabaseClient";
-
+import './Register.css'
 export function Register(){
 
 
@@ -98,20 +98,11 @@ if(insertError){
 }
 
     return(
-        <div className=" min-h-screen w-screen flex items-center justify-between mr-5 ">
-<div className="h-screen flex items-center mr-2">
-            <div className="flex flex-col justify-start items-center ml-5 bg-gray-100 float-left p-3 rounded-xl mt-3 gap-1 text-sm">
-                <h1>
-                    welcome to the Register Page
-                </h1>
-                <p className="text-lg mt-1">you can sign up a new account from the box on the right or you can get back the home page from the button below down</p>
-                    <Link to="/" className="inline-block p-2 rounded-xl text-white bg-blue-500 mt-3 w-[20vw] hover:text-white hover:bg-blue-600" >Home page</Link>
-            </div>
-</div>
+        <div className="main-register  min-h-screen w-screen flex justify-center items-center justify-between mr-5 ">
         <div >
             <div className=" font-bold bg-gray-100 p-5 mr-10 w-[60vw] max-w-96 " >
 
-<h2 className="text-lg mb-4"> register  a new account</h2>
+<h2 className=" main-title text-lg mb-4"> register  a new account</h2>
 <form >
     <div className="mb-4">
     <input 
@@ -160,17 +151,19 @@ if(insertError){
     placeholder="confirm your password" />
 
 </div >
-<div>
+<div className="terms-conditions">
 <input type="checkbox" 
 checked={termsChecked}
 onChange={handleCheckboxChange}
+className=""
 />
-<span className="ml-2 text-sm"> i agree to the terms and conditions</span>
+<span className=" select-none ml-2 text-sm"> i agree to the terms and conditions</span>
 </div>
 <div className="mt-4">
     <button onClick={handleRegisterClick} type="submit" className="w-full bg-blue-500 text-white py-2 px-4 rounded-xl hover:bg-blue-600">
         register
     </button>
+
 </div>
 
 </form>
@@ -184,9 +177,9 @@ onChange={handleCheckboxChange}
             <button
             onClick={()=>{alert('Google login coming soon')}}
             className="bg-white border border-gray-300 text-black py-2 px-4 rounded hover:bg-gray-300">
-              <div>
+              <div className="main-register">
           <img src="../../image/google.png" alt="Google" className="w-5 h-5 inline-block mr-2 " />
-          <div className="inline-block text-sm">Continue with Google</div>
+          <div className="inline-block main-register text-sm">Continue with Google</div>
               </div>
             </button>
             <button 
@@ -194,7 +187,7 @@ onChange={handleCheckboxChange}
             className="ml-3 bg-blue-800 border border-gray-300 text-white py-2 px-4 rounded hover:bg-blue-600">
             <div>
           <img src="../../image/facebook.png" alt="Facebook" className="w-5 h-5 inline-block mr-2 " />
-          <div className="inline-block text-sm">Continue with Facebook    
+          <div className="inline-block main-register text-sm">Continue with Facebook    
               </div>
             </div>
   
@@ -207,6 +200,7 @@ onChange={handleCheckboxChange}
               <div className="inline-block">Continue with Twitter</div>
             </div>
             </button>
+
           </div>
 
             </div>

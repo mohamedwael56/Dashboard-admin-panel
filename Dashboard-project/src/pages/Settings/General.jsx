@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom"
 import { supabase } from "../../supabaseClient"
 export function General(){
    const loggedInUser=JSON.parse(localStorage.getItem('user'))
-     const [changeName,setChangeName]=useState(loggedInUser.name)
-const [changeEmail,setChangeEmail]=useState(loggedInUser.email)
+     const [changeName,setChangeName]=useState(loggedInUser?loggedInUser.name:'')
+const [changeEmail,setChangeEmail]=useState(loggedInUser?loggedInUser.email:'')
    const [emailButton,setEmailButton]=useState(false) 
 const [selectedImage,setSelectedImage]=useState()
 const [loading,setLoading]=useState(false)

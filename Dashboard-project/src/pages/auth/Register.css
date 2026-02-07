@@ -1,0 +1,14 @@
+@media (max-width:600px){
+    .main-register{
+        font-size: 7px;
+    }
+   .main-title{
+    font-size: 10px;
+   }
+   .terms-conditions{
+    font-size: 8px;
+    white-space: nowrap;
+      transform: scale(0.7); /* صغر أو كبر الرقم */
+
+   }
+}
