@@ -5,7 +5,7 @@ import { General } from "./General";
 import { Security } from "./Security";
 import { Notifications } from "./Notifications";
 import { Link } from "react-router-dom";
-import './settings.css'
+import './Settings.css'
 export function Settings({collapsed,collapsingButton}){
 const [activeTab, setActiveTab] = useState('General');
 
