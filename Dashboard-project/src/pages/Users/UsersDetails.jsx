@@ -1,7 +1,7 @@
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
-
+import './users.css'
 export function UsersDetails({results}){
     return(
     <>
@@ -22,7 +22,7 @@ results.map((user)=>{
   console.log('a8a',user.image)
   return(
 <div className="grid users-details grid-cols-[2fr_3fr_5fr_2fr_2fr_2fr_1fr] gap-4 p-2">
-  <div className="flex justify-start items-start user-id ">
+  <div className="not-important flex justify-start items-start user-id ">
    {user.id}
   </div>
 
@@ -38,10 +38,10 @@ results.map((user)=>{
   <div>
 {user.email}
   </div>
-  <div className="bg-green-700 text-white rounded-xl p-1 select-none">
+  <div className="user-status bg-green-700 text-white rounded-xl p-1 select-none">
   {user.role}
   </div>
-  <div className="bg-green-500 select-none text-white rounded-xl p-1">
+  <div className="user-status bg-green-500 select-none text-white rounded-xl p-1">
   {user.status}
   </div>
   <div >
@@ -51,7 +51,7 @@ results.map((user)=>{
   </div>
  
   <div className=" mt-2  " >
-  <Link to={`/Profile/${user.id}`} className="action-button bg-violet-400 text-white p-4  rounded-xl text-lg" ><FontAwesomeIcon icon={faEye} /></Link>
+  <Link to={`/Profile/${user.id}`} className="action-button bg-violet-400 text-white p-4 rounded-xl text-lg" ><FontAwesomeIcon icon={faEye} /></Link>
  
   </div>
 </div>

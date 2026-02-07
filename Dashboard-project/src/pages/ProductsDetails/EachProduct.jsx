@@ -1,6 +1,6 @@
 import {useParams} from 'react-router-dom';
 import { Link } from "react-router-dom";
-
+import './ProductsDetails'
 export function EachProduct({products}) {
 
 const {orderId} = useParams();
@@ -14,29 +14,26 @@ if(!product){
   return (
 
     
-    <div className=" max-w-6xl mx-auto p-6">
-      {/* Breadcrumb */}
+    <div className="product-main max-w-6xl mx-auto p-6">
       <div className=" main-page flex justify-between w-full bg-white p-4 rounded-xl items-center my-2">
-                <h2 className="text-xl font-bold select-none">products details</h2>
+                <h2 className=" product-title text-xl font-bold select-none">product details</h2>
                 <div className="flex text-xl ">
-                <Link to="/" className="first-link">Home</Link>
-                <Link to="/ProductsDetails" className="first-link">~ProductsDetails</Link>
-                <Link to="#" className="current-page">~product name</Link>
+                <Link to="/" className="product-link first-link">Home</Link>
+                <Link to="/ProductsDetails" className="product-link first-link">~ProductsDetails</Link>
+                <Link to="#" className="product-link current-page">~product name</Link>
                 </div>
             </div>
 
       <div className="flex flex-col md:flex-row gap-8 bg-white p-6 rounded-xl shadow-md">
-        {/* Image */}
         <div className="flex-1">
           <img 
             src={`../${product.image}`} 
             alt="Product Name" 
-            className="w-auto h-auto rounded-lg border"
+            className="product-image w-auto h-auto rounded-lg border"
           />
         </div>
 
-        {/* Details */}
-        <div className="flex-1 flex flex-col text-lg gap-9">
+        <div className=" product-information flex-1 flex flex-col text-lg gap-9">
           <h1 className="text-2xl font-bold">{product.name}</h1>
           <p className="text-gray-500">Category: <span className="font-semibold">{product.category}</span></p>
           <p className="text-gray-500">Brand: <span className="font-semibold">{product.brand}</span></p>

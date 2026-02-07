@@ -22,24 +22,27 @@ main a {
 }
 
 @media (max-width:600px){
+.main-page{
+      background-color: rgb(237, 244, 248) !important;
 
+}
   .cards{
+    background-color: rgb(230, 234, 238) !important;
     margin-top: 10px;
-    display: grid ;
-    grid-template-columns: repeat(auto-fit, minmax(3rem, 1fr));
-    grid-auto-rows: 100px;
+    display: flex; 
+    flex-direction: column;
     width: 100%;
+    
      
   }
   .cards-size{
-    grid-row: span 2;
     font-size: 10px;
     overflow: hidden;
-    width: 100%;
     height: 100%;    
   }
   .cards-charts{
-    height: 50px;
+    height: 70px;
+    
   }
 
 .filtration-box{
@@ -52,21 +55,35 @@ main a {
 .filtration-title{
   font-size: 10px;
 }
+.select-options{
+  width: 50px;
+  font-size: 5px;
+  border-radius: 10px;
+}
+
 
 }
 
 @media (max-width:500px){
 .filtration-box{
+  font-size: 3px !important;
+  width: 120% !important;
+  overflow: hidden !important;
+  min-width: 0;
+}
+.select-options7{
+  width: 30px !important;
   font-size: 5px;
-  padding-right: 10px;
-  padding-left: 10px;
-  width: 120%;
-  gap: 10px;
-  overflow: hidden;
+  border-radius: 10px;
+  appearance: none;
+
 }
-.select-options{
-  width: 50px;
+.filtration-title{
+  font-size: 6px !important;
+  font-weight: 600 !important;
+  margin-bottom: 5px;
 }
+
 
 }
 

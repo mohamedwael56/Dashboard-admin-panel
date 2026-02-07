@@ -47,7 +47,16 @@ gap: 3PX;
 
 
 @media(max-width:500px){
-    
+  .product-date{
+    margin-left: 0;
+  }
+
+  .orders-cards{
+    display: flex;
+    flex-direction: column;
+    height: 220px;
+  }
+  
   .box-header {
     display: none; 
   }
@@ -55,9 +64,14 @@ gap: 3PX;
   .orders-details {
     display: block; 
     border: 1px solid #ddd;
-    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
     padding: 8px;
     margin-bottom: 8px;
+    width: 210% !important;
+    background-color: rgb(240, 243, 248);
   }
 
   .orders-details > div {
@@ -71,6 +85,21 @@ gap: 3PX;
   .orders-pics {
     width: 20px !important;
   }
+.select-options{
+  width: 30px !important;
+  font-size: 5px;
+  border-radius: 10px;
+  appearance: none;
+
+}
+
+.filtration-box{
+  font-size: 3px;
+  margin-left: 10px;
+  width: 90% !important;
+  overflow: hidden;
+  min-width: 0;
+}
 
   
 

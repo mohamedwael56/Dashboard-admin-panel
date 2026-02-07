@@ -46,14 +46,14 @@ console.log(results)
         <SideBar collapsed={collapsed} />
           <main className=" products-page mt-2 mx-5 ">
             <div className="  main-page flex justify-between w-full bg-gray-100 p-4 rounded-xl items-center my-2">
-                <h2 className="text-xl font-bold select-none">products details</h2>
+                <h2 className="text-xl header-title font-bold select-none">products details</h2>
                 <div className="flex text-xl  ">
                 <Link to="/home" className="header-info first-link">Home</Link>
                 <Link to="#" className=" header-info current-page">~ProductsDetails</Link>
                 </div>
             </div>
 
-<div className="grid grid-cols-3 my-4 gap-4">
+<div className="cards-details grid grid-cols-3 my-4 gap-4">
                 <button className=" flex justify-between capitalize row-span-1 bg-gradient-to-r from-blue-500 to-blue-200 p-6 text-white flex flex-col gap-2 items-start">
                 <div>547</div>
                 <div>Total products</div>
@@ -73,8 +73,8 @@ console.log(results)
               </div>
             </button>
 </div>
-        <div className="filtration-box capitalize mt-8 bg-gray-100 rounded-2xl  ">
-            <div className="flex flex-col items-start p-5">
+        <div className=" capitalize mt-8 bg-gray-100 rounded-2xl  ">
+            <div className="filtration-box flex flex-col items-start p-5">
               <div className="w-full grid grid-cols-4 gap-4  ">
                 <div>showed by</div>
                 <div>Category</div>
@@ -82,7 +82,7 @@ console.log(results)
                 <div>search by</div>
 
                 <div>
-                  <select className="bg-gray-200 p-2" onChange={(e)=>{
+                  <select className="select-options1 bg-gray-200 p-2" onChange={(e)=>{
                     setRows(e.target.value)
                   }} 
                   value={rows}>
@@ -93,7 +93,7 @@ console.log(results)
                   </select>
                 </div>
                 <div>
-                  <select className="bg-gray-200 p-2" onChange={(e)=>{
+                  <select className="select-options1 bg-gray-200 p-2" onChange={(e)=>{
                     setCategories (e.target.value)
                   }} value={categories}>
                     <option value="All">All</option>
@@ -103,7 +103,7 @@ console.log(results)
                   </select>
                 </div>
                 <div>
-                  <select className="bg-gray-200 p-2" onChange={(e)=>{
+                  <select className="select-options1 bg-gray-200 p-2" onChange={(e)=>{
                     setBrand(e.target.value)
                   }} value={brand}>
                   <option value="All">All</option>
@@ -119,7 +119,7 @@ console.log(results)
                 <div>
                   <input
                   onChange={(e)=>{setSearch(e.target.value)}}
-                  className="bg-gray-200 p-2 border-none rounded-lg"
+                  className="select-options1 bg-gray-200 p-2 border-none rounded-lg"
                     type="text"
                     name=""
                     id=""

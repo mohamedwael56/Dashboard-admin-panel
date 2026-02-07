@@ -96,7 +96,7 @@ return(
                 <div>search by</div>
 
                 <div>
-                  <select className="bg-gray-200 p-2"
+                  <select className="select-options bg-gray-200 p-2"
                   onChange={(e)=>{setRows(e.target.value)}}
                   value={rows}>
                       <option value="All">All</option>
@@ -106,7 +106,7 @@ return(
                   </select>
                 </div>
                 <div>
-                  <select className="bg-gray-200 p-2"
+                  <select className=" select-options bg-gray-200 p-2"
                   onChange={(e)=>{setGender(e.target.value)}}
                   value={gender}>
                     <option value="All">All</option>
@@ -115,7 +115,7 @@ return(
                   </select>
                 </div>
                 <div>
-                  <select className="bg-gray-200 p-2"
+                  <select className=" select-options bg-gray-200 p-2"
                   onChange={(e)=>{setStatus(e.target.value)}}
                   value={status}>
                     <option value="All">All</option>
@@ -128,7 +128,7 @@ return(
                   <input
                   onChange={(e)=>{setSearch(e.target.value)}}
                   value={search}
-                  className="bg-gray-200 p-2 border-none rounded-lg"
+                  className="select-options bg-gray-200 p-2 border-none rounded-lg"
                     type="text"
                     name=""
                     id=""

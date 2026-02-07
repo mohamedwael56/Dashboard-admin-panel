@@ -50,7 +50,7 @@ export function Header ({collapsingButton}){
                   <summary className=" flex items-center  cursor-pointer px-4 py-2 text-black rounded-lg select-none ">
                    <img
                   src={`${userData.image}`}
-                  className="rounded-full object-cover w-12 h-12 border border-blue-500 mr-2"
+                  className="profile-image rounded-full object-cover w-12 h-12 border border-blue-500 mr-2"
                
                 />
                 <div>
@@ -59,7 +59,7 @@ export function Header ({collapsingButton}){
                  </div>
                   </summary>
 
-                  <div className="absolute mt-2 w-40 bg-white shadow-lg rounded-lg">
+                  <div className="header-options absolute mt-2 w-40 bg-white shadow-lg rounded-lg">
                     <Link to={`/Profile/${userData.id}`} className="block px-4 py-2 hover:bg-gray-100">
                       Profile
                     </Link>

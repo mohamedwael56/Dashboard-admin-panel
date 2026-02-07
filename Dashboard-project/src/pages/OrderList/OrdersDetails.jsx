@@ -26,7 +26,7 @@ orders.map((order)=>{
 
   <div className=" flex justify-start items-center ">
 
-<img src={`${order.image}`} alt="" width='25px'  className="orders-pics rounded-full " />
+<img src={`../${order.image}`} alt="" width='25px'  className="orders-pics rounded-full " />
 
 <div className="text-sm ml-2 client-name ">
 <div > {order.customerName}</div>
@@ -42,11 +42,11 @@ orders.map((order)=>{
   <div>
   {order.paymentMethod}
   </div>
-  <div className={`status-column ${order.status==='completed'&& 'bg-green-600'||order.status==='pending'&&'bg-yellow-600'||order.status==='cancelled'&& 'bg-red-600'} text-white rounded-xl p-1`}>
+  <div className={`select-none status-column ${order.status==='completed'&& 'bg-green-600'||order.status==='pending'&&'bg-yellow-600'||order.status==='cancelled'&& 'bg-red-600'} text-white rounded-xl p-1`}>
   {order.status}
   </div>
   <div >
-    <div className="flex items-center ml-6">
+    <div className="product-date flex items-center ml-5">
 {order.orderDate}
 </div>
   </div>

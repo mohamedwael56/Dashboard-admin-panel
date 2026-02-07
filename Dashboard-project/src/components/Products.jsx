@@ -40,29 +40,29 @@ export function Product ({results}){
 
 </div>
   </div>
-  <div>
+  <div className="">
 {data.category}
   </div>
-  <div>
+  <div className="">
   {data.brand}
   </div>
   <div>
   ${data.price}
   </div>
-  <div>
+  <div className="not-important">
   {data.stock}
   </div>
   <div >
     <div className="flex items-center gap-1">
 <img src="../../public/image/star.png" alt=""  width="10px" className="rating-pic"/>
 <span className="text-sm rating-column">{data.rating} </span>
-<span>({data.reviewsCount})</span>
+<span className="not-important">({data.reviewsCount})</span>
 </div>
   </div>
-  <div>
+  <div className="not-important">
   {data.orders}
   </div>
-  <div>
+  <div className="not-important">
   {data.sales}
   </div>
   <div className="mt-1 " >

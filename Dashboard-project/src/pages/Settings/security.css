@@ -9,3 +9,9 @@
     color: white !important;
     font-size: 20px;    
 }
+
+@media(max-width:500px){
+    .security-page{
+        font-size: 8px;
+    }
+}

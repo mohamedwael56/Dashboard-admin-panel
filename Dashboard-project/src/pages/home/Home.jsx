@@ -32,13 +32,13 @@ const [search,setSearch]= useState('');
   return (
     <>
       <Header collapsingButton={collapsingButton}  user={users} />
-      <div className="flex min-h-screen mt-15">
+      <div className="main-page flex min-h-screen mt-15">
         <SideBar collapsed={collapsed}   />
         <main className="flex-1 p-6 m-7  w-screen">
           <Cards />
-          <div className="filtration-box capitalize mt-8 bg-gray-100 rounded-2xl  ">
-            <div className="flex flex-col items-start p-5">
-              <div className="text-xl mb-5 filtration-title">Best Selling Products</div>
+          <div className=" capitalize mt-8 bg-gray-100 rounded-2xl  ">
+            <div className="filtration-box flex overflow-hidden flex-col items-start p-5">
+              <div className=" text-xl mb-5 filtration-title">Best Selling Products</div>
               <div className="w-full grid grid-cols-4 gap-4  ">
                 <div>showed by</div>
                 <div>category by</div>
@@ -46,7 +46,7 @@ const [search,setSearch]= useState('');
                 <div>search by</div>
 
                 <div>
-                  <select className="bg-gray-200 p-2" onChange={(e)=>{
+                  <select className="rounded-xl select-options7 bg-gray-200 p-2" onChange={(e)=>{
                     setRows(e.target.value)
                   }} value={rows}>
                     <option value="All">All</option>
@@ -56,7 +56,7 @@ const [search,setSearch]= useState('');
                   </select>
                 </div>
                 <div>
-                  <select className="select-options bg-gray-200 p-2" onChange={(e)=>{
+                  <select className="rounded-xl select-options7 bg-gray-200 p-2" onChange={(e)=>{
                   setCategories(e.target.value)
                   }} value={categories}>
                   <option value="All">All</option>
@@ -67,7 +67,7 @@ const [search,setSearch]= useState('');
                   </select>
                 </div>
                 <div>
-                  <select className=" select-options bg-gray-200 p-2" onChange={(e)=>{
+                  <select className=" rounded-xl  select-options7 bg-gray-200 p-2" onChange={(e)=>{
                     setBrand(e.target.value)
                   }} value={brand}>
                     <option value="All">All</option>
@@ -80,7 +80,7 @@ const [search,setSearch]= useState('');
                 <div>
                   <input
                   onChange={(e)=>{setSearch(e.target.value)}}
-                    className=" select-options bg-gray-200 p-2 border-none rounded-lg"
+                    className="select-options7 bg-gray-200 p-2 border-none rounded-4xl"
                     type="text"
                     name=""
                     id=""

@@ -33,3 +33,40 @@
     margin-bottom: 10px;
 }
 }
+@media(max-width:500px){
+.main-title{
+    font-size: 15px;
+}
+.navigating-button{
+    font-size: 6px;
+}
+.general-image{
+    width: 70px;
+    height: 70px;
+}
+.general-change-photo{
+    margin-left: 8px;
+    font-size: 7px;
+}
+.general-name{
+    font-size: 10px;
+}
+
+.general-username{
+    font-size: 10px;
+}
+.general-email{
+    font-size: 10px;
+    white-space: nowrap;
+    gap: 12px;
+}
+.email-button{
+    font-size: 10px !important;
+    white-space: nowrap;
+    margin-top: -8px;
+}
+.save-button{
+    font-size: 10px;
+    margin-bottom: 10px;
+}
+}

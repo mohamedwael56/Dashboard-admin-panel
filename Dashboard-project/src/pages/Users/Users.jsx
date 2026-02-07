@@ -37,8 +37,8 @@ if(search.trim()!==''){
     <SideBar collapsed={collapsed} />
  <main className="w-full">
         
-<div className="main-title bg-gray-100 mx-4 flex p-4 justify-between rounded-xl mt-8">
-              <h2 className="font-bold select-none">Profile Page</h2>
+<div className=" bg-gray-100 mx-4 flex p-4 justify-between rounded-xl mt-8">
+              <h2 className="users-title font-bold select-none">Profile Page</h2>
               <div className="capitalize">
                 <Link className="main-title profile-links" to="/home">
                   home
@@ -61,7 +61,7 @@ if(search.trim()!==''){
                 <div>search by</div>
 
                 <div>
-                  <select className="bg-gray-200 p-2"  onChange={(e)=>{ 
+                  <select className="select-options bg-gray-200 p-2"  onChange={(e)=>{ 
                     setRows (e.target.value)
                   }} value={rows}> 
                       <option value="All">All</option>
@@ -71,7 +71,7 @@ if(search.trim()!==''){
                   </select>
                 </div>
                 <div>
-                  <select className="bg-gray-200 p-2 " onChange={(e)=>{
+                  <select className="select-options bg-gray-200 p-2 " onChange={(e)=>{
                     setGender (e.target.value)
                   }} value={gender}>
                     <option value="All">All</option>
@@ -81,7 +81,7 @@ if(search.trim()!==''){
                 </div>
                 <div>
                   <select
-                  className="bg-gray-200 p-2" 
+                  className="select-options bg-gray-200 p-2" 
                   onChange={(e)=>{setStatus (e.target.value) }} 
                   value={status}>
                     <option value="All">All</option>
@@ -95,7 +95,7 @@ if(search.trim()!==''){
                   <input
                   onChange={(e)=>{setSearch(e.target.value)}}
                   value={search}
-                  className="bg-gray-200 p-2 border-none rounded-lg"
+                  className="select-options bg-gray-200 p-2 border-none rounded-lg"
                     type="text"
                     name=""
                     id=""
