@@ -11,7 +11,7 @@ const getResetLink= async (e)=>{
         return;
     }
 
-        const {error}=await supabase.auth.resetPasswordForEmail('mohamedwael56187@gmail.com',{
+        const {error}=await supabase.auth.resetPasswordForEmail(email,{
             redirectTo:'https://dashboard-admin-panel-t4g7.vercel.app/ResetPassword2'
         });
         if(error){
