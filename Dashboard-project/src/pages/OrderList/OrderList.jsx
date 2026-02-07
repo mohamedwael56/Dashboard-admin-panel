@@ -2,8 +2,8 @@ import { Header } from "../../components/Header";
 import { SideBar } from "../../components/SideBar";
 import { OrdersDetails } from "./OrdersDetails";
 import { useEffect, useState } from "react";
-import axios from "axios";
 import './orders.css'
+import { supabase } from "../../supabaseClient.js";
 export function OrderList({collapsed,collapsingButton}) {
 
 const [rows,setRows]= useState('All')
@@ -15,13 +15,13 @@ const [gender,setGender]=useState('All')
 
     useEffect(()=>{
     const fetchOrders=async()=>{
-        try{
-            const response=await axios("/api/orders")
-            setOrders(response.data.data)
-            console.log(response.data.data)
-        }catch(error){
-            console.error("error fetching orders",error)
-        }
+      const {data,error}= await supabase.from('orders').select('*');
+      if(error){
+                    console.error("error fetching orders",error)
+
+      }else{
+        setOrders(data)
+      }
     }
     fetchOrders()
     },[])

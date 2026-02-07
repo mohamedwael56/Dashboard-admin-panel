@@ -1,9 +1,12 @@
-import axios from "axios";
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { supabase } from "../../supabaseClient";
 
 export function Register(){
+
+
+    
     const navigate=useNavigate();
 
     const [termsChecked,setTermsChecked]=useState(false);
@@ -36,7 +39,8 @@ export function Register(){
 
    const handleRegisterClick= async (e)=>{
     e.preventDefault();
-    try{
+
+    
         if(!username || !email || !password ||!name){
             alert ("please fill all the fields");
             return;
@@ -49,26 +53,48 @@ export function Register(){
             alert ("passwords do not match");
             return;
         }
-const response = await axios.post('/api/auth/register',{
-    name,
-    username,
+
+const {data,error}=await supabase.auth.signUp({
     email,
     password
-
-})
-
-console.log("response",response.data)
+});
+if(error){
+    console.error(error)
+    alert('something went wrong')
+    return;
+}else{
+    console.log(data)
     setUsername("");
     setEmail("");
     setPassword("");
 
-    alert("Registered successfully!");
-    navigate('/');
+}
 
-    }catch (error){
-        if(error.response){ alert (error.response.data.message)}
-        else {alert ("something went wrong")}
+const {error:insertError}=await supabase.from('userss').insert([
+    {
+        id:data.user.id,
+        name:name,
+        userName:username,
+        email:email,
+        status:'active',
+        role:'viewer',
+        registeredAt:data.user.created_at
+
     }
+])
+if(insertError){
+    console.error(insertError)
+    alert('Error adding user to database')
+    return;
+}
+       setEmail('');
+       setName('');
+       setPassword('');
+       setUsername('');
+       setConfirmPassword('');
+       alert("Registered successfully!");
+       
+    navigate('/');
 }
 
     return(

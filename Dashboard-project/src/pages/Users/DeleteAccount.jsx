@@ -1,5 +1,5 @@
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { supabase } from "../../supabaseClient";
 
 export function DeleteAccount() {
 
@@ -13,20 +13,18 @@ const confirm = window.confirm(
       "Are you sure you want to delete your account? This action cannot be undone."
 )
 if(!confirm)return;
-try{
-const response = await axios.delete(`/api/account/delete-account`,{
-  data: {
-    userId:user.id
-  }}
-)
 
-localStorage.clear()
-
-response&&navigate('/')
-}catch(error){
-  alert('something went wrong ')
-  console.error(error?.response?.data.message)
+const {error}=await supabase.from('userss').delete().eq('id',user.id)
+if(error){
+  console.error(error)
+  alert('something went wrong!')
 }
+localStorage.removeItem('user');
+
+      await supabase.auth.signOut();
+
+navigate('/')
+
 }
 
 

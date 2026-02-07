@@ -1,15 +1,16 @@
-import axios from "axios";
 import "./login.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { supabase } from "../../supabaseClient";
 
 export function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading,setLoading]=useState(false)
 
-  const handleEmailChange = (e) => {0.
+  const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
   const handlePasswordChange = (e) => {
@@ -18,29 +19,35 @@ export function Login() {
 
 const handleSubmit= async(e)=>{
   e.preventDefault();
-  try{
-  const response =await axios.post('/api/auth/login',{
+  setLoading(true)
+  const {data,error}=await supabase.auth.signInWithPassword({
     email,
     password
+  });
+  if(error){
+    setLoading(false)
+    alert('email or password are wrong')
+    console.error(error)
+    return;
   }
+  const user = data.user
 
-  )
-  const {token, user} = response.data;
-  console.log(response.data)
-
-
-  localStorage.setItem('token', token);
-  localStorage.setItem('user',JSON.stringify(user))
+const {data:userData , error:userError}=await supabase.from('userss').select('*').eq('id',user.id).single();
+if(userError){
+  setLoading(false)
+  alert('something went wrong with the data ')
+      setEmail('');
+    setPassword('');
+  console.error(userError)
+  return;
+}
+  
+  localStorage.setItem('user',JSON.stringify(userData))
+    setLoading(false)
+    setEmail('');
+    setPassword('');
     navigate('home');
 
-  console.log("Token:", token);
-  console.log("User:", user)
-  }catch (error) {
-  if(error.response){ alert(error.response.data.message)}
-  else {alert("something went wrong")};
-}
-      setEmail('');
-      setPassword('');
 
 } 
 
@@ -79,8 +86,7 @@ const handleSubmit= async(e)=>{
             type="submit"
             className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
           >
-            Login
-          </button>
+{ loading?   'Logging in...':       ' Login'}          </button>
           <Link to="/ResetPassword" className="text-blue-600 hover:underline mb-5">
             forget password
           </Link>

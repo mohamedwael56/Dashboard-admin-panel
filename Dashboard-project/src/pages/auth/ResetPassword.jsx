@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { supabase } from "../../supabaseClient";
 
 export function ResetPassword(){
 const [email,setEmail]=useState("");
@@ -9,7 +10,17 @@ const getResetLink= async (e)=>{
         alert ("please enter your email");
         return;
     }
-    alert (`Email has been sent to  ${email} .`)
+
+        const {error}=await supabase.auth.resetPasswordForEmail(email,{
+            redirectTo:'http://localhost:5173/ResetPassword2'
+        });
+        if(error){
+            console.error(error)
+            alert('something went wrong')
+            return;
+        }
+
+    alert (`Email has been sent to  ${email} check it out please .`)
     setEmail('');
 }
 
@@ -34,7 +45,6 @@ const getResetLink= async (e)=>{
 </div>
 </form>
 </div>
-    <Link className="text-blue-600" to="/ResetPassword2">try another way</Link>
 
 <div className="mt-5 mr-10">
     <p>do you remember your password? <Link to="/" className="text-blue-600">Login</Link></p>

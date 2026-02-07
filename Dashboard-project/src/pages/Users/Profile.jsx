@@ -6,7 +6,7 @@ import { useState } from "react";
 import { ChangePassword } from "./ChangePassword";
 import { DeleteAccount } from "./DeleteAccount";
 import { Link } from "react-router-dom";
-export function Profile({users}) {
+export function Profile({users,collapsingButton,collapsed}) {
 
 const [activeTab, setActiveTab] = useState("profile");
 
@@ -14,9 +14,9 @@ const [activeTab, setActiveTab] = useState("profile");
   return (
     <>
       <div>
-        <Header />
+        <Header collapsingButton={collapsingButton} />
         <div className="mt-15 flex">
-          <SideBar />
+          <SideBar collapsed={collapsed} />
 
           <main className="main-profile mt-8 w-full">
             <div className="bg-gray-100 mx-4 flex p-4 justify-between rounded-xl">

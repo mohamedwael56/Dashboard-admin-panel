@@ -53,12 +53,12 @@ export function Header ({collapsingButton}){
                 />
                 <div>
                     <span className="header-profile font-medium">{userData.name}</span>
-                    <span className="header-profile block text-xs">@{userData.username}</span>
+                    <span className="header-profile block text-xs">@{userData.userName}</span>
                  </div>
                   </summary>
 
                   <div className="absolute mt-2 w-40 bg-white shadow-lg rounded-lg">
-                    <Link to="/Profile/0" className="block px-4 py-2 hover:bg-gray-100">
+                    <Link to={`/Profile/${userData.id}`} className="block px-4 py-2 hover:bg-gray-100">
                       Profile
                     </Link>
                     <Link to="/settings" className="block px-4 py-2 hover:bg-gray-100">

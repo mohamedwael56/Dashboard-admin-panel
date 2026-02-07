@@ -12,9 +12,12 @@ import { Settings } from './pages/Settings/Settings.jsx'
 import { ResetPassword2 } from './pages/auth/ResetPassword2.jsx'
 import { EachProduct } from './pages/ProductsDetails/EachProduct.jsx'
 import { useEffect, useState } from "react";
-import axios from "axios";
+import {supabase} from './supabaseClient.js'
 
 function App() {
+
+
+
   const [collapsed, setCollapsed] = useState(false);
 const collapsingButton=()=>{
   setCollapsed(!collapsed)
@@ -23,12 +26,13 @@ const collapsingButton=()=>{
 useEffect(()=>{
 
 const fetchBrandsDetails = async ()=>{
-  try{
-const response= await axios.get('/api/products')
-setProducts(response.data.data)
-} catch(error){
+  
+  const {data,error}=await supabase.from('products').select('*')
+if (error){
   console.error('Error fetching brands details:',error)}
-}
+else{setProducts(data)}
+console.log(data)
+};
 fetchBrandsDetails()
 },[])
 
@@ -36,12 +40,14 @@ fetchBrandsDetails()
     const [users,setUsers]=useState([])
 useEffect(()=>{
 const fetchUsers=async()=>{
-    try{
-        const response=await axios("/api/users")
-        setUsers(response.data.data)
-    }catch(error){
-        console.error("error fetching users",error)
-    }
+
+  const {data,error}=await supabase.from('userss').select('*');
+  if(error){
+            console.error("error fetching users",error)
+
+  }else{
+    setUsers(data)
+  }
 }
 fetchUsers()
 },[])

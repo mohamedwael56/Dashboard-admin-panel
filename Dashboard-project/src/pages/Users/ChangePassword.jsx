@@ -1,42 +1,64 @@
-import axios from 'axios';
 import './Profile.css'
 import { useState } from 'react';
+import { supabase } from '../../supabaseClient';
 export function ChangePassword() {
-    const user=JSON.parse(localStorage.getItem('user'))
+  
 
     const [currentPassword, setCurrentPassword] = useState('');
     const [newPassword, setNewPassword] = useState('');
     const [confirmNewPassword, setConfirmNewPassword] = useState('');
-function handleSubmit(e) {
+  const [loading, setLoading] = useState(false);
+
+    async function handleSubmit(e) {
     e.preventDefault();
     if(!currentPassword || !newPassword || !confirmNewPassword) {
         alert('Please fill all the fields.');
         return;
     }
-        if (newPassword !== confirmNewPassword) {
+            if (newPassword !== confirmNewPassword) {
         alert('New password and confirmation password do not match.');
         return;
        }
-        axios.post(`/api/auth/forgot-password/`, {
-          email:user.email,
-            currentPassword,
-            newPassword,
-           
 
-    })
-    .then(response => {
-        alert('Password changed successfully.');
+        setLoading(true);
+
+        const user=await supabase.auth.getUser()
+        if(!user){
+          setLoading(false)
+          alert('You must be logged in to change your password.')
+        }
+        console.log(user)
+        const userEmail=user.data.user.email
+
+        const {error:userError}= await supabase.auth.signInWithPassword({
+          email:userEmail,
+          password:currentPassword
+        })
+        if(userError){
+          setLoading(false)
+          alert('Old password is incorrect!')
+          return;
+        }
+       const { error} = await supabase.auth.updateUser({
+      password: newPassword
+    });
+        setLoading(false);
+if(error){
+        console.error(error);
+      alert("Failed to change password: " + error.message);
+
+}else{
+        alert("Password updated successfully!");
         setCurrentPassword('');
         setNewPassword('');
         setConfirmNewPassword('');
-        console.log(response);
-    })
-    .catch(error => {
-        if (error.response){
-        alert(error.response.data.message);
-    } else {
-        alert('An error occurred. Please try again later.');
-    }});
+
+}
+   
+    
+    
+
+   
 }
 return (
   <div className="change-password-page select-none">
@@ -58,7 +80,7 @@ return (
         <input type="password" value={confirmNewPassword} onChange={(e) => setConfirmNewPassword(e.target.value)} className="confirm-New-Password border-1 rounded-xl mx-3 p-1" placeholder="Confirm new password" />
       </div>
 
-      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-xl m-5" type="submit">Update Password</button>
+      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-xl m-5" type="submit">{loading?'Loading...':'Update Password'}</button>
     </form>
   </div>
 );

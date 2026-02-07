@@ -23,6 +23,7 @@ export function Product ({results}){
   </div>
   {
     results?.map((data)=>{
+      console.log(data.image)
       return(
         
 <div className="grid product-details grid-cols-[1fr_6fr_4fr_2fr_2fr_2fr_2fr_2fr_2fr_2fr] gap-4 p-2">
@@ -32,7 +33,7 @@ export function Product ({results}){
 
   <div className=" flex justify-start items-center ">
 
-<img src={data.image} alt="" width='20px' className="products-pics" />
+<img src={`../${data.image}`} alt="" width='20px' className="products-pics" />
 
 <div className=" ml-2 ">
 <div > {data.name}</div>

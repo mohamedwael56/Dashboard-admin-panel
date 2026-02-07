@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom"
 export function GeneralInfo({users}) {
 const {userId}=useParams()
  const userDetails= users.find((data)=>{
-    return data.id===Number(userId)
+    return data.id===userId
   })
   if(!userDetails){
     return(<div>nothing found</div>)
@@ -21,7 +21,7 @@ const {userId}=useParams()
                 <div className="flex justify-start gap-5">
                   <div className="flex flex-col items-start mt-5 mb-5  ml-2">
                     <img
-                      src={userDetails.image}
+                      src={`${userDetails.image}`}
                       className="general-pic rounded-full w-32 h-32 object-cover border"
                     />
                   </div>

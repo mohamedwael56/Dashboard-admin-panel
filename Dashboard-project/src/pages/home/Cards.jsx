@@ -1,6 +1,6 @@
 import {  XAxis,AreaChart,Area, Tooltip, ResponsiveContainer,} from "recharts";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import { supabase } from "../../supabaseClient";
 import './Home.css'
 
 export function Cards (){
@@ -15,13 +15,14 @@ export function Cards (){
   const [cards ,setCards]=useState([])
   useEffect(()=>{
     const fetchCards=async()=>{
-      try{
-        const response=await axios("/api/charts")
-        setCards(response.data.data)
-      } 
-      catch(error){
-        console.error("error fetching cards",error)
+      const {data,error}=await supabase.from('charts').select('*');
+      if (error){
+                console.error("error fetching cards",error)
+
+      }else{
+        setCards(data)
       }
+      console.log(data)
     }
     fetchCards()
   },[])

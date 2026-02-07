@@ -29,7 +29,7 @@ if(!product){
         {/* Image */}
         <div className="flex-1">
           <img 
-            src={`${product.image}`} 
+            src={`../${product.image}`} 
             alt="Product Name" 
             className="w-auto h-auto rounded-lg border"
           />

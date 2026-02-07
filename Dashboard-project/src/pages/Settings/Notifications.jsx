@@ -1,7 +1,15 @@
 import {  useState } from "react"
 import './Settings.css'
 export function Notifications(){  
-  const saved = JSON.parse(localStorage.getItem('checked'))
+  const saved = JSON.parse(localStorage.getItem('checked'))||{
+     email: false,
+  inApp: false,
+  newLogin: false,
+  password: false,
+  comments: false,
+  mentions: false,
+  updates: false
+  };
   const [email,setEmail]=useState(saved.email)
   const [inApp,setInApp]=useState(saved.inApp)
   const [newLogin,setNewLogin]=useState(saved.newLogin)
